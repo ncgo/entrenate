@@ -13,6 +13,7 @@
 		82515EF626042484008C1384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82515EF426042484008C1384 /* Main.storyboard */; };
 		82515EF826042486008C1384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82515EF726042486008C1384 /* Assets.xcassets */; };
 		82515EFB26042486008C1384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82515EF926042486008C1384 /* LaunchScreen.storyboard */; };
+		8C2A316B2650860A00BACC8C /* Entrenamiento.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A316A2650860A00BACC8C /* Entrenamiento.storyboard */; };
 		8C31211C264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */; };
 		8C755636264E2DFD0008FBF2 /* ViewControllerMainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C755635264E2DFD0008FBF2 /* ViewControllerMainMenu.swift */; };
 		8C755639264E30AA0008FBF2 /* ViewControllerModoCompetencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C755638264E30AA0008FBF2 /* ViewControllerModoCompetencia.swift */; };
@@ -29,6 +30,7 @@
 		82515EF726042486008C1384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82515EFA26042486008C1384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82515EFC26042486008C1384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C2A316A2650860A00BACC8C /* Entrenamiento.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Entrenamiento.storyboard; sourceTree = "<group>"; };
 		8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRegistrarUsuario.swift; sourceTree = "<group>"; };
 		8C755635264E2DFD0008FBF2 /* ViewControllerMainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMainMenu.swift; sourceTree = "<group>"; };
 		8C755638264E30AA0008FBF2 /* ViewControllerModoCompetencia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModoCompetencia.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				82515EF026042484008C1384 /* SceneDelegate.swift */,
 				82515EF226042484008C1384 /* ViewController.swift */,
 				82515EF426042484008C1384 /* Main.storyboard */,
+				8C2A316A2650860A00BACC8C /* Entrenamiento.storyboard */,
 				8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */,
 				8C75563B264E31610008FBF2 /* ViewControllerModoEntrenamiento.swift */,
 				8C755638264E30AA0008FBF2 /* ViewControllerModoCompetencia.swift */,
@@ -139,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C2A316B2650860A00BACC8C /* Entrenamiento.storyboard in Resources */,
 				82515EFB26042486008C1384 /* LaunchScreen.storyboard in Resources */,
 				82515EF826042486008C1384 /* Assets.xcassets in Resources */,
 				AAFE89F426313098002D4B33 /* Tapia.storyboard in Resources */,

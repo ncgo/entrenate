@@ -13,6 +13,7 @@
 		82515EF626042484008C1384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82515EF426042484008C1384 /* Main.storyboard */; };
 		82515EF826042486008C1384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82515EF726042486008C1384 /* Assets.xcassets */; };
 		82515EFB26042486008C1384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82515EF926042486008C1384 /* LaunchScreen.storyboard */; };
+		827C3A28265085B7005613A3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827C3A27265085B7005613A3 /* Login.storyboard */; };
 		AAFE89F426313098002D4B33 /* Tapia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFE89F326313098002D4B33 /* Tapia.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		82515EF726042486008C1384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82515EFA26042486008C1384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82515EFC26042486008C1384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		827C3A27265085B7005613A3 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		AAFE89F326313098002D4B33 /* Tapia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tapia.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +64,7 @@
 				82515EF026042484008C1384 /* SceneDelegate.swift */,
 				82515EF226042484008C1384 /* ViewController.swift */,
 				82515EF426042484008C1384 /* Main.storyboard */,
+				827C3A27265085B7005613A3 /* Login.storyboard */,
 				AAFE89F326313098002D4B33 /* Tapia.storyboard */,
 				82515EF726042486008C1384 /* Assets.xcassets */,
 				82515EF926042486008C1384 /* LaunchScreen.storyboard */,
@@ -130,6 +133,7 @@
 				82515EFB26042486008C1384 /* LaunchScreen.storyboard in Resources */,
 				82515EF826042486008C1384 /* Assets.xcassets in Resources */,
 				AAFE89F426313098002D4B33 /* Tapia.storyboard in Resources */,
+				827C3A28265085B7005613A3 /* Login.storyboard in Resources */,
 				82515EF626042484008C1384 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

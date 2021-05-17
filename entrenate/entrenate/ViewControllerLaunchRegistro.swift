@@ -1,5 +1,5 @@
 //
-//  ViewControllerLaunch.swift
+//  ViewControllerLaunchRegistro.swift
 //  entrenate
 //
 //  Created by Nadia Garcia on 16/05/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewControllerLaunch: UIViewController {
+class ViewControllerLaunchRegistro: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

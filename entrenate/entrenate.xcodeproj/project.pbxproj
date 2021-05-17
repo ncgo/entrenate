@@ -15,11 +15,14 @@
 		82515EF626042484008C1384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82515EF426042484008C1384 /* Main.storyboard */; };
 		82515EF826042486008C1384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82515EF726042486008C1384 /* Assets.xcassets */; };
 		82515EFB26042486008C1384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82515EF926042486008C1384 /* LaunchScreen.storyboard */; };
-		8C2A316B2650860A00BACC8C /* Entrenamiento.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A316A2650860A00BACC8C /* Entrenamiento.storyboard */; };
+		8C2A316B2650860A00BACC8C /* Competencia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A316A2650860A00BACC8C /* Competencia.storyboard */; };
 		8C31211C264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */; };
 		8C755636264E2DFD0008FBF2 /* ViewControllerMainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C755635264E2DFD0008FBF2 /* ViewControllerMainMenu.swift */; };
 		8C755639264E30AA0008FBF2 /* ViewControllerModoCompetencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C755638264E30AA0008FBF2 /* ViewControllerModoCompetencia.swift */; };
 		8C75563C264E31610008FBF2 /* ViewControllerModoEntrenamiento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C75563B264E31610008FBF2 /* ViewControllerModoEntrenamiento.swift */; };
+		8CC2C58126522C6C00C15252 /* ViewControllerSeleccionProblemas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2C58026522C6C00C15252 /* ViewControllerSeleccionProblemas.swift */; };
+		8CC2C5842652437400C15252 /* TipoDeProblema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2C5832652437400C15252 /* TipoDeProblema.swift */; };
+		8CDBED10265305B90093B430 /* ViewControllerProblemaActivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDBED0F265305B90093B430 /* ViewControllerProblemaActivo.swift */; };
 		AAFE89F426313098002D4B33 /* Tapia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFE89F326313098002D4B33 /* Tapia.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -34,11 +37,14 @@
 		82515EF726042486008C1384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82515EFA26042486008C1384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82515EFC26042486008C1384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C2A316A2650860A00BACC8C /* Entrenamiento.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Entrenamiento.storyboard; sourceTree = "<group>"; };
+		8C2A316A2650860A00BACC8C /* Competencia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Competencia.storyboard; sourceTree = "<group>"; };
 		8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRegistrarUsuario.swift; sourceTree = "<group>"; };
 		8C755635264E2DFD0008FBF2 /* ViewControllerMainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMainMenu.swift; sourceTree = "<group>"; };
 		8C755638264E30AA0008FBF2 /* ViewControllerModoCompetencia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModoCompetencia.swift; sourceTree = "<group>"; };
 		8C75563B264E31610008FBF2 /* ViewControllerModoEntrenamiento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModoEntrenamiento.swift; sourceTree = "<group>"; };
+		8CC2C58026522C6C00C15252 /* ViewControllerSeleccionProblemas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSeleccionProblemas.swift; sourceTree = "<group>"; };
+		8CC2C5832652437400C15252 /* TipoDeProblema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipoDeProblema.swift; sourceTree = "<group>"; };
+		8CDBED0F265305B90093B430 /* ViewControllerProblemaActivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProblemaActivo.swift; sourceTree = "<group>"; };
 		AAFE89F326313098002D4B33 /* Tapia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tapia.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +82,10 @@
 				82515EF026042484008C1384 /* SceneDelegate.swift */,
 				82515EF226042484008C1384 /* ViewController.swift */,
 				82515EF426042484008C1384 /* Main.storyboard */,
-				8C2A316A2650860A00BACC8C /* Entrenamiento.storyboard */,
+				8C2A316A2650860A00BACC8C /* Competencia.storyboard */,
+				8CDBED0F265305B90093B430 /* ViewControllerProblemaActivo.swift */,
+				8CC2C58026522C6C00C15252 /* ViewControllerSeleccionProblemas.swift */,
+				8CC2C5832652437400C15252 /* TipoDeProblema.swift */,
 				8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */,
 				8C75563B264E31610008FBF2 /* ViewControllerModoEntrenamiento.swift */,
 				8C755638264E30AA0008FBF2 /* ViewControllerModoCompetencia.swift */,
@@ -148,7 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C2A316B2650860A00BACC8C /* Entrenamiento.storyboard in Resources */,
+				8C2A316B2650860A00BACC8C /* Competencia.storyboard in Resources */,
 				82515EFB26042486008C1384 /* LaunchScreen.storyboard in Resources */,
 				82515EF826042486008C1384 /* Assets.xcassets in Resources */,
 				AAFE89F426313098002D4B33 /* Tapia.storyboard in Resources */,
@@ -164,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CC2C5842652437400C15252 /* TipoDeProblema.swift in Sources */,
 				8C755639264E30AA0008FBF2 /* ViewControllerModoCompetencia.swift in Sources */,
 				8C755636264E2DFD0008FBF2 /* ViewControllerMainMenu.swift in Sources */,
 				82515EF326042484008C1384 /* ViewController.swift in Sources */,
@@ -171,6 +181,8 @@
 				82515EF126042484008C1384 /* SceneDelegate.swift in Sources */,
 				8C75563C264E31610008FBF2 /* ViewControllerModoEntrenamiento.swift in Sources */,
 				8239D3D8265208A600A891BC /* ViewControllerLaunchRegistro.swift in Sources */,
+				8CC2C58126522C6C00C15252 /* ViewControllerSeleccionProblemas.swift in Sources */,
+				8CDBED10265305B90093B430 /* ViewControllerProblemaActivo.swift in Sources */,
 				8C31211C264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

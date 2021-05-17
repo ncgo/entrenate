@@ -1,14 +1,21 @@
 //
-//  ViewControllerLaunchRegistro.swift
+//  ViewControllerRegistro.swift
 //  entrenate
 //
-//  Created by Nadia Garcia on 16/05/21.
+//  Created by Nadia Garcia on 17/05/21.
 //
 
 import UIKit
 
-class ViewControllerLaunchRegistro: UIViewController {
+class ViewControllerRegistro: UIViewController {
 
+    @IBOutlet weak var tfNombre: UITextField!
+    @IBOutlet weak var tfMunicipio: UITextField!
+    @IBOutlet weak var tfGrado: UITextField!
+    @IBOutlet weak var tfEmail: UITextField!
+    @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var btRegistro: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

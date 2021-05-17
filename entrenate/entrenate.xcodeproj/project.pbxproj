@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8239D3D8265208A600A891BC /* ViewControllerLaunchRegistro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8239D3D7265208A600A891BC /* ViewControllerLaunchRegistro.swift */; };
 		824712C72650D4510095642F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824712C62650D4510095642F /* Colors.xcassets */; };
 		82515EEF26042484008C1384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82515EEE26042484008C1384 /* AppDelegate.swift */; };
 		82515EF126042484008C1384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82515EF026042484008C1384 /* SceneDelegate.swift */; };
@@ -15,6 +14,9 @@
 		82515EF626042484008C1384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82515EF426042484008C1384 /* Main.storyboard */; };
 		82515EF826042486008C1384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82515EF726042486008C1384 /* Assets.xcassets */; };
 		82515EFB26042486008C1384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82515EF926042486008C1384 /* LaunchScreen.storyboard */; };
+		82B85C6F265327EE0002EC82 /* LogIn y Registro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B85C6E265327EE0002EC82 /* LogIn y Registro.storyboard */; };
+		82B85C762653285D0002EC82 /* ViewControllerRegistro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B85C752653285D0002EC82 /* ViewControllerRegistro.swift */; };
+		82B85C7A2653288B0002EC82 /* ViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B85C792653288B0002EC82 /* ViewControllerLogin.swift */; };
 		8C2A316B2650860A00BACC8C /* Competencia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A316A2650860A00BACC8C /* Competencia.storyboard */; };
 		8C31211C264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */; };
 		8C755636264E2DFD0008FBF2 /* ViewControllerMainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C755635264E2DFD0008FBF2 /* ViewControllerMainMenu.swift */; };
@@ -27,7 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8239D3D7265208A600A891BC /* ViewControllerLaunchRegistro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLaunchRegistro.swift; sourceTree = "<group>"; };
 		824712C62650D4510095642F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		82515EEB26042484008C1384 /* entrenate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = entrenate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82515EEE26042484008C1384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +38,9 @@
 		82515EF726042486008C1384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82515EFA26042486008C1384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82515EFC26042486008C1384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82B85C6E265327EE0002EC82 /* LogIn y Registro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "LogIn y Registro.storyboard"; sourceTree = "<group>"; };
+		82B85C752653285D0002EC82 /* ViewControllerRegistro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRegistro.swift; sourceTree = "<group>"; };
+		82B85C792653288B0002EC82 /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
 		8C2A316A2650860A00BACC8C /* Competencia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Competencia.storyboard; sourceTree = "<group>"; };
 		8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRegistrarUsuario.swift; sourceTree = "<group>"; };
 		8C755635264E2DFD0008FBF2 /* ViewControllerMainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMainMenu.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 				8C2A316A2650860A00BACC8C /* Competencia.storyboard */,
 				8CDBED0F265305B90093B430 /* ViewControllerProblemaActivo.swift */,
 				8CC2C58026522C6C00C15252 /* ViewControllerSeleccionProblemas.swift */,
+				82B85C6D265327D40002EC82 /* LogIn y Registro */,
 				8CC2C5832652437400C15252 /* TipoDeProblema.swift */,
 				8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */,
 				8C75563B264E31610008FBF2 /* ViewControllerModoEntrenamiento.swift */,
@@ -93,11 +98,20 @@
 				AAFE89F326313098002D4B33 /* Tapia.storyboard */,
 				82515EF726042486008C1384 /* Assets.xcassets */,
 				824712C62650D4510095642F /* Colors.xcassets */,
-				8239D3D7265208A600A891BC /* ViewControllerLaunchRegistro.swift */,
 				82515EF926042486008C1384 /* LaunchScreen.storyboard */,
 				82515EFC26042486008C1384 /* Info.plist */,
 			);
 			path = entrenate;
+			sourceTree = "<group>";
+		};
+		82B85C6D265327D40002EC82 /* LogIn y Registro */ = {
+			isa = PBXGroup;
+			children = (
+				82B85C6E265327EE0002EC82 /* LogIn y Registro.storyboard */,
+				82B85C752653285D0002EC82 /* ViewControllerRegistro.swift */,
+				82B85C792653288B0002EC82 /* ViewControllerLogin.swift */,
+			);
+			path = "LogIn y Registro";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +174,7 @@
 				8C2A316B2650860A00BACC8C /* Competencia.storyboard in Resources */,
 				82515EFB26042486008C1384 /* LaunchScreen.storyboard in Resources */,
 				82515EF826042486008C1384 /* Assets.xcassets in Resources */,
+				82B85C6F265327EE0002EC82 /* LogIn y Registro.storyboard in Resources */,
 				AAFE89F426313098002D4B33 /* Tapia.storyboard in Resources */,
 				824712C72650D4510095642F /* Colors.xcassets in Resources */,
 				82515EF626042484008C1384 /* Main.storyboard in Resources */,
@@ -174,13 +189,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CC2C5842652437400C15252 /* TipoDeProblema.swift in Sources */,
+				82B85C762653285D0002EC82 /* ViewControllerRegistro.swift in Sources */,
 				8C755639264E30AA0008FBF2 /* ViewControllerModoCompetencia.swift in Sources */,
 				8C755636264E2DFD0008FBF2 /* ViewControllerMainMenu.swift in Sources */,
 				82515EF326042484008C1384 /* ViewController.swift in Sources */,
 				82515EEF26042484008C1384 /* AppDelegate.swift in Sources */,
 				82515EF126042484008C1384 /* SceneDelegate.swift in Sources */,
 				8C75563C264E31610008FBF2 /* ViewControllerModoEntrenamiento.swift in Sources */,
-				8239D3D8265208A600A891BC /* ViewControllerLaunchRegistro.swift in Sources */,
+				82B85C7A2653288B0002EC82 /* ViewControllerLogin.swift in Sources */,
 				8CC2C58126522C6C00C15252 /* ViewControllerSeleccionProblemas.swift in Sources */,
 				8CDBED10265305B90093B430 /* ViewControllerProblemaActivo.swift in Sources */,
 				8C31211C264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift in Sources */,

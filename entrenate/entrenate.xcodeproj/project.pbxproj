@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8239D3D8265208A600A891BC /* ViewControllerLaunchRegistro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8239D3D7265208A600A891BC /* ViewControllerLaunchRegistro.swift */; };
 		824712C72650D4510095642F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824712C62650D4510095642F /* Colors.xcassets */; };
-		824712CF2650ECAD0095642F /* ViewControllerLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824712CE2650ECAD0095642F /* ViewControllerLaunch.swift */; };
 		82515EEF26042484008C1384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82515EEE26042484008C1384 /* AppDelegate.swift */; };
 		82515EF126042484008C1384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82515EF026042484008C1384 /* SceneDelegate.swift */; };
 		82515EF326042484008C1384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82515EF226042484008C1384 /* ViewController.swift */; };
@@ -27,8 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8239D3D7265208A600A891BC /* ViewControllerLaunchRegistro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLaunchRegistro.swift; sourceTree = "<group>"; };
 		824712C62650D4510095642F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		824712CE2650ECAD0095642F /* ViewControllerLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLaunch.swift; sourceTree = "<group>"; };
 		82515EEB26042484008C1384 /* entrenate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = entrenate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82515EEE26042484008C1384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82515EF026042484008C1384 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,8 +93,8 @@
 				AAFE89F326313098002D4B33 /* Tapia.storyboard */,
 				82515EF726042486008C1384 /* Assets.xcassets */,
 				824712C62650D4510095642F /* Colors.xcassets */,
+				8239D3D7265208A600A891BC /* ViewControllerLaunchRegistro.swift */,
 				82515EF926042486008C1384 /* LaunchScreen.storyboard */,
-				824712CE2650ECAD0095642F /* ViewControllerLaunch.swift */,
 				82515EFC26042486008C1384 /* Info.plist */,
 			);
 			path = entrenate;
@@ -179,8 +179,8 @@
 				82515EF326042484008C1384 /* ViewController.swift in Sources */,
 				82515EEF26042484008C1384 /* AppDelegate.swift in Sources */,
 				82515EF126042484008C1384 /* SceneDelegate.swift in Sources */,
-				824712CF2650ECAD0095642F /* ViewControllerLaunch.swift in Sources */,
 				8C75563C264E31610008FBF2 /* ViewControllerModoEntrenamiento.swift in Sources */,
+				8239D3D8265208A600A891BC /* ViewControllerLaunchRegistro.swift in Sources */,
 				8CC2C58126522C6C00C15252 /* ViewControllerSeleccionProblemas.swift in Sources */,
 				8CDBED10265305B90093B430 /* ViewControllerProblemaActivo.swift in Sources */,
 				8C31211C264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift in Sources */,

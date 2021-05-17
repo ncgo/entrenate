@@ -11,6 +11,14 @@ class ViewControllerSeleccionProblemas: UIViewController, UITableViewDelegate, U
     
     @IBOutlet weak var lbTimeSelected: UILabel!
     var timeSet : Int!
+    
+    var listaTemas = [
+        TipoDeProblema(tema: "Teoría de Números"),
+        TipoDeProblema(tema: "Geometría"),
+        TipoDeProblema(tema: "Álgebra"),
+        TipoDeProblema(tema: "Combinatorio"),
+        TipoDeProblema(tema: "Bonus"),
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,24 +26,32 @@ class ViewControllerSeleccionProblemas: UIViewController, UITableViewDelegate, U
         // Do any additional setup after loading the view.
         lbTimeSelected.text = String(timeSet) + " min"
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let viewProblema = segue.destination as! ViewControllerProblemaActivo
+        viewProblema.totalTime = timeSet * 60
     }
-    */
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return listaTemas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
+        cell.textLabel?.text = listaTemas[indexPath.row].tema
+        return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+        }
+        else {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        }
+    }
+    
+    
 
 }

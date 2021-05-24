@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asd-We-bQL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1406" y="375"/>
+            <point key="canvasLocation" x="1582" y="375"/>
         </scene>
         <!--View Controller Registro-->
         <scene sceneID="1hA-JL-UqU">
@@ -377,12 +377,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRm-bZ-nxt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1406" y="1140"/>
+            <point key="canvasLocation" x="1582" y="1139"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Vista Inicial Login Registro-->
         <scene sceneID="XjO-IT-V9E">
             <objects>
-                <viewController id="59N-fa-zBx" sceneMemberID="viewController">
+                <viewController id="59N-fa-zBx" customClass="ViewControllerVistaInicialLoginRegistro" customModule="entrenate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qaR-z3-BHk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -442,6 +442,10 @@
                             <constraint firstItem="riZ-b5-QSP" firstAttribute="width" secondItem="riZ-b5-QSP" secondAttribute="height" multiplier="10:21" id="GOW-Dz-8uh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btLogin" destination="jOF-Fx-rbj" id="syZ-av-a0Z"/>
+                        <outlet property="btRegister" destination="xms-el-9AB" id="V14-1t-NWW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQD-Rs-D1d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -449,7 +453,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6Hs-2v-gqb"/>
+        <segue reference="R0Z-I0-2he"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="logo verde" width="500" height="500"/>

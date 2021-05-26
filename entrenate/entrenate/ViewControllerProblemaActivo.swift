@@ -43,8 +43,8 @@ class ViewControllerProblemaActivo: UIViewController {
         func timeFormatted(_ totalSeconds: Int) -> String {
             let seconds: Int = totalSeconds % 60
             let minutes: Int = (totalSeconds / 60) % 60
-            //     let hours: Int = totalSeconds / 3600
-            return String(format: "%02d:%02d", minutes, seconds)
+            let hours: Int = totalSeconds / 3600
+            return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
         }
     
     @IBAction func quitaTeclado() {

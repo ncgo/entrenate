@@ -52,6 +52,8 @@ class ViewControllerSeleccionProblemas: UIViewController, UITableViewDelegate, U
         }
     }
     
-    
+    @IBAction func unwindToFirstViewController(_ sender: UIStoryboardSegue) {
+         // No code needed, no need to connect the IBAction explicitely
+        }
 
 }

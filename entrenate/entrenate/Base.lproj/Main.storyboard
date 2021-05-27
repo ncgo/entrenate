@@ -786,7 +786,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Vector-3"/>
                                 <connections>
-                                    <segue destination="V8X-YQ-GSv" kind="presentation" modalPresentationStyle="fullScreen" id="9ck-ys-f0V"/>
+                                    <segue destination="V8X-YQ-GSv" kind="presentation" identifier="ProblemaActivo" modalPresentationStyle="fullScreen" id="9ck-ys-f0V"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¡Iniciar!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QH1-5L-8Wn">
@@ -930,6 +930,7 @@
                                 <state key="normal" backgroundImage="Vector"/>
                                 <connections>
                                     <action selector="btTimer60:" destination="Gcs-J5-Rb3" eventType="touchUpInside" id="iey-gP-ZKx"/>
+                                    <segue destination="n9n-pM-wtd" kind="presentation" id="JDX-Si-WYs"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enviar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3H-Tz-NAF">
@@ -958,13 +959,31 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="lbNumProblema" destination="GL1-Jy-yF2" id="YgL-v2-8Wl"/>
                         <outlet property="lbTimer" destination="Bw8-2h-JcB" id="kpP-Vz-Rm2"/>
+                        <outlet property="lbTipoProblema" destination="MUi-ZJ-ORI" id="6kW-JL-ut8"/>
+                        <outlet property="tvProblemaDescripcion" destination="wIZ-gn-zLC" id="8Rv-zy-NQj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xo8-iw-nAR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ku4-W4-PJB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3728.8000000000002" y="-364.7676161919041"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="z0E-65-EV8">
+            <objects>
+                <viewController id="n9n-pM-wtd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0el-go-hQT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="l07-IF-IHO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h8L-R5-SeJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4514" y="-365"/>
         </scene>
     </scenes>
     <resources>

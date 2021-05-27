@@ -28,8 +28,10 @@ class ViewControllerSeleccionProblemas: UIViewController, UITableViewDelegate, U
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let viewProblema = segue.destination as! ViewControllerProblemaActivo
-        viewProblema.totalTime = timeSet * 60
+        if segue.identifier == "ProblemaActivo"{
+            let viewProblema = segue.destination as! ViewControllerProblemaActivo
+            viewProblema.totalTime = timeSet * 60
+        }
     }
     
     

@@ -25,6 +25,7 @@
 		8CC2C58126522C6C00C15252 /* ViewControllerSeleccionProblemas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2C58026522C6C00C15252 /* ViewControllerSeleccionProblemas.swift */; };
 		8CC2C5842652437400C15252 /* TipoDeProblema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2C5832652437400C15252 /* TipoDeProblema.swift */; };
 		8CDBED10265305B90093B430 /* ViewControllerProblemaActivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDBED0F265305B90093B430 /* ViewControllerProblemaActivo.swift */; };
+		8CFE90A6265F636D00806719 /* CorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFE90A5265F636D00806719 /* CorrectViewController.swift */; };
 		AAFE89F426313098002D4B33 /* Tapia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFE89F326313098002D4B33 /* Tapia.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		8CC2C58026522C6C00C15252 /* ViewControllerSeleccionProblemas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSeleccionProblemas.swift; sourceTree = "<group>"; };
 		8CC2C5832652437400C15252 /* TipoDeProblema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipoDeProblema.swift; sourceTree = "<group>"; };
 		8CDBED0F265305B90093B430 /* ViewControllerProblemaActivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProblemaActivo.swift; sourceTree = "<group>"; };
+		8CFE90A5265F636D00806719 /* CorrectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectViewController.swift; sourceTree = "<group>"; };
 		AAFE89F326313098002D4B33 /* Tapia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tapia.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				82515EF026042484008C1384 /* SceneDelegate.swift */,
 				82515EF226042484008C1384 /* ViewController.swift */,
 				82515EF426042484008C1384 /* Main.storyboard */,
+				8CFE90A5265F636D00806719 /* CorrectViewController.swift */,
 				8C2A316A2650860A00BACC8C /* Competencia.storyboard */,
 				8CDBED0F265305B90093B430 /* ViewControllerProblemaActivo.swift */,
 				8CC2C58026522C6C00C15252 /* ViewControllerSeleccionProblemas.swift */,
@@ -199,6 +202,7 @@
 				82B85C7A2653288B0002EC82 /* ViewControllerLogin.swift in Sources */,
 				8CC2C58126522C6C00C15252 /* ViewControllerSeleccionProblemas.swift in Sources */,
 				8CDBED10265305B90093B430 /* ViewControllerProblemaActivo.swift in Sources */,
+				8CFE90A6265F636D00806719 /* CorrectViewController.swift in Sources */,
 				8C31211C264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

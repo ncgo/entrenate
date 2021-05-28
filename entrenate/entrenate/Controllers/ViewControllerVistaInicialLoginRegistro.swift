@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import Firebase
+class ViewControllerVistaInicialLoginRegistro: UIViewController{
 
-class ViewControllerVistaInicialLoginRegistro: UIViewController {
+    
     @IBOutlet weak var btLogin: UIButton!
     @IBOutlet weak var btRegister: UIButton!
     
@@ -17,7 +19,14 @@ class ViewControllerVistaInicialLoginRegistro: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func btInicioSesion(_ sender: UIButton) {
+        
+        print("Inicio de sesión tapped")
+    }
+    
+    @IBAction func htRegistroUsuario(_ sender: UIButton) {
+        print("Registrarse tapped")
+    }
     /*
     // MARK: - Navigation
 
@@ -29,3 +38,4 @@ class ViewControllerVistaInicialLoginRegistro: UIViewController {
     */
 
 }
+

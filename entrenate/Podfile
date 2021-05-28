@@ -6,5 +6,16 @@ target 'entrenate' do
   use_frameworks!
 
   # Pods for entrenate
+  pod 'Firebase/Core'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'FirebaseUI/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'FirebaseUI/Google'
+  pod 'FirebaseUI/Facebook'
+  pod 'FirebaseUI/OAuth'
+  pod 'FirebaseUI/Phone'
+  pod 'GoogleSignIn'
 
 end

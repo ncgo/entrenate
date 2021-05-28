@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zcs-gg-oor">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Perfil-->
+        <scene sceneID="LLk-Ea-R2n">
+            <objects>
+                <viewController id="Zcs-gg-oor" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DaO-Pf-ewQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="uei-LO-Jz0"/>
+                        <color key="backgroundColor" name="Amarillo ommch"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Perfil" id="giZ-7d-dmD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nf6-F7-liJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3316" y="3095"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Amarillo ommch">
+            <color red="0.96899998188018799" green="0.74500000476837158" blue="0.10199999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

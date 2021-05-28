@@ -75,6 +75,9 @@
                                         <state key="normal" title="Inicia Sesión">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btIniciaSesion:" destination="fbk-9A-CkY" eventType="touchUpInside" id="mjS-Io-df6"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="o" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaE-7U-zLl">
                                         <rect key="frame" x="182.5" y="488" width="10" height="21"/>

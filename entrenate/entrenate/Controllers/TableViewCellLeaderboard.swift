@@ -12,6 +12,7 @@ class TableViewCellLeaderboard: UITableViewCell {
     @IBOutlet weak var imgUser: UIImageView!
     @IBOutlet weak var lbUserName: UILabel!
     @IBOutlet weak var lbCity: UILabel!
+    @IBOutlet weak var lbPuntos: UILabel!
     
     
     

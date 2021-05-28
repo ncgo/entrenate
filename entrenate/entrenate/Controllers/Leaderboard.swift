@@ -9,15 +9,15 @@ import UIKit
 
 class Leaderboard: UITableViewController {
 
-    var listaUsuarios = [usersLeaderboard(username: "Nadia García", ciudad: "Ciudad Juarez", imagenPerfil: UIImage(named: "3")),
-        usersLeaderboard(username: "Sergio Tapia", ciudad: "Tijuana", imagenPerfil: UIImage(named: "2")),
-        usersLeaderboard(username: "Mauricio Ruffo", ciudad: "Ensenada", imagenPerfil: UIImage(named: "3")),
-        usersLeaderboard(username: "Katia García", ciudad: "Ciudad Juarez", imagenPerfil: UIImage(named: "2")),
-        usersLeaderboard(username: "Yolanda Martínez", ciudad: "Monterrey", imagenPerfil: UIImage(named: "3")),
-        usersLeaderboard(username: "Andrés López", ciudad: "Villahermosa", imagenPerfil: UIImage(named: "2")),
-        usersLeaderboard(username: "Eduardo Acosta", ciudad: "Morelia", imagenPerfil: UIImage(named: "3")),
-        usersLeaderboard(username: "Karla Padilla", ciudad: "Pachuca", imagenPerfil: UIImage(named: "2")),
-        usersLeaderboard(username: "Raúl Pérez", ciudad: "León", imagenPerfil: UIImage(named: "3"))
+    var listaUsuarios = [usersLeaderboard(username: "Nadia García", ciudad: "Ciudad Juarez", puntos: "1000", imagenPerfil: UIImage(named: "3")),
+        usersLeaderboard(username: "Sergio Tapia", ciudad: "Tijuana", puntos: "950",  imagenPerfil: UIImage(named: "2")),
+        usersLeaderboard(username: "Mauricio Ruffo", ciudad: "Ensenada", puntos: "600", imagenPerfil: UIImage(named: "3")),
+        usersLeaderboard(username: "Katia García", ciudad: "Ciudad Juarez", puntos: "550", imagenPerfil: UIImage(named: "2")),
+        usersLeaderboard(username: "Yolanda Martínez", ciudad: "Monterrey", puntos: "400", imagenPerfil: UIImage(named: "3")),
+        usersLeaderboard(username: "Andrés López", ciudad: "Villahermosa", puntos: "350", imagenPerfil: UIImage(named: "2")),
+        usersLeaderboard(username: "Eduardo Acosta", ciudad: "Morelia", puntos: "200", imagenPerfil: UIImage(named: "3")),
+        usersLeaderboard(username: "Karla Padilla", ciudad: "Pachuca", puntos: "100", imagenPerfil: UIImage(named: "2")),
+        usersLeaderboard(username: "Raúl Pérez", ciudad: "León", puntos: "50", imagenPerfil: UIImage(named: "3"))
     ]
     
     
@@ -51,6 +51,7 @@ class Leaderboard: UITableViewController {
         cell.lbUserName.text = listaUsuarios[indexPath.row].username
         cell.lbCity.text = listaUsuarios[indexPath.row].ciudad
         cell.imgUser.image = listaUsuarios[indexPath.row].imagenPerfil
+        cell.lbPuntos.text = listaUsuarios[indexPath.row].puntos
 
         return cell
     }

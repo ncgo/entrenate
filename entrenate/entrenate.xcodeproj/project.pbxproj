@@ -17,6 +17,7 @@
 		82B85C6F265327EE0002EC82 /* LogIn y Registro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B85C6E265327EE0002EC82 /* LogIn y Registro.storyboard */; };
 		82B85C762653285D0002EC82 /* ViewControllerRegistro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B85C752653285D0002EC82 /* ViewControllerRegistro.swift */; };
 		82B85C7A2653288B0002EC82 /* ViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B85C792653288B0002EC82 /* ViewControllerLogin.swift */; };
+		82B85C9E265333D50002EC82 /* ViewControllerVistaInicialLoginRegistro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B85C9D265333D50002EC82 /* ViewControllerVistaInicialLoginRegistro.swift */; };
 		8C2A316B2650860A00BACC8C /* Competencia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A316A2650860A00BACC8C /* Competencia.storyboard */; };
 		8C31211C264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */; };
 		8C755636264E2DFD0008FBF2 /* ViewControllerMainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C755635264E2DFD0008FBF2 /* ViewControllerMainMenu.swift */; };
@@ -50,6 +51,7 @@
 		82B85C6E265327EE0002EC82 /* LogIn y Registro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "LogIn y Registro.storyboard"; sourceTree = "<group>"; };
 		82B85C752653285D0002EC82 /* ViewControllerRegistro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRegistro.swift; sourceTree = "<group>"; };
 		82B85C792653288B0002EC82 /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
+		82B85C9D265333D50002EC82 /* ViewControllerVistaInicialLoginRegistro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerVistaInicialLoginRegistro.swift; sourceTree = "<group>"; };
 		8C2A316A2650860A00BACC8C /* Competencia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Competencia.storyboard; sourceTree = "<group>"; };
 		8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRegistrarUsuario.swift; sourceTree = "<group>"; };
 		8C755635264E2DFD0008FBF2 /* ViewControllerMainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMainMenu.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				82B85C6E265327EE0002EC82 /* LogIn y Registro.storyboard */,
 				82B85C752653285D0002EC82 /* ViewControllerRegistro.swift */,
+				82B85C9D265333D50002EC82 /* ViewControllerVistaInicialLoginRegistro.swift */,
 				82B85C792653288B0002EC82 /* ViewControllerLogin.swift */,
 			);
 			path = "LogIn y Registro";
@@ -235,6 +238,7 @@
 				8CC2C58126522C6C00C15252 /* ViewControllerSeleccionProblemas.swift in Sources */,
 				8CDBED10265305B90093B430 /* ViewControllerProblemaActivo.swift in Sources */,
 				8CFE90A6265F636D00806719 /* CorrectViewController.swift in Sources */,
+				82B85C9E265333D50002EC82 /* ViewControllerVistaInicialLoginRegistro.swift in Sources */,
 				8C31211C264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewControllerRegistro: UIViewController {
+class ViewControllerRegistro: UIViewController, UIPickerViewDataSource, UIPickerViewAccessibilityDelegate { {
     
     struct User : Codable {
         var name: String!
@@ -25,12 +25,21 @@ class ViewControllerRegistro: UIViewController {
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var btRegistro: UIButton!
     
+    var municipios = ["Ahumada", "Camargo", "Chihuahua", "Ciudad Juárez", "Cuauhtémoc", "Delicias", "Guachochi", "Jiménez", "Nuevo Casas Grandes", "Parral"]
+    var niveles = ["Primaria", "Secundaria", "Preparatoria"]
+    var gradosPrimaria = ["1º", "2º", "3º", "4º", "5º", "6º"]
+    var gradosSecundaria = ["1º", "2º", "3º"]
+    var semestresPrepa = ["1º Semestre", "2º Semestre", "3º Semestre", "4º Semestre", "5º Semestre", "6º Semestre"]
+    
+    let pickerMunicipio = UIPickerView()
+    let pickerGrado = UIPickerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        createPickerMunicipio()
         // Do any additional setup after loading the view.
     }
-    
+
     @IBAction func saveUserDefaults(_ sender: Any){
         let usuario = User(name: tfNombre.text,town: tfMunicipio.text,grade: tfGrado.text,email: tfEmail.text,highScore: 0)
         let defaults = UserDefaults.standard
@@ -42,6 +51,45 @@ class ViewControllerRegistro: UIViewController {
         saveUserDefaults((Any).self)
     }
     
+    
+    // Picker en vez de Keyboard para Municipio
+    func createPickerMunicipio() {
+        pickerMunicipio.delegate = self
+        pickerMunicipio.delegate?.pickerView?(pickerMunicipio, didSelectRow: 0, inComponent: 0)
+        tfMunicipio.inputView = pickerMunicipio
+    }
+    
+    // Numero de components para los PickerViews
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        if pickerView == pickerMunicipio {
+            return 1
+        }  else {
+            return 2
+        }
+    }
+    
+    // Numero de Rows para los PickerViews
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == pickerMunicipio {
+            return municipios.count
+        }  else {
+            return 6
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == pickerMunicipio {
+            return String(municipios[row])
+        } else {
+            return String(niveles[row])
+        }
+    }
+    
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "login-registrate" {
             let viewLogin = segue.destination as! ViewControllerLogin

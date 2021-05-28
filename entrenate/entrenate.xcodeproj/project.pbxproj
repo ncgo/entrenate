@@ -83,9 +83,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		82515EE226042484008C1384 = {
+		824FE5A22660CDA8004D53BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		824FE5A32660CDB0004D53BA /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				82515EFC26042486008C1384 /* Info.plist */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		824FE5A42660CDBB004D53BA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				82515EF926042486008C1384 /* LaunchScreen.storyboard */,
+				82B85C6E265327EE0002EC82 /* LogIn y Registro.storyboard */,
+				AAFE89F326313098002D4B33 /* Tapia.storyboard */,
 				8C98F9252660C53E00CB434F /* SeleccionModo.storyboard */,
 				8C98F9212660C51500CB434F /* Perfil.storyboard */,
 				8C98F91E2660C4E900CB434F /* Configuracion.storyboard */,
@@ -94,6 +112,62 @@
 				8C98F9132660C42800CB434F /* SeleccionProblema.storyboard */,
 				8C98F9102660C3F600CB434F /* ProblemaActivo.storyboard */,
 				8C98F90C2660C3BF00CB434F /* Correct.storyboard */,
+				8C2A316A2650860A00BACC8C /* Competencia.storyboard */,
+				82515EF426042484008C1384 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		824FE5A52660CDC8004D53BA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		824FE5A62660CDCF004D53BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		824FE5A82660CDE4004D53BA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		824FE5A92660CDF7004D53BA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		824FE5AA2660CDFE004D53BA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				82515EF226042484008C1384 /* ViewController.swift */,
+				8CC2C58026522C6C00C15252 /* ViewControllerSeleccionProblemas.swift */,
+				82B85C792653288B0002EC82 /* ViewControllerLogin.swift */,
+				82B85C752653285D0002EC82 /* ViewControllerRegistro.swift */,
+				8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */,
+				82B85C9D265333D50002EC82 /* ViewControllerVistaInicialLoginRegistro.swift */,
+				8C755635264E2DFD0008FBF2 /* ViewControllerMainMenu.swift */,
+				8C755638264E30AA0008FBF2 /* ViewControllerModoCompetencia.swift */,
+				8C75563B264E31610008FBF2 /* ViewControllerModoEntrenamiento.swift */,
+				8CC2C5832652437400C15252 /* TipoDeProblema.swift */,
+				8CDBED0F265305B90093B430 /* ViewControllerProblemaActivo.swift */,
+				8CFE90A5265F636D00806719 /* CorrectViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		82515EE226042484008C1384 = {
+			isa = PBXGroup;
+			children = (
 				82515EED26042484008C1384 /* entrenate */,
 				82515EEC26042484008C1384 /* Products */,
 			);
@@ -112,36 +186,18 @@
 			children = (
 				82515EEE26042484008C1384 /* AppDelegate.swift */,
 				82515EF026042484008C1384 /* SceneDelegate.swift */,
-				82515EF226042484008C1384 /* ViewController.swift */,
-				82515EF426042484008C1384 /* Main.storyboard */,
-				8CFE90A5265F636D00806719 /* CorrectViewController.swift */,
-				8C2A316A2650860A00BACC8C /* Competencia.storyboard */,
-				8CDBED0F265305B90093B430 /* ViewControllerProblemaActivo.swift */,
-				8CC2C58026522C6C00C15252 /* ViewControllerSeleccionProblemas.swift */,
-				82B85C6D265327D40002EC82 /* LogIn y Registro */,
-				8CC2C5832652437400C15252 /* TipoDeProblema.swift */,
-				8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */,
-				8C75563B264E31610008FBF2 /* ViewControllerModoEntrenamiento.swift */,
-				8C755638264E30AA0008FBF2 /* ViewControllerModoCompetencia.swift */,
-				8C755635264E2DFD0008FBF2 /* ViewControllerMainMenu.swift */,
-				AAFE89F326313098002D4B33 /* Tapia.storyboard */,
+				824FE5AA2660CDFE004D53BA /* Controllers */,
+				824FE5A92660CDF7004D53BA /* Extensions */,
+				824FE5A82660CDE4004D53BA /* Helpers */,
+				824FE5A62660CDCF004D53BA /* Models */,
+				824FE5A52660CDC8004D53BA /* Services */,
+				824FE5A42660CDBB004D53BA /* Storyboards */,
+				824FE5A32660CDB0004D53BA /* Supporting */,
+				824FE5A22660CDA8004D53BA /* Views */,
 				82515EF726042486008C1384 /* Assets.xcassets */,
 				824712C62650D4510095642F /* Colors.xcassets */,
-				82515EF926042486008C1384 /* LaunchScreen.storyboard */,
-				82515EFC26042486008C1384 /* Info.plist */,
 			);
 			path = entrenate;
-			sourceTree = "<group>";
-		};
-		82B85C6D265327D40002EC82 /* LogIn y Registro */ = {
-			isa = PBXGroup;
-			children = (
-				82B85C6E265327EE0002EC82 /* LogIn y Registro.storyboard */,
-				82B85C752653285D0002EC82 /* ViewControllerRegistro.swift */,
-				82B85C9D265333D50002EC82 /* ViewControllerVistaInicialLoginRegistro.swift */,
-				82B85C792653288B0002EC82 /* ViewControllerLogin.swift */,
-			);
-			path = "LogIn y Registro";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,7 +476,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 459KZ5T6YK;
-				INFOPLIST_FILE = entrenate/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/entrenate/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,7 +495,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 459KZ5T6YK;
-				INFOPLIST_FILE = entrenate/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/entrenate/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

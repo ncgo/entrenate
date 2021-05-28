@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewControllerRegistro: UIViewController, UIPickerViewDataSource, UIPickerViewAccessibilityDelegate { {
+class ViewControllerRegistro: UIViewController, UIPickerViewDataSource, UIPickerViewAccessibilityDelegate {
     
     struct User : Codable {
         var name: String!
@@ -138,5 +138,5 @@ class ViewControllerRegistro: UIViewController, UIPickerViewDataSource, UIPicker
             viewLogin.tfPassword = tfPassword
         }
     }
-
+*/
 }

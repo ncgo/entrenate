@@ -20,7 +20,28 @@ class ViewControllerLogin: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func unwindToFirstViewController(_ sender: UIStoryboardSegue) {
+         // No code needed, no need to connect the IBAction explicitely
+        }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    func isValidPassword(_ password: String) -> Bool {
+        if tfPassword.text! == "" {
+            return false
+        }
+        return true
+    }
+    
+    @IBAction func loadUserDefaults(_ sender: Any) {
+        let defaults = UserDefaults.standard
+    }
+    
     /*
     // MARK: - Navigation
 

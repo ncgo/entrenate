@@ -22,42 +22,12 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="foz-c7-Kel" kind="relationship" relationship="rootViewController" id="Asx-Of-9M7"/>
+                        <segue destination="ZmO-so-9mZ" kind="relationship" relationship="rootViewController" id="Asx-Of-9M7"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCG-WJ-hEk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="887" y="2191"/>
-        </scene>
-        <!--Leaderboard-->
-        <scene sceneID="Zey-oX-NPv">
-            <objects>
-                <tableViewController id="foz-c7-Kel" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zXX-zH-i57">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <color key="sectionIndexBackgroundColor" name="Verde ommch"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Fin-2d-ZnD">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fin-2d-ZnD" id="2Jc-Gx-1vd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="foz-c7-Kel" id="rhy-bl-OHG"/>
-                            <outlet property="delegate" destination="foz-c7-Kel" id="WQL-F2-17R"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Leaderboard" id="Lyo-l4-b6t"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FwW-u2-9Tb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="886" y="3095"/>
         </scene>
         <!--Problemas-->
         <scene sceneID="6we-IT-VPw">
@@ -427,6 +397,15 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIz-68-fCX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4420" y="-328"/>
+        <!--Leaderboard-->
+        <scene sceneID="6H7-Zn-bVf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Leaderboard" id="ZmO-so-9mZ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="wbY-ww-mG1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oqp-ed-ndB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886" y="3095"/>
         </scene>
     </scenes>
     <resources>

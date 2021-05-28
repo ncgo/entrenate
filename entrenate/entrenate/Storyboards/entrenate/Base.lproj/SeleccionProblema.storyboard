@@ -133,9 +133,6 @@
                                 <rect key="frame" x="37" y="612" width="149" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Vector-3"/>
-                                <connections>
-                                    <segue destination="HYQ-WQ-4Md" kind="presentation" identifier="ProblemaActivo" modalPresentationStyle="fullScreen" id="9ck-ys-f0V"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¡Iniciar!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QH1-5L-8Wn">
                                 <rect key="frame" x="76" y="619" width="78" height="30"/>
@@ -156,14 +153,6 @@
                 <exit id="NNG-hL-ZXy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2901.5999999999999" y="-364.7676161919041"/>
-        </scene>
-        <!--ProblemaActivo-->
-        <scene sceneID="gT0-on-3dK">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ProblemaActivo" id="HYQ-WQ-4Md" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zsh-K5-DkO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3728.8000000000002" y="-364.7676161919041"/>
         </scene>
     </scenes>
     <resources>

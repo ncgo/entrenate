@@ -17,5 +17,6 @@ target 'entrenate' do
   pod 'FirebaseUI/OAuth'
   pod 'FirebaseUI/Phone'
   pod 'GoogleSignIn'
+  pod 'Firebase/Storage'
 
 end

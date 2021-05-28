@@ -20,6 +20,10 @@
 		82B85C9E265333D50002EC82 /* ViewControllerVistaInicialLoginRegistro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B85C9D265333D50002EC82 /* ViewControllerVistaInicialLoginRegistro.swift */; };
 		82D899D32660EDA800CA0762 /* ViewControllerIniciaSesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D899D22660EDA800CA0762 /* ViewControllerIniciaSesion.swift */; };
 		82D899F52660FE5700CA0762 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82D899F42660FE5700CA0762 /* GoogleService-Info.plist */; };
+		82D899FB266101EC00CA0762 /* ViewControllerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D899FA266101EC00CA0762 /* ViewControllerHome.swift */; };
+		82D899FE2661042100CA0762 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D899FD2661042100CA0762 /* DatabaseManager.swift */; };
+		82D89A01266104CD00CA0762 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D89A00266104CD00CA0762 /* AuthManager.swift */; };
+		82D89A042661050A00CA0762 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D89A032661050A00CA0762 /* StorageManager.swift */; };
 		8C2A316B2650860A00BACC8C /* Competencia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A316A2650860A00BACC8C /* Competencia.storyboard */; };
 		8C31211C264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */; };
 		8C755636264E2DFD0008FBF2 /* ViewControllerMainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C755635264E2DFD0008FBF2 /* ViewControllerMainMenu.swift */; };
@@ -60,6 +64,10 @@
 		82B85C9D265333D50002EC82 /* ViewControllerVistaInicialLoginRegistro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerVistaInicialLoginRegistro.swift; sourceTree = "<group>"; };
 		82D899D22660EDA800CA0762 /* ViewControllerIniciaSesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewControllerIniciaSesion.swift; path = entrenate/Controllers/ViewControllerIniciaSesion.swift; sourceTree = SOURCE_ROOT; };
 		82D899F42660FE5700CA0762 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		82D899FA266101EC00CA0762 /* ViewControllerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome.swift; sourceTree = "<group>"; };
+		82D899FD2661042100CA0762 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		82D89A00266104CD00CA0762 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		82D89A032661050A00CA0762 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		8C2A316A2650860A00BACC8C /* Competencia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Competencia.storyboard; sourceTree = "<group>"; };
 		8C31211B264F6BF800F7A811 /* ViewControllerRegistrarUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRegistrarUsuario.swift; sourceTree = "<group>"; };
 		8C755635264E2DFD0008FBF2 /* ViewControllerMainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMainMenu.swift; sourceTree = "<group>"; };
@@ -152,6 +160,9 @@
 		824FE5A82660CDE4004D53BA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				82D899FD2661042100CA0762 /* DatabaseManager.swift */,
+				82D89A032661050A00CA0762 /* StorageManager.swift */,
+				82D89A00266104CD00CA0762 /* AuthManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -179,6 +190,7 @@
 				8CC2C5832652437400C15252 /* TipoDeProblema.swift */,
 				8CDBED0F265305B90093B430 /* ViewControllerProblemaActivo.swift */,
 				8CFE90A5265F636D00806719 /* CorrectViewController.swift */,
+				82D899FA266101EC00CA0762 /* ViewControllerHome.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -376,16 +388,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CC2C5842652437400C15252 /* TipoDeProblema.swift in Sources */,
+				82D89A01266104CD00CA0762 /* AuthManager.swift in Sources */,
 				82D899D32660EDA800CA0762 /* ViewControllerIniciaSesion.swift in Sources */,
 				82B85C762653285D0002EC82 /* ViewControllerRegistro.swift in Sources */,
 				8C755639264E30AA0008FBF2 /* ViewControllerModoCompetencia.swift in Sources */,
+				82D899FE2661042100CA0762 /* DatabaseManager.swift in Sources */,
 				8C755636264E2DFD0008FBF2 /* ViewControllerMainMenu.swift in Sources */,
 				82515EF326042484008C1384 /* ViewController.swift in Sources */,
 				82515EEF26042484008C1384 /* AppDelegate.swift in Sources */,
+				82D89A042661050A00CA0762 /* StorageManager.swift in Sources */,
 				82515EF126042484008C1384 /* SceneDelegate.swift in Sources */,
 				8C75563C264E31610008FBF2 /* ViewControllerModoEntrenamiento.swift in Sources */,
 				82B85C7A2653288B0002EC82 /* ViewControllerLogin.swift in Sources */,
 				8CC2C58126522C6C00C15252 /* ViewControllerSeleccionProblemas.swift in Sources */,
+				82D899FB266101EC00CA0762 /* ViewControllerHome.swift in Sources */,
 				8CDBED10265305B90093B430 /* ViewControllerProblemaActivo.swift in Sources */,
 				8CFE90A6265F636D00806719 /* CorrectViewController.swift in Sources */,
 				82B85C9E265333D50002EC82 /* ViewControllerVistaInicialLoginRegistro.swift in Sources */,

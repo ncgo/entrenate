@@ -215,17 +215,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="o" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eav-hO-jGg">
-                                        <rect key="frame" x="182.5" y="488" width="10" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="10" id="GvY-9d-8DU"/>
-                                            <constraint firstAttribute="width" secondItem="Eav-hO-jGg" secondAttribute="height" multiplier="10:21" id="HBS-7v-Y6a"/>
-                                            <constraint firstAttribute="height" constant="21" id="cYv-a1-GHe"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Oc-zg-sKG">
                                         <rect key="frame" x="59" y="514" width="257" height="36"/>
                                         <color key="backgroundColor" name="Verde"/>
@@ -267,9 +256,7 @@
                                     <constraint firstItem="K9Y-e8-Xyu" firstAttribute="leading" secondItem="LHh-kv-MWA" secondAttribute="leadingMargin" id="0gR-xa-rd0"/>
                                     <constraint firstItem="K9Y-e8-Xyu" firstAttribute="leading" secondItem="LHh-kv-MWA" secondAttribute="leading" id="0mN-qS-G3H"/>
                                     <constraint firstItem="8Oc-zg-sKG" firstAttribute="centerX" secondItem="LHh-kv-MWA" secondAttribute="centerX" id="5FI-TZ-sCi"/>
-                                    <constraint firstItem="Eav-hO-jGg" firstAttribute="centerX" secondItem="LHh-kv-MWA" secondAttribute="centerX" id="7v5-34-cwe"/>
                                     <constraint firstItem="SLw-PW-bMM" firstAttribute="centerY" secondItem="LHh-kv-MWA" secondAttribute="centerY" id="9Xz-XI-GH2"/>
-                                    <constraint firstItem="8Oc-zg-sKG" firstAttribute="top" secondItem="Eav-hO-jGg" secondAttribute="bottom" constant="5" id="Dr9-3u-RlW"/>
                                     <constraint firstItem="8Oc-zg-sKG" firstAttribute="centerX" secondItem="LHh-kv-MWA" secondAttribute="centerX" id="JJy-m9-sF7"/>
                                     <constraint firstItem="K9Y-e8-Xyu" firstAttribute="top" secondItem="LHh-kv-MWA" secondAttribute="top" id="Lv4-o2-2cd"/>
                                     <constraint firstItem="Wqn-Zc-jZc" firstAttribute="centerX" secondItem="LHh-kv-MWA" secondAttribute="centerX" id="WJI-8W-b3a"/>
@@ -277,8 +264,6 @@
                                     <constraint firstItem="K9Y-e8-Xyu" firstAttribute="top" secondItem="LHh-kv-MWA" secondAttribute="top" id="XTU-kO-0jT"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="K9Y-e8-Xyu" secondAttribute="trailing" id="Z1H-gd-0sV"/>
                                     <constraint firstItem="Wqn-Zc-jZc" firstAttribute="centerX" secondItem="LHh-kv-MWA" secondAttribute="centerX" id="as0-OQ-iTC"/>
-                                    <constraint firstItem="Eav-hO-jGg" firstAttribute="centerX" secondItem="LHh-kv-MWA" secondAttribute="centerX" id="eCM-aq-If6"/>
-                                    <constraint firstItem="Eav-hO-jGg" firstAttribute="centerX" secondItem="LHh-kv-MWA" secondAttribute="centerX" id="feZ-NJ-dng"/>
                                     <constraint firstItem="K9Y-e8-Xyu" firstAttribute="leading" secondItem="LHh-kv-MWA" secondAttribute="leading" id="huq-V0-PUs"/>
                                     <constraint firstItem="SLw-PW-bMM" firstAttribute="centerX" secondItem="LHh-kv-MWA" secondAttribute="centerX" id="jGg-FQ-2UL"/>
                                     <constraint firstItem="K9Y-e8-Xyu" firstAttribute="top" secondItem="LHh-kv-MWA" secondAttribute="topMargin" id="jKE-MF-KzA"/>
@@ -573,7 +558,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pyW-UM-07Q"/>
+        <segue reference="F85-0O-9ya"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="logo verde" width="500" height="500"/>

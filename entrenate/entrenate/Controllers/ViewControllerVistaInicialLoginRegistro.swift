@@ -13,6 +13,8 @@ class ViewControllerVistaInicialLoginRegistro: UIViewController{
     @IBOutlet weak var btLogin: UIButton!
     @IBOutlet weak var btRegister: UIButton!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

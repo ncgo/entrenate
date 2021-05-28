@@ -5,17 +5,19 @@
 //  Created by Nadia Garcia on 28/05/21.
 //
 
+
+import Firebase
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         UITabBar.appearance().tintColor = UIColor.systemYellow
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
+        
         return true
     }
 

@@ -7,7 +7,16 @@
 
 import UIKit
 
-class ViewControllerRegistro: UIViewController, UIPickerViewDataSource, UIPickerViewAccessibilityDelegate {
+class ViewControllerRegistro: UIViewController, UIPickerViewDataSource, UIPickerViewAccessibilityDelegate { {
+    
+    struct User : Codable {
+        var name: String!
+        var town: String!
+        var grade: String!
+        var email: String!
+        var password: String!
+        var highScore: Int!
+    }
 
     @IBOutlet weak var tfNombre: UITextField!
     @IBOutlet weak var tfMunicipio: UITextField!
@@ -29,6 +38,17 @@ class ViewControllerRegistro: UIViewController, UIPickerViewDataSource, UIPicker
         super.viewDidLoad()
         createPickerMunicipio()
         // Do any additional setup after loading the view.
+    }
+
+    @IBAction func saveUserDefaults(_ sender: Any){
+        let usuario = User(name: tfNombre.text,town: tfMunicipio.text,grade: tfGrado.text,email: tfEmail.text,highScore: 0)
+        let defaults = UserDefaults.standard
+        defaults.set(try? PropertyListEncoder().encode(usuario), forKey: "usuario")
+        print("Usuario Guardado")
+    }
+    
+    @IBAction func GuardarInfo(_ sender: Any) {
+        saveUserDefaults((Any).self)
     }
     
     
@@ -71,9 +91,11 @@ class ViewControllerRegistro: UIViewController, UIPickerViewDataSource, UIPicker
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "login-registrate" {
+            let viewLogin = segue.destination as! ViewControllerLogin
+            viewLogin.tfEmail = tfEmail
+            viewLogin.tfPassword = tfPassword
+        }
     }
-    */
 
 }

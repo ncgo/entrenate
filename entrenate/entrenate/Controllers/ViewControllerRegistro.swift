@@ -98,4 +98,5 @@ class ViewControllerRegistro: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
 */
+    
 }

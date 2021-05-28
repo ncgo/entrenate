@@ -18,6 +18,13 @@
 		82995FBE2661871C00A4FBE8 /* ProblemasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FBD2661871C00A4FBE8 /* ProblemasViewController.swift */; };
 		82995FC22661872C00A4FBE8 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FC12661872C00A4FBE8 /* ConfigViewController.swift */; };
 		82995FC62661873700A4FBE8 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FC52661873700A4FBE8 /* PerfilViewController.swift */; };
+		82995FCD2661898600A4FBE8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FCC2661898600A4FBE8 /* LoginViewController.swift */; };
+		82995FD12661899200A4FBE8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FD02661899200A4FBE8 /* RegisterViewController.swift */; };
+		82995FD4266189D600A4FBE8 /* CompetenciaStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FD3266189D600A4FBE8 /* CompetenciaStartViewController.swift */; };
+		82995FD8266189E700A4FBE8 /* EntrenamientoStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FD7266189E700A4FBE8 /* EntrenamientoStartViewController.swift */; };
+		82995FDB26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FDA26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift */; };
+		82995FDF26618A8300A4FBE8 /* ProblemaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FDE26618A8300A4FBE8 /* ProblemaViewController.swift */; };
+		82995FE226618D1000A4FBE8 /* EmpiezaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FE126618D1000A4FBE8 /* EmpiezaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +41,13 @@
 		82995FBD2661871C00A4FBE8 /* ProblemasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemasViewController.swift; sourceTree = "<group>"; };
 		82995FC12661872C00A4FBE8 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		82995FC52661873700A4FBE8 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
+		82995FCC2661898600A4FBE8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		82995FD02661899200A4FBE8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		82995FD3266189D600A4FBE8 /* CompetenciaStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetenciaStartViewController.swift; sourceTree = "<group>"; };
+		82995FD7266189E700A4FBE8 /* EntrenamientoStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrenamientoStartViewController.swift; sourceTree = "<group>"; };
+		82995FDA26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeleccionProblemasViewController.swift; sourceTree = "<group>"; };
+		82995FDE26618A8300A4FBE8 /* ProblemaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemaViewController.swift; sourceTree = "<group>"; };
+		82995FE126618D1000A4FBE8 /* EmpiezaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpiezaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +92,8 @@
 		82995FB0266184BE00A4FBE8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				82995F9F2661843E00A4FBE8 /* HomeViewController.swift */,
-				82995FBA2661870700A4FBE8 /* LeaderboardViewController.swift */,
-				82995FBD2661871C00A4FBE8 /* ProblemasViewController.swift */,
-				82995FC12661872C00A4FBE8 /* ConfigViewController.swift */,
-				82995FC52661873700A4FBE8 /* PerfilViewController.swift */,
+				82995FCA2661895200A4FBE8 /* Other */,
+				82995FC92661893B00A4FBE8 /* Core Tabs */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -90,6 +101,7 @@
 		82995FB1266184C700A4FBE8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				82995FE52661985C00A4FBE8 /* Navigation */,
 				82995FA42661844000A4FBE8 /* Assets.xcassets */,
 				82995FB72661862D00A4FBE8 /* Storyboards */,
 				82995FA12661843E00A4FBE8 /* Main.storyboard */,
@@ -120,6 +132,47 @@
 			children = (
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		82995FC92661893B00A4FBE8 /* Core Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				82995F9F2661843E00A4FBE8 /* HomeViewController.swift */,
+				82995FBA2661870700A4FBE8 /* LeaderboardViewController.swift */,
+				82995FE126618D1000A4FBE8 /* EmpiezaViewController.swift */,
+				82995FBD2661871C00A4FBE8 /* ProblemasViewController.swift */,
+				82995FC52661873700A4FBE8 /* PerfilViewController.swift */,
+			);
+			path = "Core Tabs";
+			sourceTree = "<group>";
+		};
+		82995FCA2661895200A4FBE8 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				82995FD7266189E700A4FBE8 /* EntrenamientoStartViewController.swift */,
+				82995FDA26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift */,
+				82995FDE26618A8300A4FBE8 /* ProblemaViewController.swift */,
+				82995FC12661872C00A4FBE8 /* ConfigViewController.swift */,
+				82995FD3266189D600A4FBE8 /* CompetenciaStartViewController.swift */,
+				82995FCB2661896800A4FBE8 /* Onboarding */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		82995FCB2661896800A4FBE8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				82995FCC2661898600A4FBE8 /* LoginViewController.swift */,
+				82995FD02661899200A4FBE8 /* RegisterViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		82995FE52661985C00A4FBE8 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,12 +246,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82995FD12661899200A4FBE8 /* RegisterViewController.swift in Sources */,
 				82995FA02661843E00A4FBE8 /* HomeViewController.swift in Sources */,
+				82995FDB26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift in Sources */,
+				82995FDF26618A8300A4FBE8 /* ProblemaViewController.swift in Sources */,
+				82995FD4266189D600A4FBE8 /* CompetenciaStartViewController.swift in Sources */,
 				82995FBE2661871C00A4FBE8 /* ProblemasViewController.swift in Sources */,
 				82995FC22661872C00A4FBE8 /* ConfigViewController.swift in Sources */,
+				82995FD8266189E700A4FBE8 /* EntrenamientoStartViewController.swift in Sources */,
 				82995F9C2661843E00A4FBE8 /* AppDelegate.swift in Sources */,
+				82995FCD2661898600A4FBE8 /* LoginViewController.swift in Sources */,
 				82995FBB2661870700A4FBE8 /* LeaderboardViewController.swift in Sources */,
 				82995FC62661873700A4FBE8 /* PerfilViewController.swift in Sources */,
+				82995FE226618D1000A4FBE8 /* EmpiezaViewController.swift in Sources */,
 				82995F9E2661843E00A4FBE8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

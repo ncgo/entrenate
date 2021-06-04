@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4C13800A54113F562430DFF9 /* Pods_entrenate_v2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC88275DB8F873B24C034E3 /* Pods_entrenate_v2.framework */; };
+		82774DB52661A5BE00EB40D7 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82774DB42661A5BE00EB40D7 /* DatabaseManager.swift */; };
+		82774DB82661A68200EB40D7 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82774DB72661A68200EB40D7 /* AuthManager.swift */; };
+		82774DBB2661A6B300EB40D7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82774DBA2661A6B300EB40D7 /* StorageManager.swift */; };
+		82774DD22661AA8C00EB40D7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82774DD12661AA8C00EB40D7 /* Extensions.swift */; };
 		82995F9C2661843E00A4FBE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995F9B2661843E00A4FBE8 /* AppDelegate.swift */; };
 		82995F9E2661843E00A4FBE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995F9D2661843E00A4FBE8 /* SceneDelegate.swift */; };
 		82995FA02661843E00A4FBE8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995F9F2661843E00A4FBE8 /* HomeViewController.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		82774DB42661A5BE00EB40D7 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		82774DB72661A68200EB40D7 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		82774DBA2661A6B300EB40D7 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		82774DD12661AA8C00EB40D7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		82995F982661843E00A4FBE8 /* entrenate v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "entrenate v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82995F9B2661843E00A4FBE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82995F9D2661843E00A4FBE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,8 +153,12 @@
 			isa = PBXGroup;
 			children = (
 				82995F9B2661843E00A4FBE8 /* AppDelegate.swift */,
-				82995F9D2661843E00A4FBE8 /* SceneDelegate.swift */,
+				82774DB72661A68200EB40D7 /* AuthManager.swift */,
+				82774DB42661A5BE00EB40D7 /* DatabaseManager.swift */,
 				82995FB4266185F000A4FBE8 /* GoogleService-Info.plist */,
+				82995F9D2661843E00A4FBE8 /* SceneDelegate.swift */,
+				82774DBA2661A6B300EB40D7 /* StorageManager.swift */,
+				82774DD12661AA8C00EB40D7 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -314,14 +326,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82774DBB2661A6B300EB40D7 /* StorageManager.swift in Sources */,
+				82774DD22661AA8C00EB40D7 /* Extensions.swift in Sources */,
 				82995FD12661899200A4FBE8 /* RegisterViewController.swift in Sources */,
 				82995FA02661843E00A4FBE8 /* HomeViewController.swift in Sources */,
+				82774DB52661A5BE00EB40D7 /* DatabaseManager.swift in Sources */,
 				82995FDB26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift in Sources */,
 				82995FDF26618A8300A4FBE8 /* ProblemaViewController.swift in Sources */,
 				82995FD4266189D600A4FBE8 /* CompetenciaStartViewController.swift in Sources */,
 				82995FBE2661871C00A4FBE8 /* ProblemasViewController.swift in Sources */,
 				82995FC22661872C00A4FBE8 /* ConfigViewController.swift in Sources */,
 				82995FD8266189E700A4FBE8 /* EntrenamientoStartViewController.swift in Sources */,
+				82774DB82661A68200EB40D7 /* AuthManager.swift in Sources */,
 				82995F9C2661843E00A4FBE8 /* AppDelegate.swift in Sources */,
 				82995FCD2661898600A4FBE8 /* LoginViewController.swift in Sources */,
 				82995FBB2661870700A4FBE8 /* LeaderboardViewController.swift in Sources */,

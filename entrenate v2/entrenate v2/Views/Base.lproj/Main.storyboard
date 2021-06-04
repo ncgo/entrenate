@@ -12,7 +12,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yh4-bF-7t1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0oV-k6-wgW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="Tlq-MJ-Sxu" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qeo-sb-knQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -28,13 +27,13 @@
                         <segue destination="hYS-91-Vul" kind="relationship" relationship="viewControllers" id="iA1-pk-Qvt"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0oV-k6-wgW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-498" y="153"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pkr-XC-6fG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hmv-Qn-05i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="jJn-7N-tXa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="KeH-Sz-7qj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="rtA-IH-hvX">
@@ -46,6 +45,7 @@
                         <segue destination="mKh-c5-J7F" kind="relationship" relationship="rootViewController" id="EW1-QK-LsP"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hmv-Qn-05i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2265" y="1015"/>
         </scene>
@@ -69,7 +69,6 @@
         <!--Navigation Controller-->
         <scene sceneID="nRG-iT-zgI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="omb-OZ-TJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="hYS-91-Vul" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="BYS-Tg-cp2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Svk-Tb-Xy5">
@@ -84,13 +83,13 @@
                         <segue destination="HLL-y2-fDj" kind="relationship" relationship="rootViewController" id="K2H-NS-7eH"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="omb-OZ-TJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1295" y="1014"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gFc-vc-A2r">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6k2-dw-vPz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="deV-8L-OJy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="books.vertical" catalog="system" id="Daj-xG-ubL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kPs-rd-7jv">
@@ -105,13 +104,13 @@
                         <segue destination="eqe-nB-SBf" kind="relationship" relationship="rootViewController" id="H2g-qr-FpQ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6k2-dw-vPz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1396" y="1014"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SeB-kY-3ti">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wp4-Hk-pt3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="wJY-bX-bzm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="star" catalog="system" id="UGI-m3-JbG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tQz-F9-DsQ">
@@ -126,13 +125,13 @@
                         <segue destination="CNs-n9-tKE" kind="relationship" relationship="rootViewController" id="G9D-dG-4Mk"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wp4-Hk-pt3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="385" y="1014"/>
         </scene>
         <!--Entrénate-->
         <scene sceneID="2hf-wQ-WYS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6nd-eu-VmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="2qx-GI-ZgH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Entrénate" image="bubble.left.and.bubble.right.fill" catalog="system" id="sZv-eI-j0W">
                         <color key="badgeColor" name="Rojo ommch"/>
@@ -149,6 +148,7 @@
                         <segue destination="l3z-eb-EQZ" kind="relationship" relationship="rootViewController" id="Nl3-Mt-iKb"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6nd-eu-VmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-498" y="1014"/>
         </scene>

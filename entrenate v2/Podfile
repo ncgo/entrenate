@@ -12,5 +12,6 @@ target 'entrenate v2' do
   pod 'Firebase/Database'
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
+  pod 'Firebase/Storage'
 
 end

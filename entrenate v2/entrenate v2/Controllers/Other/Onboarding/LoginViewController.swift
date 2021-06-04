@@ -64,7 +64,10 @@ class LoginViewController: UIViewController {
     }()
     
     private let headerView: UIView = {
-        return UIView()
+        let header = UIView()
+        header.backgroundColor = Constantes.verdeOmmch
+        header.clipsToBounds = true
+        return header
     }()
     
     
@@ -80,7 +83,7 @@ class LoginViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         //Assign frames
-        headerView.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.frame.size.width , height: 200)
+        headerView.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.width , height: view.height/2.0)
         
     }
     private func addSubviews() {

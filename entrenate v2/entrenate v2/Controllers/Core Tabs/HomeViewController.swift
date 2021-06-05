@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureNavigationBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -29,7 +29,16 @@ class HomeViewController: UIViewController {
             present(loginVC, animated: false)
         }
     }
+    
+    private func configureNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .done, target: self, action: #selector(didTapNotificationsButton))
+        navigationItem.rightBarButtonItem?.tintColor = .systemYellow
+    }
 
-
+    @objc private func didTapNotificationsButton() {
+        let vc = NotificationsViewController()
+        vc.title = "Notificaciones"
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 

@@ -3,7 +3,9 @@
 //  entrenate v2
 //
 //  Created by Nadia Garcia on 28/05/21.
-//
+//  To add photo like collections following the tutorial
+//  Build Instagram App: Part 8 (Swift 5) - 2020 - Xcode 11 - iOS Development
+//  youtu.be/SS9EQ9w2ZsU
 
 import UIKit
 
@@ -17,10 +19,15 @@ final class PerfilViewController: UIViewController {
         configureNavigationBar()
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: view.width/3.0, height: view.width/3.0)
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 1, bottom: 0, right: 1)
+        let size = (view.width - 4 )/3.0
+        layout.itemSize = CGSize(width: size, height: size)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView?.backgroundColor = UIColor(red: 0, green: 0.50, blue: 0.22, alpha: 1.00)
+        // Cell
+        collectionView?.register(AreaCollectionViewCell.self, forCellWithReuseIdentifier: AreaCollectionViewCell.identifier)
         // Headers
         collectionView?.register(ProfileInfoHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileInfoHeaderCollectionReusableView.identifier)
         collectionView?.register(ProfileTabsCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileTabsCollectionReusableView.identifier)
@@ -52,11 +59,13 @@ final class PerfilViewController: UIViewController {
 
 extension PerfilViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AreaCollectionViewCell.identifier, for: indexPath) as! AreaCollectionViewCell
+        cell.backgroundColor = .systemYellow
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

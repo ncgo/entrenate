@@ -157,12 +157,34 @@ class LoginViewController: UIViewController {
               let password = passwordField.text, !password.isEmpty, password.count >= 8 else {
                 return
         }
+        
+        var username: String?
+        var email: String?
         //Login functionality
+        if usernameEmail.contains("@"), usernameEmail.contains(".") {
+            email = usernameEmail
+        } else {
+            username = usernameEmail
+        }
+        AuthManager.shared.loginUser(username: username, email: email, password: password) { success in
+            DispatchQueue.main.async {
+                if success {
+                    // user logged in
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    // error occurred
+                    let alert = UIAlertController(title: "Error de Inicio de Sesión", message: "No se pudo Iniciar Sesión.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
+                }
+            }
+        }
     }
     
     @objc private func didTapRegister() {
         let vc = RegisterViewController()
-        present(vc, animated: true)
+        vc.title = "Crea una cuenta"
+        present(UINavigationController(rootViewController: vc), animated: true)
     }
     
     @objc private func didTapPrivacyButton() {

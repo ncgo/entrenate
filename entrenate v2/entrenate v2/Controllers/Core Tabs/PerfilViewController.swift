@@ -14,7 +14,6 @@ final class PerfilViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         configureNavigationBar()
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical

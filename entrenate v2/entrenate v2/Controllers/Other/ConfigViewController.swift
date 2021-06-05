@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 struct SettingsCellModel {
     let title: String
@@ -39,8 +40,87 @@ final class ConfigViewController: UIViewController {
     }
     
     private func configureModels() {
-        let section = [SettingsCellModel(title: "Log Out") {[weak self] in self?.didTapLogOut()}]
-        data.append(section)
+        data.append([
+            SettingsCellModel(title: "Editar Perfil") { [weak self] in
+                self?.didTapEditProfile()
+            },
+            SettingsCellModel(title: "Invitar Amigos") { [weak self] in
+                self?.didTapInviteFriends()
+            }
+        ])
+        
+        data.append([
+            SettingsCellModel(title: "Accesibilidad") { [weak self] in
+                self?.didTapAccessibility()
+            },
+            SettingsCellModel(title: "Ayuda y Feedback") { [weak self] in
+                self?.openURL(type: .help)
+            }
+        ])
+        
+        data.append([
+            SettingsCellModel(title: "Créditos") {[weak self] in
+                self?.didTapCredits()
+            },
+            SettingsCellModel(title: "Acerca de la Olimpiada") { [weak self] in
+                self?.openURL(type: .about)
+            },
+            SettingsCellModel(title: "Califica la App") { [weak self] in
+                // self?.didTapRate()
+            },
+            SettingsCellModel(title: "Términos y Condiciones") { [weak self] in
+                self?.openURL(type: .terms)
+            },
+            SettingsCellModel(title: "Política de Privacidad") { [weak self] in
+                self?.openURL(type: .privacy)
+            }
+        ])
+        
+        data.append([
+            SettingsCellModel(title: "Cerrar Sesión") {[weak self] in self?.didTapLogOut()}
+        ])
+    }
+    
+    enum SettingsURLType {
+        case terms, privacy, help, about
+    }
+    
+    private func openURL(type: SettingsURLType) {
+        let urlString: String
+        switch type {
+        case .terms: urlString = "https://www.facebook.com/ommch"
+        case .privacy: urlString = "https://www.facebook.com/ommch"
+        case .help: urlString = "https://www.facebook.com/ommch"
+        case .about: urlString = "https://www.facebook.com/ommch"
+        }
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
+    }
+    
+    private func didTapCredits() {
+        let vc = CreditsViewController()
+        vc.title = "Créditos"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func didTapEditProfile() {
+        let vc = EditProfileViewController()
+        vc.title = "Editar Perfil"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func didTapInviteFriends() {
+    }
+    
+    private func didTapAccessibility() {
+        let vc = AccessibilityViewController()
+        vc.title = "Accesibilidad"
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func didTapLogOut() {

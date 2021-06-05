@@ -111,10 +111,11 @@ final class ConfigViewController: UIViewController {
     private func didTapEditProfile() {
         let vc = EditProfileViewController()
         vc.title = "Editar Perfil"
-        navigationController?.pushViewController(vc, animated: true)
+        present(UINavigationController(rootViewController: vc), animated: true)
     }
     
     private func didTapInviteFriends() {
+        // Show share sheet to invite friends
     }
     
     private func didTapAccessibility() {

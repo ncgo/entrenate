@@ -32,10 +32,10 @@
             </objects>
             <point key="canvasLocation" x="-498" y="153"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Gradient View Controller-->
         <scene sceneID="pkr-XC-6fG">
             <objects>
-                <navigationController id="jJn-7N-tXa" sceneMemberID="viewController">
+                <navigationController id="jJn-7N-tXa" customClass="NavigationGradientViewController" customModule="entrenate_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="KeH-Sz-7qj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="rtA-IH-hvX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="-2266" y="1850"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Gradient View Controller-->
         <scene sceneID="nRG-iT-zgI">
             <objects>
-                <navigationController id="hYS-91-Vul" sceneMemberID="viewController">
+                <navigationController id="hYS-91-Vul" customClass="NavigationGradientViewController" customModule="entrenate_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="BYS-Tg-cp2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Svk-Tb-Xy5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="1295" y="1014"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Gradient View Controller-->
         <scene sceneID="gFc-vc-A2r">
             <objects>
-                <navigationController id="deV-8L-OJy" sceneMemberID="viewController">
+                <navigationController id="deV-8L-OJy" customClass="NavigationGradientViewController" customModule="entrenate_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="books.vertical" catalog="system" id="Daj-xG-ubL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kPs-rd-7jv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -115,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="-1396" y="1014"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Gradient View Controller-->
         <scene sceneID="SeB-kY-3ti">
             <objects>
-                <navigationController id="wJY-bX-bzm" sceneMemberID="viewController">
+                <navigationController id="wJY-bX-bzm" customClass="NavigationGradientViewController" customModule="entrenate_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="star" catalog="system" id="UGI-m3-JbG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tQz-F9-DsQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -139,7 +139,7 @@
         <!--Entrénate-->
         <scene sceneID="2hf-wQ-WYS">
             <objects>
-                <navigationController id="2qx-GI-ZgH" sceneMemberID="viewController">
+                <navigationController id="2qx-GI-ZgH" customClass="NavigationGradientViewController" customModule="entrenate_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Entrénate" image="bubble.left.and.bubble.right.fill" catalog="system" id="sZv-eI-j0W">
                         <color key="badgeColor" name="Rojo ommch"/>
                     </tabBarItem>

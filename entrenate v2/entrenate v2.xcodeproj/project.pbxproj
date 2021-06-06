@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C13800A54113F562430DFF9 /* Pods_entrenate_v2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC88275DB8F873B24C034E3 /* Pods_entrenate_v2.framework */; };
+		826082FD266CB73B00E72DFB /* NavigationGradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826082FC266CB73B00E72DFB /* NavigationGradientViewController.swift */; };
 		8274545C266B5A4D00513881 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8274545B266B5A4D00513881 /* NotificationsViewController.swift */; };
 		8274545F266B638B00513881 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8274545E266B638B00513881 /* CreditsViewController.swift */; };
 		82745463266B75AC00513881 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82745462266B75AC00513881 /* EditProfileViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		826082FC266CB73B00E72DFB /* NavigationGradientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationGradientViewController.swift; sourceTree = "<group>"; };
 		8274545B266B5A4D00513881 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		8274545E266B638B00513881 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		82745462266B75AC00513881 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				82995FB4266185F000A4FBE8 /* GoogleService-Info.plist */,
 				82995F9D2661843E00A4FBE8 /* SceneDelegate.swift */,
 				82774DBA2661A6B300EB40D7 /* StorageManager.swift */,
+				826082FC266CB73B00E72DFB /* NavigationGradientViewController.swift */,
 				82774DD12661AA8C00EB40D7 /* Extensions.swift */,
 				82B37283266C970800D94620 /* GradientTabBarController.swift */,
 			);
@@ -395,6 +398,7 @@
 				827454A3266B9EEF00513881 /* ProfileInfoHeaderCollectionReusableView.swift in Sources */,
 				827454A7266B9F3000513881 /* ProfileTabsCollectionReusableView.swift in Sources */,
 				82995FD4266189D600A4FBE8 /* CompetenciaStartViewController.swift in Sources */,
+				826082FD266CB73B00E72DFB /* NavigationGradientViewController.swift in Sources */,
 				82995FBE2661871C00A4FBE8 /* ProblemasViewController.swift in Sources */,
 				82995FC22661872C00A4FBE8 /* ConfigViewController.swift in Sources */,
 				82745467266B7AB800513881 /* AccessibilityViewController.swift in Sources */,

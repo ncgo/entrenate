@@ -16,5 +16,11 @@ target 'entrenate v2' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Performance'
   pod 'Firebase/Storage'
+  pod 'Cards'
+  pod 'ShimmerSwift'
+  pod 'RAMAnimatedTabBarController'
+  pod 'TransitionButton'
+
+
 
 end

@@ -16,6 +16,7 @@ class RegisterViewController: UIViewController {
     private let usernameField: UITextField = {
         let field = UITextField()
         field.placeholder = "Nombre de usuario"
+        field.textContentType = .username
         field.returnKeyType = .next
         field.leftViewMode = .always
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -32,6 +33,7 @@ class RegisterViewController: UIViewController {
     private let emailField: UITextField = {
         let field = UITextField()
         field.placeholder = "Dirección de correo electrónico"
+        field.keyboardType = .emailAddress
         field.returnKeyType = .next
         field.leftViewMode = .always
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -48,7 +50,8 @@ class RegisterViewController: UIViewController {
     private let passwordField: UITextField = {
         let field = UITextField()
         field.isSecureTextEntry = true
-        field.placeholder = "Contraseña"
+        field.textContentType = .newPassword
+        field.placeholder = "Contraseña (Mínimo 8 carácteres)"
         field.returnKeyType = .continue
         field.leftViewMode = .always
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -59,6 +62,13 @@ class RegisterViewController: UIViewController {
         field.backgroundColor = .secondarySystemBackground
         field.layer.borderWidth = 1.0
         field.layer.borderColor = Constantes.verdeOmmch.cgColor
+        
+        let descriptor = """
+        required: upper; required: lower; required: digit; minlength: 8;
+        """
+        let rules = UITextInputPasswordRules(descriptor: descriptor)
+        field.passwordRules = rules
+        
         return field
     }()
     
@@ -128,6 +138,9 @@ class RegisterViewController: UIViewController {
         guard let email = emailField.text, !email.isEmpty,
               let password = passwordField.text, !password.isEmpty, password.count >= 8,
                    let username = usernameField.text, !username.isEmpty else {
+                    let alert = UIAlertController(title: "Error en registro de cuenta", message: "Revisa tus datos y por favor intenta de nuevo.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
             return
         }
         
@@ -135,6 +148,11 @@ class RegisterViewController: UIViewController {
             DispatchQueue.main.async {
                 if registered {
                     // good to go
+                    let alert = UIAlertController(title: "Registro de cuenta exitoso", message: "Procede a iniciar sesión.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: {_ in 
+                        self.dismiss(animated: true, completion: nil)
+                    }))
+                    self.present(alert, animated: true)
                 }
                 else {
                     // something failed

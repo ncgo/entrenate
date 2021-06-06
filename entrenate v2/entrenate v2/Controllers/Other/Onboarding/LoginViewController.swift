@@ -5,6 +5,7 @@
 //  Created by Nadia Garcia on 28/05/21.
 //
 import SafariServices
+import TransitionButton
 import UIKit
 
 class LoginViewController: UIViewController {
@@ -16,7 +17,7 @@ class LoginViewController: UIViewController {
     
     private let usernameEmailField: UITextField = {
         let field = UITextField()
-        field.placeholder = "Nombre de usuario o Email"
+        field.placeholder = "Email"
         field.returnKeyType = .next
         field.leftViewMode = .always
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -47,13 +48,14 @@ class LoginViewController: UIViewController {
         return field
     }()
     
-    private let btLogin: UIButton = {
-        let boton = UIButton()
+    private let btLogin: TransitionButton = {
+        let boton = TransitionButton()
         boton.setTitle("Inicia Sesión", for: .normal)
         boton.layer.masksToBounds = true
         boton.layer.cornerRadius = Constantes.cornerRadius
         boton.backgroundColor = Constantes.verdeOmmch
         boton.setTitleColor(.white, for: .normal)
+        boton.spinnerColor = .white
         return boton
     }()
     
@@ -153,6 +155,8 @@ class LoginViewController: UIViewController {
         passwordField.resignFirstResponder()
         usernameEmailField.resignFirstResponder()
         
+        btLogin.startAnimation()
+        
         guard let usernameEmail = usernameEmailField.text, !usernameEmail.isEmpty,
               let password = passwordField.text, !password.isEmpty, password.count >= 8 else {
                 return
@@ -172,10 +176,14 @@ class LoginViewController: UIViewController {
                     // user logged in
                     self.dismiss(animated: true, completion: nil)
                 } else {
-                    // error occurred
-                    let alert = UIAlertController(title: "Error de Inicio de Sesión", message: "No se pudo Iniciar Sesión.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
-                    self.present(alert, animated: true)
+                    // error occurredDispatchQueue.main.asyncAfter(deadline: .now()+3) {
+                    self.btLogin.stopAnimation(animationStyle: .shake, revertAfterDelay: 1) {
+                        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                            let alert = UIAlertController(title: "Error de Inicio de Sesión", message: "No se pudo Iniciar Sesión.", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
+                            self.present(alert, animated: true)
+                        }
+                    }
                 }
             }
         }

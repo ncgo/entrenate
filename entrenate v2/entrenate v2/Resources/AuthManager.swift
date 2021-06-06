@@ -57,7 +57,6 @@ public class AuthManager {
                 completion(true)
             }
         } else if let username = username {
-            print(username)
         }
     }
     

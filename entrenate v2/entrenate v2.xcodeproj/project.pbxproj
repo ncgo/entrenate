@@ -244,13 +244,14 @@
 			isa = PBXGroup;
 			children = (
 				82745461266B757B00513881 /* Config */,
-				82995FD7266189E700A4FBE8 /* EntrenamientoStartViewController.swift */,
-				82995FDA26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift */,
 				82995FDE26618A8300A4FBE8 /* ProblemaViewController.swift */,
+				82995FD3266189D600A4FBE8 /* CompetenciaStartViewController.swift */,
+				82995FDA26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift */,
+				82995FD7266189E700A4FBE8 /* EntrenamientoStartViewController.swift */,
 				82995FC12661872C00A4FBE8 /* ConfigViewController.swift */,
 				82745466266B7AB800513881 /* AccessibilityViewController.swift */,
+				829DA930266CD6BB0053B159 /* Game */,
 				8274545B266B5A4D00513881 /* NotificationsViewController.swift */,
-				82995FD3266189D600A4FBE8 /* CompetenciaStartViewController.swift */,
 				82995FCB2661896800A4FBE8 /* Onboarding */,
 			);
 			path = Other;
@@ -270,6 +271,13 @@
 			children = (
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		829DA930266CD6BB0053B159 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

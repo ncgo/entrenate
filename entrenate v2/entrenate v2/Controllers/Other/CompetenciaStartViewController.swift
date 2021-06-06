@@ -5,9 +5,12 @@
 //  Created by Nadia Garcia on 28/05/21.
 //
 import Cards
+import ShimmerSwift
 import UIKit
 
 class CompetenciaStartViewController: UIViewController, UIPickerViewAccessibilityDelegate, UIPickerViewDataSource {
+    
+    var tiempoSeleccionado: String = "15 minutos"
     
     let timeToPick = ["15 minutos", "30 minutos", "45 minutos", "1 hora", "1 hora 30 minutos*"]
     
@@ -31,6 +34,7 @@ class CompetenciaStartViewController: UIViewController, UIPickerViewAccessibilit
         } else {
             showAdvertencia(show: false)
         }
+        tiempoSeleccionado = timeToPick[timeSelected]
     }
     
     private let cardTitulo: CardHighlight = {
@@ -112,7 +116,23 @@ class CompetenciaStartViewController: UIViewController, UIPickerViewAccessibilit
     
     @objc private func didTapBotonIr() {
         let vc = SeleccionProblemasViewController()
+        vc.tiempoSeleccionado = tiempoSeleccionado
+        vc.cantidadProblemas = cantidadProblemas(tiempo: tiempoSeleccionado)!
         navigationController?.pushViewController(vc, animated: true)
     }
-
+    
+    private func cantidadProblemas(tiempo: String) -> Int? {
+        if tiempo == "15 minutos" {
+            return 3
+        } else if tiempo == "30 minutos" {
+            return 6
+        } else if tiempo == "45 minutos" {
+            return 9
+        } else if tiempo == "1 hora" {
+            return 12
+        } else {
+            return 15
+        }
+    }
+    
 }

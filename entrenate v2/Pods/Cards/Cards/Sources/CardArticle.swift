@@ -74,9 +74,9 @@ import UIKit
         super.draw(rect)
         
         categoryLbl.text = category.uppercased()
-        categoryLbl.textColor = textColor.withAlphaComponent(0.3)
+        categoryLbl.textColor = textColor.withAlphaComponent(0.9)
         categoryLbl.font = UIFont.systemFont(ofSize: 100, weight: .bold)
-        categoryLbl.shadowColor = UIColor.black
+        //categoryLbl.shadowColor = UIColor.black
         categoryLbl.shadowOffset = CGSize.zero
         categoryLbl.adjustsFontSizeToFitWidth = true
         categoryLbl.minimumScaleFactor = 0.1

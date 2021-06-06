@@ -5,6 +5,7 @@
 //  Created by Nadia Garcia on 28/05/21.
 //
 import SafariServices
+import TransitionButton
 import UIKit
 
 class LoginViewController: UIViewController {
@@ -47,13 +48,14 @@ class LoginViewController: UIViewController {
         return field
     }()
     
-    private let btLogin: UIButton = {
-        let boton = UIButton()
+    private let btLogin: TransitionButton = {
+        let boton = TransitionButton()
         boton.setTitle("Inicia Sesión", for: .normal)
         boton.layer.masksToBounds = true
         boton.layer.cornerRadius = Constantes.cornerRadius
         boton.backgroundColor = Constantes.verdeOmmch
         boton.setTitleColor(.white, for: .normal)
+        boton.spinnerColor = .white
         return boton
     }()
     
@@ -152,6 +154,8 @@ class LoginViewController: UIViewController {
     @objc private func didTapLogin() {
         passwordField.resignFirstResponder()
         usernameEmailField.resignFirstResponder()
+        
+        btLogin.startAnimation()
         
         guard let usernameEmail = usernameEmailField.text, !usernameEmail.isEmpty,
               let password = passwordField.text, !password.isEmpty, password.count >= 8 else {

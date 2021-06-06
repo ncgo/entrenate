@@ -38,15 +38,15 @@ class EntrenamientoStartViewController: UIViewController, UIPickerViewAccessibil
         card.backgroundImage = UIImage(named: "fondo gradiente azul opacity")
         card.textColor = .white
         card.buttonText = nil
-        card.icon = UIImage(named: "competencia")
+        card.icon = UIImage(named: "entrenamiento")
         return card
     }()
     
     private let instrucciones: UILabel = {
         let label = UILabel()
-        label.text = "Tendrás un límite de tiempo para contestar \ncorrectamente la mayor cantidad de problemas. \n\nTienes intentos ilimitados, pero cada vez que \nte equivoques, se te restarán puntos. \n\nSelecciona la duración de esta sesión."
+        label.text = "Resuelve los problemas a tu tiempo. Familiarizate con ellos y desarrolla habilidades de solución. "
         label.textColor = .secondaryLabel
-        label.numberOfLines = 8
+        label.numberOfLines = 3
         label.textAlignment = .justified
         label.font = UIFont.systemFont(ofSize: 15.0)
         return label
@@ -62,20 +62,11 @@ class EntrenamientoStartViewController: UIViewController, UIPickerViewAccessibil
         botonIr.setTitle("Iniciar", for: .normal)
         botonIr.layer.masksToBounds = true
         botonIr.layer.cornerRadius = 8.0
-        botonIr.backgroundColor = .systemBlue
+        botonIr.backgroundColor = .systemYellow
         botonIr.setTitleColor(.white, for: .normal)
         return botonIr
     }()
     
-    private let advertencia: UILabel = {
-        let label = UILabel()
-        label.text = ""
-        label.textColor = .systemRed
-        label.numberOfLines = 1
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 10.0)
-        return label
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +75,6 @@ class EntrenamientoStartViewController: UIViewController, UIPickerViewAccessibil
         view.addSubview(instrucciones)
         view.addSubview(timePicker)
         view.addSubview(botonIr)
-        view.addSubview(advertencia)
         botonIr.addTarget(self, action: #selector(didTapBotonIr), for: .touchUpInside)
         timePicker.delegate = self
         timePicker.dataSource = self
@@ -95,16 +85,7 @@ class EntrenamientoStartViewController: UIViewController, UIPickerViewAccessibil
         cardTitulo.frame = CGRect(x: 10, y: view.safeAreaInsets.top + 20, width: view.frame.size.width - 20, height: view.frame.size.height/3.5)
         instrucciones.frame = CGRect(x: 20, y: cardTitulo.bottom + 20, width: view.frame.size.width - 40, height: 150)
         timePicker.frame = CGRect(x: 20, y: instrucciones.bottom, width: view.frame.size.width - 40, height: 100)
-        advertencia.frame = CGRect(x: 20, y: timePicker.bottom, width: view.frame.size.width - 40, height: 20)
         botonIr.frame = CGRect(x: view.frame.size.width/4, y: timePicker.bottom + 50, width: view.frame.size.width/2, height: 50)
-    }
-    
-    @IBAction func showAdvertencia(show: Bool) {
-        if show {
-            advertencia.text = "*Recomendado solamente para Nivel 1"
-        } else {
-            advertencia.text = ""
-        }
     }
     
     @objc private func didTapBotonIr() {

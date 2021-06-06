@@ -11,7 +11,11 @@ class EntrenamientoStartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemYellow
+        view.backgroundColor = .systemBlue
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        navigationController?.popToRootViewController(animated: true)
     }
 
 }

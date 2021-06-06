@@ -14,5 +14,8 @@ class CompetenciaStartViewController: UIViewController {
         view.backgroundColor = .systemYellow
         // Do any additional setup after loading the view.
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        navigationController?.popToRootViewController(animated: true)
+    }
 
 }

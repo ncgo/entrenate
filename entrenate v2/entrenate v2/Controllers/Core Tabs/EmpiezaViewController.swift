@@ -8,7 +8,7 @@
 import Cards
 import UIKit
 
-class EmpiezaViewController: UIViewController {
+class EmpiezaViewController: UIViewController, CardDelegate {
     
     private let cardCompetencia: CardHighlight = {
         let card = CardHighlight(frame: .zero)
@@ -44,7 +44,10 @@ class EmpiezaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cardCompetencia.shouldPresent(CompetenciaStartViewController(), from: self, fullscreen: true)
+        // cardCompetencia.shouldPresent(CompetenciaDescriptionController(), from: self, fullscreen: true)
+        // cardEntrenamiento.shouldPresent(EntrenamientoStartViewController(), from: self, fullscreen: true)
+        cardCompetencia.delegate = self
+        cardEntrenamiento.delegate = self
         view.addSubview(cardCompetencia)
         view.addSubview(cardEntrenamiento)
     }
@@ -55,5 +58,22 @@ class EmpiezaViewController: UIViewController {
         cardEntrenamiento.frame = CGRect(x: 10, y: cardCompetencia.bottom + 20, width: view.frame.size.width - 20, height: view.frame.size.height/3)
     }
     
+    func cardHighlightDidTapButton(card: CardHighlight, button: UIButton) {
+        if card == cardCompetencia {
+            let vc = CompetenciaStartViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = EntrenamientoStartViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    
+}
 
+class CompetenciaDescriptionController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .systemBackground
+    }
 }

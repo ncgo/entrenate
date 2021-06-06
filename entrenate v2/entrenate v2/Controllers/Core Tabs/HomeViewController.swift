@@ -33,15 +33,12 @@ class HomeViewController: UIViewController {
     private func configureNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .done, target: self, action: #selector(didTapNotificationsButton))
         navigationItem.rightBarButtonItem?.tintColor = .systemYellow
-        print("ola")
     }
 
     @objc private func didTapNotificationsButton() {
         let vc = NotificationsViewController()
         vc.title = "Notificaciones"
-        print("hey")
         navigationController?.pushViewController(vc, animated: true)
-        print("hola")
     }
 }
 

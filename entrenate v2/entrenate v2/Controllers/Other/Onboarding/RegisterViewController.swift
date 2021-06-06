@@ -48,7 +48,7 @@ class RegisterViewController: UIViewController {
     private let passwordField: UITextField = {
         let field = UITextField()
         field.isSecureTextEntry = true
-        field.placeholder = "Contraseña"
+        field.placeholder = "Contraseña (Mínimo 8 carácteres)"
         field.returnKeyType = .continue
         field.leftViewMode = .always
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -128,6 +128,9 @@ class RegisterViewController: UIViewController {
         guard let email = emailField.text, !email.isEmpty,
               let password = passwordField.text, !password.isEmpty, password.count >= 8,
                    let username = usernameField.text, !username.isEmpty else {
+                    let alert = UIAlertController(title: "Error de Inicio de Sesión", message: "No se pudo Iniciar Sesión.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
             return
         }
         
@@ -135,6 +138,8 @@ class RegisterViewController: UIViewController {
             DispatchQueue.main.async {
                 if registered {
                     // good to go
+                    let vc = HomeViewController()
+                    self.present(vc, animated: true)
                 }
                 else {
                     // something failed

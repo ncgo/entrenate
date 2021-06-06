@@ -8,7 +8,40 @@
 import UIKit
 import Cards
 
-class SeleccionProblemasViewController: UIViewController {
+class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    struct problema {
+        let area: String
+        let titulo: String
+        let nivel: String
+    }
+    
+    private let tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        return tableView
+    }()
+    
+    var problemas = [[problema]]()
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return problemas.count
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return problemas[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = problemas[indexPath.section][indexPath.row].area
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ProblemaViewController()
+        navigationController?.present(vc, animated: true, completion: nil)
+    }
+    
     
     var tiempoSeleccionado: String = "0"
     var cantidadProblemas: Int = 12
@@ -36,16 +69,21 @@ class SeleccionProblemasViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = newBackButton
         view.addSubview(cardTitulo)
         createTimer(tiempo: Int(getSeconds(tiempo: tiempoSeleccionado)))
+        configureModels()
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        
     }
 
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         cardTitulo.frame = CGRect(x: 10, y: view.safeAreaInsets.top + 20, width: view.frame.size.width - 20, height: view.frame.size.height/6)
+        tableView.frame = CGRect(x: 10, y: cardTitulo.bottom + 20, width: view.frame.size.width - 20, height: view.frame.size.height/2)
     }
     
     private func getSeconds(tiempo: String) -> Double {
-        return 15
         if tiempo == "15 minutos" {
             return 15*60
         } else if tiempo == "30 minutos" {
@@ -60,7 +98,7 @@ class SeleccionProblemasViewController: UIViewController {
     }
     
     func createTimer(tiempo: Int) {
-        var timer = Timer.scheduledTimer(timeInterval: TimeInterval(tiempo), target: self, selector: #selector(didFinishTime), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: TimeInterval(tiempo), target: self, selector: #selector(didFinishTime), userInfo: nil, repeats: false)
     }
     
     @objc private func didTapBack(sender: UIBarButtonItem) {
@@ -84,6 +122,12 @@ class SeleccionProblemasViewController: UIViewController {
     
     @IBAction private func numProblemas(num: Int) {
         cardTitulo.category = "\(num) problemas"
+    }
+    
+    // MARK: -Models
+    private func configureModels() {
+        problemas.append([problema(area:"Geometría", titulo: "Juanito Alcachofa va a votar", nivel: "Introductorio"), problema(area:"Teoría de Números", titulo: "Panchita compra sandías", nivel: "Introductorio"), problema(area:"Combinatoria", titulo: "Sherlock el  perro y sus amigos", nivel: "Introductorio"), problema(area:"Álgebra", titulo: "Nadia se va a dormir", nivel: "Introductorio")])
+        problemas.append([problema(area:"Bonus", titulo: "Juanito Alcachofa va a votar", nivel: "Introductorio")])
     }
 }
 

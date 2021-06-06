@@ -5,7 +5,6 @@
 //  Created by Nadia Garcia on 28/05/21.
 //
 import Cards
-import ShimmerSwift
 import UIKit
 
 class CompetenciaStartViewController: UIViewController, UIPickerViewAccessibilityDelegate, UIPickerViewDataSource {

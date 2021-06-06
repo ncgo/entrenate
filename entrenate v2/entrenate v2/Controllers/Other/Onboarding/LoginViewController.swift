@@ -176,10 +176,14 @@ class LoginViewController: UIViewController {
                     // user logged in
                     self.dismiss(animated: true, completion: nil)
                 } else {
-                    // error occurred
-                    let alert = UIAlertController(title: "Error de Inicio de Sesión", message: "No se pudo Iniciar Sesión.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
-                    self.present(alert, animated: true)
+                    // error occurredDispatchQueue.main.asyncAfter(deadline: .now()+3) {
+                    self.btLogin.stopAnimation(animationStyle: .shake, revertAfterDelay: 1) {
+                        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                            let alert = UIAlertController(title: "Error de Inicio de Sesión", message: "No se pudo Iniciar Sesión.", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
+                            self.present(alert, animated: true)
+                        }
+                    }
                 }
             }
         }

@@ -1,5 +1,7 @@
 PODS:
   - Appirater (2.3.1)
+  - Cards (1.4.0):
+    - Player (= 0.13.0)
   - Firebase (8.0.0):
     - Firebase/Core (= 8.0.0)
   - Firebase/Analytics (8.0.0):
@@ -143,6 +145,7 @@ PODS:
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
+  - Player (0.13.0)
   - PromisesObjC (1.2.12)
   - Protobuf (3.17.0)
   - SDWebImage (5.11.1):
@@ -151,6 +154,7 @@ PODS:
 
 DEPENDENCIES:
   - Appirater
+  - Cards
   - Firebase
   - Firebase/Analytics
   - Firebase/Auth
@@ -164,6 +168,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Appirater
+    - Cards
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -182,12 +187,14 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - Player
     - PromisesObjC
     - Protobuf
     - SDWebImage
 
 SPEC CHECKSUMS:
   Appirater: 44a4651f7912a17dc906b655f0c215d5bb768b84
+  Cards: 45ae6bd0eca7b5e8016d3b6cb30b60b04753f68f
   Firebase: 73c3e3b216ec1ecbc54d2ffdd4670c65c749edb1
   FirebaseABTesting: 5b22abfa9a55d5b9cd3d1e500a3ca29f6b1264cb
   FirebaseAnalytics: dcb92c7c9ef4fa7ffac276e8f87bd4fc8c97f1b8
@@ -206,10 +213,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  Player: 968d8d07d923bcdd6f7e4091c9e306eb44a5f7a4
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Protobuf: 7327d4444215b5f18e560a97f879ff5503c4581c
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: ab510a5ed39c7a65ed69d93d6b003699f7140a16
+PODFILE CHECKSUM: 7be3c8df57579f4dc286e06605902401f8978160
 
 COCOAPODS: 1.10.1

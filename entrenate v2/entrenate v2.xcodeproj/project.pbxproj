@@ -75,6 +75,7 @@
 		82995FDA26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeleccionProblemasViewController.swift; sourceTree = "<group>"; };
 		82995FDE26618A8300A4FBE8 /* ProblemaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemaViewController.swift; sourceTree = "<group>"; };
 		82995FE126618D1000A4FBE8 /* EmpiezaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpiezaViewController.swift; sourceTree = "<group>"; };
+		82B37263266C7C4B00D94620 /* entrenate v2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "entrenate v2.entitlements"; sourceTree = "<group>"; };
 		DFC88275DB8F873B24C034E3 /* Pods_entrenate_v2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_entrenate_v2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F22E84A8B4FD7A9E2C1E0440 /* Pods-entrenate v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-entrenate v2.release.xcconfig"; path = "Target Support Files/Pods-entrenate v2/Pods-entrenate v2.release.xcconfig"; sourceTree = "<group>"; };
 		F771A0B02291BA70426E35C0 /* Pods-entrenate v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-entrenate v2.debug.xcconfig"; path = "Target Support Files/Pods-entrenate v2/Pods-entrenate v2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +158,7 @@
 		82995F9A2661843E00A4FBE8 /* entrenate v2 */ = {
 			isa = PBXGroup;
 			children = (
+				82B37263266C7C4B00D94620 /* entrenate v2.entitlements */,
 				82995FB3266184D200A4FBE8 /* Resources */,
 				82995FB2266184CB00A4FBE8 /* Models */,
 				82995FB1266184C700A4FBE8 /* Views */,
@@ -551,6 +553,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "entrenate v2/entrenate v2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 459KZ5T6YK;
 				INFOPLIST_FILE = "entrenate v2/Info.plist";
@@ -558,7 +561,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "moviles.entrenate-v2";
+				PRODUCT_BUNDLE_IDENTIFIER = moviles.entrenate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -571,6 +574,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "entrenate v2/entrenate v2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 459KZ5T6YK;
 				INFOPLIST_FILE = "entrenate v2/Info.plist";
@@ -578,7 +582,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "moviles.entrenate-v2";
+				PRODUCT_BUNDLE_IDENTIFIER = moviles.entrenate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

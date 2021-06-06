@@ -35,12 +35,32 @@ class SeleccionProblemasViewController: UIViewController {
         newBackButton.tintColor = .white
         self.navigationItem.leftBarButtonItem = newBackButton
         view.addSubview(cardTitulo)
+        createTimer(tiempo: Int(getSeconds(tiempo: tiempoSeleccionado)))
     }
 
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         cardTitulo.frame = CGRect(x: 10, y: view.safeAreaInsets.top + 20, width: view.frame.size.width - 20, height: view.frame.size.height/6)
+    }
+    
+    private func getSeconds(tiempo: String) -> Double {
+        return 15
+        if tiempo == "15 minutos" {
+            return 15*60
+        } else if tiempo == "30 minutos" {
+            return 30*60
+        } else if tiempo == "45 minutos" {
+            return 45*60
+        } else if tiempo == "1 hora" {
+            return 60*60
+        } else {
+            return 90*60
+        }
+    }
+    
+    func createTimer(tiempo: Int) {
+        var timer = Timer.scheduledTimer(timeInterval: TimeInterval(tiempo), target: self, selector: #selector(didFinishTime), userInfo: nil, repeats: false)
     }
     
     @objc private func didTapBack(sender: UIBarButtonItem) {
@@ -52,10 +72,19 @@ class SeleccionProblemasViewController: UIViewController {
         present(actionSheet, animated: true)
     }
     
+    @objc private func didFinishTime() {let alert = UIAlertController(title: "Tiempo Fuera", message: "Se ha terminado el tiempo.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: {_ in
+            let vc = ResultadosViewController()
+            self.present(vc, animated: true) {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }))
+        self.present(alert, animated: true)
+    }
+    
     @IBAction private func numProblemas(num: Int) {
         cardTitulo.category = "\(num) problemas"
     }
-    
 }
 
 

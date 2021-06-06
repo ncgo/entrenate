@@ -40,6 +40,7 @@
 		82995FDB26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FDA26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift */; };
 		82995FDF26618A8300A4FBE8 /* ProblemaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FDE26618A8300A4FBE8 /* ProblemaViewController.swift */; };
 		82995FE226618D1000A4FBE8 /* EmpiezaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FE126618D1000A4FBE8 /* EmpiezaViewController.swift */; };
+		829DA98C266CFC3A0053B159 /* ResultadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DA98B266CFC390053B159 /* ResultadosViewController.swift */; };
 		82B37284266C970800D94620 /* GradientTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B37283266C970800D94620 /* GradientTabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		82995FDA26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeleccionProblemasViewController.swift; sourceTree = "<group>"; };
 		82995FDE26618A8300A4FBE8 /* ProblemaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemaViewController.swift; sourceTree = "<group>"; };
 		82995FE126618D1000A4FBE8 /* EmpiezaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpiezaViewController.swift; sourceTree = "<group>"; };
+		829DA98B266CFC390053B159 /* ResultadosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultadosViewController.swift; sourceTree = "<group>"; };
 		82B37263266C7C4B00D94620 /* entrenate v2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "entrenate v2.entitlements"; sourceTree = "<group>"; };
 		82B37283266C970800D94620 /* GradientTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTabBarController.swift; sourceTree = "<group>"; };
 		DFC88275DB8F873B24C034E3 /* Pods_entrenate_v2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_entrenate_v2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +249,7 @@
 				82995FDE26618A8300A4FBE8 /* ProblemaViewController.swift */,
 				82995FD3266189D600A4FBE8 /* CompetenciaStartViewController.swift */,
 				82995FDA26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift */,
+				829DA98B266CFC390053B159 /* ResultadosViewController.swift */,
 				82995FD7266189E700A4FBE8 /* EntrenamientoStartViewController.swift */,
 				82995FC12661872C00A4FBE8 /* ConfigViewController.swift */,
 				82745466266B7AB800513881 /* AccessibilityViewController.swift */,
@@ -419,6 +422,7 @@
 				827454C3266C27AA00513881 /* AreaCollectionViewCell.swift in Sources */,
 				82995FBB2661870700A4FBE8 /* LeaderboardViewController.swift in Sources */,
 				82995FC62661873700A4FBE8 /* PerfilViewController.swift in Sources */,
+				829DA98C266CFC3A0053B159 /* ResultadosViewController.swift in Sources */,
 				82995FE226618D1000A4FBE8 /* EmpiezaViewController.swift in Sources */,
 				82995F9E2661843E00A4FBE8 /* SceneDelegate.swift in Sources */,
 				829180FA266C33FA008973AA /* Models.swift in Sources */,

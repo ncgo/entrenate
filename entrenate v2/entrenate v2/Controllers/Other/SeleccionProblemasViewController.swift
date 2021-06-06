@@ -65,6 +65,12 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         return card
     }()
     
+    private let labelTimer: UILabel = {
+        let label = UILabel()
+        label.text = "Hola"
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -80,6 +86,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        view.addSubview(labelTimer)
         
     }
 
@@ -87,7 +94,13 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         cardTitulo.frame = CGRect(x: 10, y: view.safeAreaInsets.top + 20, width: view.frame.size.width - 20, height: view.frame.size.height/6)
-        tableView.frame = CGRect(x: 10, y: cardTitulo.bottom + 20, width: view.frame.size.width - 20, height: view.frame.size.height/2)
+        labelTimer.frame = CGRect(x: 10, y: cardTitulo.bottom + 10, width: view.frame.size.width - 20, height: 50)
+        tableView.frame = CGRect(x: 10, y: labelTimer.bottom + 20, width: view.frame.size.width - 20, height: view.frame.size.height/2)
+    }
+    
+    
+    @IBAction private func actualizaLabelTimer() {
+        labelTimer.text = "Algo"
     }
     
     private func getSeconds(tiempo: String) -> Double {

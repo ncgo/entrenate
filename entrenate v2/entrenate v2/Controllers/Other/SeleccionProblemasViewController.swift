@@ -16,6 +16,13 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         let nivel: String
     }
     
+    struct sesion {
+        let dateSesion: Date
+        let numProblems: Int
+        let time: Timer
+        
+    }
+    
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -84,6 +91,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     }
     
     private func getSeconds(tiempo: String) -> Double {
+        return 15
         if tiempo == "15 minutos" {
             return 15*60
         } else if tiempo == "30 minutos" {

@@ -27,7 +27,7 @@ public class AuthManager {
                         return
                     }
                     // Insert account to database
-                    DatabaseManager.shared.insertNewUser(with: email, username: username, escuela: escuela) { inserted in
+                    DatabaseManager.shared.insertNewUser(with: name, email: email, username: username, Ciudad: Ciudad, nivelEducativo: nivelEducativo, gradoEtapa: gradoEtapa, escuela: escuela) { inserted in
                         if inserted {
                             completion(true)
                             return

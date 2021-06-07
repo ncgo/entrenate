@@ -14,7 +14,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         let points: Int
     }
     
-    var userData = [LeaderboardCells(user: "PedroA" , points: 125), LeaderboardCells(user: "UrsulaC" , points: 400), LeaderboardCells(user: "JaimeL" , points: 340), LeaderboardCells(user: "EstherA" , points: 235)  ]
+    var userData = [LeaderboardCells(user: "PedroA" , points: 125), LeaderboardCells(user: "UrsulaC" , points: 400), LeaderboardCells(user: "JaimeL" , points: 340), LeaderboardCells(user: "EstherA" , points: 235), LeaderboardCells(user: "ItziarI" , points: 25), LeaderboardCells(user: "MiguelH" , points: 800)]
     
     
     private let tableView: UITableView = {
@@ -28,6 +28,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         view.addSubview(tableView)
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 1, bottom: 0, right: 1)
         tableView.frame = view.bounds
+        tableView.backgroundColor = UIColor(red: 0, green: 0.50, blue: 0.22, alpha: 1)
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -43,6 +44,10 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LeaderboardTableViewCell.identifier, for: indexPath) as? LeaderboardTableViewCell
 
+        let sortedPoints  = userData.sorted {
+            $0.points > $1.points
+        }
+        
         var placeImg: String
         
         switch(indexPath.row){
@@ -55,7 +60,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         default:
             placeImg = "4th+"
         }
-        cell?.configure(imgName: placeImg, lbPointsText: String(userData[indexPath.row].points), lbUserText: userData[indexPath.row].user )
+        cell?.configure(imgName: placeImg, lbPointsText: String(sortedPoints[indexPath.row].points), lbUserText: sortedPoints[indexPath.row].user )
 
             return cell!
     }

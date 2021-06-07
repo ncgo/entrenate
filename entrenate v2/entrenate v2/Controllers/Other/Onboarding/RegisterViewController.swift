@@ -7,7 +7,110 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var etapaEducativa = ["Primaria", "Secundaria", "Preparatoria"]
+    var gradosPrimaria = ["Primer Grado", "Segundo Grado", "Tercer Grado", "Cuarto Grado", "Quinto Grado", "Sexto Grado"]
+    var gradosSecundaria = ["Primer Grado", "Segundo Grado", "Tercer Grado"]
+    var semestresPrepa = ["Primer Semestre", "Segundo Semestre", "Tercer Semestre", "Cuarto Semestre", "Quinto Semestre", "Sexto Semestre"]
+    var Ciudades = ["Ciudad Juárez", "Chihuahua", "Cuauhtémoc", "Delicias", "Saucillo", "Camargo", "Parral", "Otra"]
+    
+    var etapa: String!
+    var gradoEtapa: String!
+    var Ciudad: String!
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        if pickerView == pickerCiudad {
+            return 1
+        }
+        else {
+            return 2
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == pickerNivelEducativo {
+            if component == 0 {
+                return etapaEducativa.count
+            } else {
+                let opcionSleccionada = pickerView.selectedRow(inComponent: 0)
+                if opcionSleccionada == 0 {
+                    return gradosPrimaria.count
+                } else if opcionSleccionada == 1 {
+                    return gradosSecundaria.count
+                } else {
+                    return semestresPrepa.count
+                }
+            }
+        } else if pickerView == pickerCiudad {
+            if component == 0 {
+                return Ciudades.count
+            }
+        }
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == pickerCiudad {
+            if component == 0 {
+                return Ciudades[row]
+            }
+        }
+        else if pickerView == pickerNivelEducativo {
+            if component == 0 {
+                return etapaEducativa[row]
+            } else {
+                let opcionSeleccionada = pickerView.selectedRow(inComponent: 0)
+                if opcionSeleccionada == 0 {
+                    return gradosPrimaria[row]
+                } else if opcionSeleccionada == 1 {
+                    return gradosSecundaria[row]
+                } else {
+                    return semestresPrepa[row]
+                }
+            }
+        }
+        return String(0)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == pickerCiudad {
+            pickerView.reloadComponent(0)
+            let opcionSeleccionada = pickerView.selectedRow(inComponent: 0)
+            let ciudadSeleccionada = Ciudades[opcionSeleccionada]
+            Ciudad = ciudadSeleccionada
+        }
+        else if pickerView == pickerNivelEducativo {
+            pickerView.reloadComponent(1)
+            let opcionSeleccionada = pickerView.selectedRow(inComponent: 0)
+            let listaElementoSeleccionado = pickerView.selectedRow(inComponent: 1)
+            let nivelEducativo = etapaEducativa[opcionSeleccionada]
+            let listaElemento: String
+            
+            if opcionSeleccionada == 0 {
+                listaElemento = gradosPrimaria[listaElementoSeleccionado]
+            }else if opcionSeleccionada == 1 {
+                listaElemento = gradosSecundaria[listaElementoSeleccionado]
+            }else {
+                listaElemento = semestresPrepa[listaElementoSeleccionado]
+            }
+            etapa = nivelEducativo
+            gradoEtapa = listaElemento
+        }
+    }
+    
+    let pickerCiudad: UIPickerView = {
+       let field = UIPickerView()
+        
+        return field
+    }()
+    
+    let pickerNivelEducativo: UIPickerView = {
+       let field = UIPickerView()
+        
+        return field
+    }()
+    
     struct Constantes {
         static let cornerRadius: CGFloat = 8.0
         static let verdeOmmch = UIColor(red: 0, green: 0.50, blue: 0.22, alpha: 1.00)
@@ -118,11 +221,15 @@ class RegisterViewController: UIViewController {
         usernameField.delegate = self
         emailField.delegate = self
         passwordField.delegate = self
+        self.pickerCiudad.delegate = self
+        self.pickerCiudad.dataSource = self
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         headerView.frame = CGRect(x: 0, y: 0.0, width: view.width , height: view.height/6.0)
+        pickerCiudad.frame = CGRect(x: 0, y: headerView.bottom + 20, width: view.width - 40, height: 52)
+        
         usernameField.frame = CGRect(x: 20, y: headerView.bottom + 20, width: view.width - 40, height: 52)
         emailField.frame = CGRect(x: 20, y: usernameField.bottom + 15, width: view.width - 40, height: 52)
         passwordField.frame = CGRect(x: 20, y: emailField.bottom + 15, width: view.width - 40, height: 52)

@@ -111,7 +111,18 @@ class LoginViewController: UIViewController {
         usernameEmailField.delegate = self
         passwordField.delegate = self
         addSubviews()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(quitaTeclado))
+        view.addGestureRecognizer(tap)
+        NotificationCenter.default.addObserver(self, selector: #selector(tecladoCambia), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(tecladoCambia), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(tecladoCambia), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         // Do any additional setup after loading the view.
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -232,4 +243,24 @@ extension LoginViewController: UITextFieldDelegate {
         }
         return true
     }
+    
+    @IBAction func quitaTeclado() {
+        view.endEditing(true)
+    }
+    
+    @objc func tecladoCambia(notification: Notification) {
+        print("Teclado aparece: \(notification.name.rawValue)")
+        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
+            view.frame.origin.y = -keyboardRect.height
+        }
+        else {
+            view.frame.origin.y = 0
+        }
+        
+    }
+    
 }

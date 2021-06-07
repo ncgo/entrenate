@@ -59,14 +59,23 @@ class ProfileTabsCollectionReusableView: UICollectionReusableView {
     }
     
     @objc private func didTapInfoButton() {
+        infoButton.tintColor = .systemGreen
+        statsButton.tintColor = .secondarySystemBackground
+        achievementsButton.tintColor = .secondarySystemBackground
         delegate?.didTapInfoButton()
     }
     
     @objc private func didTapStatsButton() {
+        infoButton.tintColor = .secondarySystemBackground
+        statsButton.tintColor = .systemGreen
+        achievementsButton.tintColor = .secondarySystemBackground
         delegate?.didTapStatsButton()
     }
     
     @objc private func didTapAchievementsButton() {
+        infoButton.tintColor = .secondarySystemBackground
+        statsButton.tintColor = .secondarySystemBackground
+        achievementsButton.tintColor = .systemGreen
         delegate?.didTapAchievementsButton()
     }
     
@@ -77,9 +86,8 @@ class ProfileTabsCollectionReusableView: UICollectionReusableView {
     override func layoutSubviews() {
         super.layoutSubviews()
         let size = height/2
-        let widthBt = ((width/3)-size)/3
-        infoButton.frame = CGRect(x: widthBt, y: height/4, width: size, height: size)
-        statsButton.frame = CGRect(x: width/3 + widthBt, y: height/4, width: size, height: size)
-        achievementsButton.frame = CGRect(x: 2*(width/3) + widthBt, y: height/4, width: size, height: size)
+        infoButton.frame = CGRect(x: (width/4) - size + 12, y: height/4, width: size, height: size)
+        statsButton.frame = CGRect(x: 2*(width/4) - size + 12, y: height/4, width: size, height: size)
+        achievementsButton.frame = CGRect(x: 3*(width/4) - size + 12, y: height/4, width: size, height: size)
     }
 }

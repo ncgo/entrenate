@@ -5,10 +5,17 @@
 //  Created by Nadia Garcia on 28/05/21.
 //
 
-import Cards
 import UIKit
-
 class ProblemaViewController: UIViewController {
+    
+    struct Problema {
+        var tipoProblema:String!
+        var descProblema:String!
+        var nomProblema:String!
+        var respProblema:String!
+        var imgProblema:UIImage!
+        
+    }
     
     var countDownTimer: Timer!
     var totalTime: Int!
@@ -80,6 +87,10 @@ class ProblemaViewController: UIViewController {
         descripcion.numberOfLines = 0
         return descripcion
     }()
+    
+    var listaProblemas = [
+        Problema(tipoProblema: "Combinatoria", descProblema: "Rita camina de izquierda a derecha y va poniendo en su canasta los números que se encuentra en su camino. ¿Cuáles de los siguientes números pueden estar en su canasta?", nomProblema: "El camino de Rita", respProblema: "2, 3 y 5", imgProblema: nil), Problema(tipoProblema: "Teoría de Números", descProblema: "¿Cuántos cubitos se quitaron del primer bloque para obtener el segundo?", nomProblema: "Removiendo cubitos", respProblema: "7", imgProblema: nil), Problema(tipoProblema: "Combinatoria", descProblema: "La combinación de una caja fuerte es un número de tres cifras distintas. Si se sabe que las cifras son 1, 3 y 5 ¿Cuántas combinaciones son posibles?", nomProblema: "Combinaciones posibles", respProblema: "6", imgProblema: nil), Problema(tipoProblema: "Combinatoria", descProblema: "Después del primer silbido que da un entrenador de changos en el circo, los changos se quedan formados en 6 filas cada una con 4 changos. Después del segundo chiflido se forman 8 filas ¿Cuántos changos quedan en cada fila después del segundo silbido?", nomProblema: "Formación chango", respProblema: "3", imgProblema: nil), Problema(tipoProblema: "Combinatoria", descProblema: "Sofía dibuja canguros: uno azul, uno verde, uno rojo, uno negro, uno amarillo, uno azul, uno verde, uno rojo, etc. ¿De qué color es el 17º canguro", nomProblema: "Sofía dibuja canguros", respProblema: "Verde", imgProblema: nil)
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()

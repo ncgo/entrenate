@@ -53,6 +53,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     var tiempoSeleccionado: String = "0"
     var cantidadProblemas: Int = 12
     var puntosAcumulados: Int!
+    var countDownTimer: Timer!
     
     
     private let cardTitulo: CardArticle = {
@@ -67,7 +68,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     
     private let labelTimer: UILabel = {
         let label = UILabel()
-        label.text = "Hola"
+        label.text = "--:--"
         return label
     }()
     
@@ -98,28 +99,47 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         tableView.frame = CGRect(x: 10, y: labelTimer.bottom + 20, width: view.frame.size.width - 20, height: view.frame.size.height/2)
     }
     
+    var totalTime: Int!
     
-    @IBAction private func actualizaLabelTimer() {
-        labelTimer.text = "Algo"
+    @objc func actualizaLabelTimer() {
+        labelTimer.text = "\(timeFormatted(totalTime))"
+        if totalTime != 0 {
+            totalTime -= 1
+        }
+        else {
+            didFinishTime()
+        }
+        
+    }
+    
+    func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        let hours: Int = totalSeconds / 3600
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
     
     private func getSeconds(tiempo: String) -> Double {
-        return 15
         if tiempo == "15 minutos" {
+            totalTime = 15*60
             return 15*60
         } else if tiempo == "30 minutos" {
+            totalTime = 30*60
             return 30*60
         } else if tiempo == "45 minutos" {
+            totalTime = 45*60
             return 45*60
         } else if tiempo == "1 hora" {
+            totalTime = 60*60
             return 60*60
         } else {
+            totalTime = 90*60
             return 90*60
         }
     }
     
     func createTimer(tiempo: Int) {
-        Timer.scheduledTimer(timeInterval: TimeInterval(tiempo), target: self, selector: #selector(didFinishTime), userInfo: nil, repeats: false)
+        countDownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(actualizaLabelTimer), userInfo: nil, repeats: true)
     }
     
     @objc private func didTapBack(sender: UIBarButtonItem) {
@@ -138,6 +158,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
                 self.navigationController?.popViewController(animated: true)
             }
         }))
+        countDownTimer.invalidate()
         self.present(alert, animated: true)
     }
     

@@ -27,8 +27,14 @@ public class DatabaseManager {
     /// - email: String representing email
     /// - username: String representing username
     /// - completion: Async callback for result if database entry suceeded
-    public func insertNewUser(with email: String, username: String, completion: @escaping (Bool) -> Void) {
-        database.child(email.safeDatabaseKey()).setValue(["username": username]) { error,  _ in
+    public func insertNewUser(with email: String, username: String, escuela: String, completion: @escaping (Bool) -> Void) {
+        database.child(email.safeDatabaseKey()).setValue(
+            ["username": username,
+             "nivelUsuarioJuego": 0,
+             "puntosAcumulados" : 0,
+             "escuela" : escuela,
+             "ciudad" : "Ciudad Juarez",
+             "estado" : "Chihuahua"]) { error,  _ in
             if error == nil {
                 //success
                 completion(true)
@@ -40,6 +46,8 @@ public class DatabaseManager {
             }
         }
     }
+    
+    
     
     
 }

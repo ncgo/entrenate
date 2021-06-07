@@ -12,7 +12,7 @@ public class AuthManager {
     
     // MARK: -Public
     
-    public func registerNewUser(username: String, email: String, password: String, completion: @escaping (Bool) -> Void) {
+    public func registerNewUser(username: String, email: String, password: String, escuela: String, completion: @escaping (Bool) -> Void) {
         // Check if username is available
         // Check if email is available
         // Create account
@@ -27,7 +27,7 @@ public class AuthManager {
                         return
                     }
                     // Insert account to database
-                    DatabaseManager.shared.insertNewUser(with: email, username: username) { inserted in
+                    DatabaseManager.shared.insertNewUser(with: email, username: username, escuela: escuela) { inserted in
                         if inserted {
                             completion(true)
                             return
@@ -57,6 +57,8 @@ public class AuthManager {
                 completion(true)
             }
         } else if let username = username {
+            //Accept auth with user
+            print(username)
         }
     }
     

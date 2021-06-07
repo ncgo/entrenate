@@ -29,6 +29,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     }()
     
     var problemas = [[problema]]()
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return problemas.count
     }
@@ -53,6 +54,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     var cantidadProblemas: Int = 12
     var puntosAcumulados: Int!
     var countDownTimer: Timer!
+    var puntosPorProblema: Int = 500
     
     
     private let cardTitulo: CardArticle = {
@@ -88,6 +90,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(labelTimer)
+        pointConfig()
     }
 
     
@@ -187,7 +190,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         let defaults = UserDefaults.standard
         if let nivel = defaults.string(forKey: "NivelUsuarioJuego") {
             if let puntos = defaults.string(forKey: "PuntosAcumulados") {
-                let puntosPorProblema = p.puntosProblema(nivelUsuarioJuego: Int(nivel)!)
+                puntosPorProblema = p.puntosProblema(nivelUsuarioJuego: Int(nivel)!)
             }
         }
         

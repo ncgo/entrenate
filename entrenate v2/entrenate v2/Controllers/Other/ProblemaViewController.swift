@@ -13,7 +13,13 @@ class ProblemaViewController: UIViewController {
     var countDownTimer: Timer!
     var totalTime: Int!
     var descripcionProblema: String!
+    var tituloProblema: String!
+    var areaProblema: String!
+    var respuestaProblema: String!
     let color: UIColor = .systemBlue
+    
+    
+    
     let titulo: UILabel = {
         let titulo = UILabel()
         titulo.text = "Titulo Divertido"
@@ -84,6 +90,7 @@ class ProblemaViewController: UIViewController {
         view.addSubview(titulo)
         view.addSubview(respuestaInput)
         view.addSubview(areaLabel)
+        botonEnviar.addTarget(self, action: #selector(didTapEnviar), for: .touchUpInside)
         createTimer(tiempo: totalTime)
         view.backgroundColor = .systemBackground
     }
@@ -141,6 +148,24 @@ class ProblemaViewController: UIViewController {
         }))
         countDownTimer.invalidate()
         self.present(alert, animated: true)
+    }
+    
+    @objc private func didTapEnviar() {
+        checkAnswer(respuestaRecibida: respuestaInput.text!, respuestaCorrecta: respuestaProblema)
+    }
+    
+    private func checkAnswer(respuestaRecibida: String, respuestaCorrecta: String) {
+        if respuestaRecibida == respuestaCorrecta {
+            // Sumar Puntos
+            navigationController?.popViewController(animated: true)
+        } else {
+            // Restar Puntos, respuesta incorrecta
+        }
+        //Update puntosAcumulados
+    }
+    
+    @objc private func didTapInfo() {
+        //Present popover with fuente del problema
     }
     
 }

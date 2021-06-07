@@ -65,10 +65,11 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         return card
     }()
     
-    private let labelTimer: UILabel = {
-        let label = UILabel()
-        label.text = "--:--"
-        return label
+    private let labelTimer: UIButton = {
+        let button = UIButton()
+        button.setTitle("--:--", for: .normal)
+        button.backgroundColor = .systemGreen
+        return button
     }()
     
     override func viewDidLoad() {
@@ -93,14 +94,14 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         cardTitulo.frame = CGRect(x: 10, y: view.safeAreaInsets.top + 20, width: view.frame.size.width - 20, height: view.frame.size.height/6)
-        labelTimer.frame = CGRect(x: 10, y: cardTitulo.bottom + 10, width: view.frame.size.width - 20, height: 50)
-        tableView.frame = CGRect(x: 10, y: labelTimer.bottom + 20, width: view.frame.size.width - 20, height: view.frame.size.height/2)
+        labelTimer.frame = CGRect(x: 0, y: view.bottom - 150, width: view.frame.size.width, height: 50)
+        tableView.frame = CGRect(x: 10, y: cardTitulo.bottom + 20, width: view.frame.size.width - 20, height: view.frame.size.height/2)
     }
     
     var totalTime: Int!
     
     @objc func actualizaLabelTimer() {
-        labelTimer.text = "\(timeFormatted(totalTime))"
+        labelTimer.setTitle("\(timeFormatted(totalTime))", for: .normal)
         if totalTime != 0 {
             totalTime -= 1
         }
@@ -108,6 +109,11 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
             didFinishTime()
         }
         
+        if totalTime > 120 && totalTime < 300{
+            labelTimer.backgroundColor = .systemYellow
+        } else if totalTime < 120 {
+            labelTimer.backgroundColor = .systemRed
+        }
     }
     
     func timeFormatted(_ totalSeconds: Int) -> String {

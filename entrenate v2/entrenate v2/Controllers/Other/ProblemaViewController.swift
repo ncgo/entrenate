@@ -5,6 +5,7 @@
 //  Created by Nadia Garcia on 28/05/21.
 //
 
+import Cards
 import UIKit
 
 class ProblemaViewController: UIViewController {
@@ -12,10 +13,65 @@ class ProblemaViewController: UIViewController {
     var countDownTimer: Timer!
     var totalTime: Int!
     var descripcionProblema: String!
+    let color: UIColor = .systemBlue
+    let titulo: UILabel = {
+        let titulo = UILabel()
+        titulo.text = "Titulo Divertido"
+        titulo.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        titulo.textColor = .systemBlue
+        titulo.textAlignment = .center
+        return titulo
+    }()
+    
+    let botonInfo: UIButton = {
+        let boton = UIButton()
+        boton.setImage(UIImage(systemName: "info"), for: .normal)
+        boton.layer.masksToBounds = true
+        boton.backgroundColor = .systemBlue
+        boton.layer.cornerRadius = 25
+        return boton
+    }()
+    
+    let areaLabel : UILabel = {
+       let label = UILabel()
+        label.text = "Teoria de Numeros"
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.textColor = .systemBlue
+        label.textAlignment = .center
+        return label
+    }()
+    
+    let respuestaInput: UITextField = {
+       let field = UITextField()
+        field.placeholder = "Ingresa tu respuesta"
+        field.keyboardType = .numberPad
+        field.returnKeyType = .done
+        field.leftViewMode = .always
+        field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
+        field.layer.masksToBounds = true
+        field.layer.cornerRadius = 8.0
+        field.backgroundColor = .secondarySystemBackground
+        field.layer.borderWidth = 1.0
+        field.layer.borderColor = UIColor(red: 0.24, green: 0.57, blue: 0.90, alpha: 1.00).cgColor
+        return field
+    }()
+    
+    let botonEnviar: UIButton = {
+        let boton = UIButton()
+        boton.backgroundColor = .systemBlue
+        boton.setTitle("Enviar", for: .normal)
+        boton.tintColor = .white
+        boton.layer.masksToBounds = true
+        boton.layer.cornerRadius = 8.0
+        return boton
+    }()
     
     let descripcion: UILabel = {
         let descripcion = UILabel()
         descripcion.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis risus id felis pulvinar, nec pretium mi tempus. Nulla facilisi. Aliquam eget justo ut libero sagittis maximus nec sit amet lacus. Donec blandit est eget ipsum porta, ut pharetra ex tincidunt. Aenean vitae hendrerit mauris."
+        descripcion.textAlignment = .center
+        descripcion.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        descripcion.numberOfLines = 0
         return descripcion
     }()
 
@@ -23,28 +79,45 @@ class ProblemaViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(labelTimer)
         view.addSubview(descripcion)
+        view.addSubview(botonInfo)
+        view.addSubview(botonEnviar)
+        view.addSubview(titulo)
+        view.addSubview(respuestaInput)
+        view.addSubview(areaLabel)
         createTimer(tiempo: totalTime)
+        view.backgroundColor = .systemBackground
     }
     
-    private let labelTimer: UILabel = {
-        let label = UILabel()
-        label.text = "--:--"
-        return label
+    private let labelTimer: UIButton = {
+        let button = UIButton()
+        button.setTitle("--:--", for: .normal)
+        button.backgroundColor = .systemGreen
+        return button
     }()
     
     override func viewDidLayoutSubviews() {
-        labelTimer.frame = CGRect(x: 70, y: 70, width: view.frame.size.width - 20, height: 50)
+        labelTimer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50)
+        titulo.frame = CGRect(x: 10, y: 1*view.frame.size.height/4, width: view.frame.size.width - 20, height: 30)
+        areaLabel.frame = CGRect(x: 10, y: titulo.bottom + 5, width: view.frame.size.width - 20, height: 20)
+        descripcion.frame = CGRect(x: 20, y: 3*view.frame.size.height/8 , width: view.frame.size.width - 40, height: view.frame.size.height/4)
+        botonInfo.frame = CGRect(x: view.frame.size.width/2 - 20, y: 7*view.frame.size.height/8, width: 40, height: 40)
+        respuestaInput.frame = CGRect(x: view.frame.size.width/4, y: descripcion.bottom + 25, width: view.frame.size.width/2, height: 50)
+        botonEnviar.frame = CGRect(x: view.frame.size.width/3, y: respuestaInput.bottom + 10, width: view.frame.size.width/3, height: 50)
     }
     
     @objc func actualizaLabelTimer() {
-        labelTimer.text = "\(timeFormatted(totalTime))"
+        labelTimer.setTitle("\(timeFormatted(totalTime))", for: .normal)
         if totalTime != 0 {
             totalTime -= 1
         }
         else {
             didFinishTime()
         }
-        
+        if totalTime > 120 && totalTime < 300{
+            labelTimer.backgroundColor = .systemYellow
+        } else if totalTime < 120 {
+            labelTimer.backgroundColor = .systemRed
+        }
     }
     
     func timeFormatted(_ totalSeconds: Int) -> String {

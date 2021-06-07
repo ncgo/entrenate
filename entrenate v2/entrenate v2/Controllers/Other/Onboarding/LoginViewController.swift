@@ -6,9 +6,11 @@
 //
 import SafariServices
 import TransitionButton
+import Firebase
 import UIKit
 
 class LoginViewController: UIViewController {
+    
     
     struct Constantes {
         static let cornerRadius: CGFloat = 8.0
@@ -174,9 +176,7 @@ class LoginViewController: UIViewController {
             DispatchQueue.main.async {
                 if success {
                     // user logged in
-                    let defaults = UserDefaults.standard
-                    defaults.set(username, forKey: "Username")
-                    defaults.set(email, forKey: "email")
+                    self.updateUserDefaults(email: email!)
                     self.dismiss(animated: true, completion: nil)
                 } else {
                     // error occurredDispatchQueue.main.asyncAfter(deadline: .now()+3) {
@@ -214,6 +214,12 @@ class LoginViewController: UIViewController {
         present(vc, animated: true)
     }
     
+    private func updateUserDefaults(email: String) {
+        let defaults = UserDefaults.standard
+        let dbKey = email.safeDatabaseKey()
+        defaults.set(dbKey, forKey: "dbKey")
+        DatabaseManager.shared.readUserData(dbKey: dbKey)
+    }
 
 }
 

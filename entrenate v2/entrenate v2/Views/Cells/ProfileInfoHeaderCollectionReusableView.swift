@@ -10,6 +10,7 @@ import UIKit
 class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
     static let identifier = "ProfileInfoHeaderCollectionReusableView"
     
+    let defaults = UserDefaults.standard
     
     private let profilePictureImageView: UIImageView = {
         let imageView = UIImageView()
@@ -21,6 +22,11 @@ class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
     private let usernameLabel: UILabel = {
         let label = UILabel()
         label.text = "@username"
+        /*
+        if let username = defaults.string(forKey: "Username") as? String {
+            label.text = username
+        } else { "@username"}
+                        */
         return label
     }()
     
@@ -92,6 +98,35 @@ class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
         addSubviews()
         backgroundColor = .systemBackground
         clipsToBounds =  true
+        updateUserData()
+    }
+    
+    private func updateUserData() {
+        if let username = defaults.string(forKey: "Username") {
+            usernameLabel.text = username
+        }
+        if let nombre = defaults.string(forKey: "Nombre") {
+            nameLabel.text = nombre
+        }
+        if let escuela = defaults.string(forKey: "Escuela") {
+            escuelaLabel.text = escuela
+        }
+        if let ciudad = defaults.string(forKey: "Ciudad") {
+            ciudadLabel.text = ciudad
+        }
+        
+        if let nivel = defaults.string(forKey: "NivelUsuarioJuego") {
+            nivelValorLabel.text = nivel
+            if let puntos = defaults.string(forKey: "PuntosAcumulados") {
+                experiencePointsLabel.text = "\(puntos) XP Points"
+                let puntosLogic = LogicaPuntos()
+                let puntosTotales = puntosLogic.puntosNivel(nivelUsuarioJuego: Int(nivel)!)
+                let progress = Float(Float(puntos) ?? 1/Float(puntosTotales))
+                puntosProgressView.setProgress(progress, animated: true)
+            }
+        }
+        
+        
     }
     
     private func addSubviews() {

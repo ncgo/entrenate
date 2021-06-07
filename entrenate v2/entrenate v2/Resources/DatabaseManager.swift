@@ -28,13 +28,17 @@ public class DatabaseManager {
     /// - username: String representing username
     /// - completion: Async callback for result if database entry suceeded
     public func insertNewUser(with email: String, username: String, escuela: String, completion: @escaping (Bool) -> Void) {
+        let user: [String: Any] = [
+            "username": username,
+            "email": email,
+            "nivelUsuarioJuego": 0,
+            "puntosAcumulados" : 0,
+            "escuela" : escuela,
+            "ciudad" : "Ciudad Juarez",
+            "estado" : "Chihuahua"
+        ]
         database.child(email.safeDatabaseKey()).setValue(
-            ["username": username,
-             "nivelUsuarioJuego": 0,
-             "puntosAcumulados" : 0,
-             "escuela" : escuela,
-             "ciudad" : "Ciudad Juarez",
-             "estado" : "Chihuahua"]) { error,  _ in
+            user) { error,  _ in
             if error == nil {
                 //success
                 completion(true)
@@ -47,7 +51,21 @@ public class DatabaseManager {
         }
     }
     
-    
+    /// Read user data from database
+    public func readUserData(dbKey: String) {
+        database.child(dbKey).observeSingleEvent(of: .value, with: { snapshot in
+            guard let userData = snapshot.value as? [String: Any] else { return }
+            let defaults = UserDefaults.standard
+            defaults.set(userData["username"], forKey: "Username")
+            defaults.set(userData["email"], forKey: "Email")
+            defaults.set(userData["nivelUsuarioJuego"], forKey: "NivelUsuarioJuego")
+            defaults.set(userData["puntosAcumulados"], forKey: "PuntosAcumulados")
+            defaults.set(userData["escuela"], forKey: "Escuela")
+            defaults.set(userData["ciudad"], forKey: "Ciudad")
+            defaults.set(userData["estado"], forKey: "Estado")
+            defaults.set(dbKey, forKey: "dbKey")
+        })
+    }
     
     
 }

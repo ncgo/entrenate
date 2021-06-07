@@ -13,6 +13,8 @@ import UIKit
 final class PerfilViewController: UIViewController {
     
     private var collectionView: UICollectionView?
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +102,8 @@ extension PerfilViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return CGSize(width: collectionView.width, height: 65)
         
     }
+    
+    
 }
 
 extension PerfilViewController: ProfileTabsCollectionReusableViewDelegate {

@@ -174,6 +174,9 @@ class LoginViewController: UIViewController {
             DispatchQueue.main.async {
                 if success {
                     // user logged in
+                    let defaults = UserDefaults.standard
+                    defaults.set(username, forKey: "Username")
+                    defaults.set(email, forKey: "email")
                     self.dismiss(animated: true, completion: nil)
                 } else {
                     // error occurredDispatchQueue.main.asyncAfter(deadline: .now()+3) {

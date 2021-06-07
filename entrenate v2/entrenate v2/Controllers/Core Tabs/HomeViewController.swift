@@ -4,13 +4,15 @@
 //
 //  Created by Nadia Garcia on 28/05/21.
 //
-
 import FirebaseAuth
 import SafariServices
 import Cards
 import UIKit
 
 class HomeViewController: UIViewController, CardDelegate {
+    
+    let scrollView = UIScrollView()
+    private var cardHeight : CGFloat = 0
     
     private let cardConsejos: CardHighlight = {
         let card = CardHighlight(frame: .zero)
@@ -47,18 +49,34 @@ class HomeViewController: UIViewController, CardDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
+        
+        cardHeight = self.view.frame.width
+        
+        scrollView.frame = self.view.bounds
+        
         cardConsejos.shouldPresent(ConsejosViewController(), from: self, fullscreen: true)
         cardConsejos.delegate = self
         cardConvocatoria.delegate = self
-        view.addSubview(cardConsejos)
-        view.addSubview(cardConvocatoria)
+        
+        scrollView.addSubview(cardConsejos)
+        scrollView.addSubview(cardConvocatoria)
+        
+        scrollView.contentSize = CGSize(width:self.view.width, height: (cardHeight+20) * 2.1)
+        
+        view.addSubview(scrollView)
+
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        cardConvocatoria.frame = CGRect(x: 10, y: view.safeAreaInsets.top + 10, width: view.frame.size.width - 20, height: view.frame.size.width)
-        cardConsejos.frame = CGRect(x: 10, y: cardConvocatoria.bottom + 10, width: view.frame.size.width - 20, height: view.frame.size.height/3)
+
+        cardConvocatoria.frame = CGRect(x: 10, y: 10, width: view.frame.size.width - 20, height: cardHeight)
+        cardConsejos.frame = CGRect(x: 10, y: (cardHeight+20),
+                                    width: view.frame.size.width - 20, height: cardHeight)
     }
+    
+    
+    
     
     func cardHighlightDidTapButton(card: CardHighlight, button: UIButton) {
         if card == cardConvocatoria {

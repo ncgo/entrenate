@@ -66,20 +66,3 @@ class LeaderboardTableViewCell: UITableViewCell {
     }
 
 }
-
-/*
-cell.textLabel?.text = userData[indexPath.row].user
-
-
-switch(indexPath.row){
-case 0:
-    cell.imageView?.image = UIImage(named: "1st")
-case 1:
-    cell.imageView?.image = UIImage(named: "2nd")
-case 2:
-    cell.imageView?.image = UIImage(named: "3rd")
-default:
-    cell.imageView?.image = UIImage(named: "4th+")
-    
-}
-*/

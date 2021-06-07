@@ -9,10 +9,14 @@ import UIKit
 
 class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let defaults = UserDefaults.standard
+    
     struct LeaderboardCells {
         let user: String
         let points: Int
     }
+    
+
     
     var userData = [LeaderboardCells(user: "PedroA" , points: 125), LeaderboardCells(user: "UrsulaC" , points: 400), LeaderboardCells(user: "JaimeL" , points: 340), LeaderboardCells(user: "EstherA" , points: 235), LeaderboardCells(user: "ItziarI" , points: 25), LeaderboardCells(user: "MiguelH" , points: 800)]
     
@@ -38,17 +42,28 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userData.count
+        return userData.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LeaderboardTableViewCell.identifier, for: indexPath) as? LeaderboardTableViewCell
 
-        let sortedPoints  = userData.sorted {
-            $0.points > $1.points
+        var sUsername: String!
+        var iPoints: Int!
+        var placeImg: String!
+        
+        if let puntos = defaults.string(forKey: "PuntosAcumulados") {
+            iPoints = Int(puntos)!
         }
         
-        var placeImg: String
+        if let username = defaults.string(forKey: "Username") {
+            sUsername = username
+        }
+        
+        let newElem = LeaderboardCells(user: sUsername, points: iPoints)
+        
+        userData.append(newElem)
+
         
         switch(indexPath.row){
         case 0:
@@ -60,7 +75,12 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         default:
             placeImg = "4th+"
         }
-        cell?.configure(imgName: placeImg, lbPointsText: String(sortedPoints[indexPath.row].points), lbUserText: sortedPoints[indexPath.row].user )
+        
+        let sortedPoints = userData.sorted {
+            $0.points > $1.points
+        }
+        
+        cell?.configure(imgName: placeImg, lbPointsText: String(sortedPoints[indexPath.row].points), lbUserText: sortedPoints[indexPath.row].user)
 
             return cell!
     }

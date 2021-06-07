@@ -23,7 +23,6 @@ class ProfileTabsCollectionReusableView: UICollectionReusableView {
         boton.clipsToBounds = true
         boton.tintColor = .systemGreen
         boton.setBackgroundImage(UIImage(systemName: "info"), for: .normal)
-        boton.backgroundColor = .red
         return boton
     }()
     
@@ -32,7 +31,6 @@ class ProfileTabsCollectionReusableView: UICollectionReusableView {
         boton.clipsToBounds = true
         boton.tintColor = .secondarySystemBackground
         boton.setBackgroundImage(UIImage(systemName: "house"), for: .normal)
-        boton.backgroundColor = .blue
         return boton
     }()
     
@@ -41,7 +39,6 @@ class ProfileTabsCollectionReusableView: UICollectionReusableView {
         boton.clipsToBounds = true
         boton.tintColor = .secondarySystemBackground
         boton.setBackgroundImage(UIImage(systemName: "person"), for: .normal)
-        boton.backgroundColor = .yellow
         return boton
     }()
     

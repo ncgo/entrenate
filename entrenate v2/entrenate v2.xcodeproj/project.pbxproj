@@ -42,6 +42,9 @@
 		82995FE226618D1000A4FBE8 /* EmpiezaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82995FE126618D1000A4FBE8 /* EmpiezaViewController.swift */; };
 		829DA98C266CFC3A0053B159 /* ResultadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DA98B266CFC390053B159 /* ResultadosViewController.swift */; };
 		82B37284266C970800D94620 /* GradientTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B37283266C970800D94620 /* GradientTabBarController.swift */; };
+		8A618C65266D981900C85194 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A618C64266D981800C85194 /* LeaderboardTableViewCell.swift */; };
+		82C24565266DB5FB00AD8FF5 /* ProblemaListaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C24564266DB5FB00AD8FF5 /* ProblemaListaTableViewCell.swift */; };
+		82C2456C266DC4DD00AD8FF5 /* logicaPuntos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C2456B266DC4DD00AD8FF5 /* logicaPuntos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +86,9 @@
 		829DA98B266CFC390053B159 /* ResultadosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultadosViewController.swift; sourceTree = "<group>"; };
 		82B37263266C7C4B00D94620 /* entrenate v2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "entrenate v2.entitlements"; sourceTree = "<group>"; };
 		82B37283266C970800D94620 /* GradientTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTabBarController.swift; sourceTree = "<group>"; };
+		8A618C64266D981800C85194 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
+		82C24564266DB5FB00AD8FF5 /* ProblemaListaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemaListaTableViewCell.swift; sourceTree = "<group>"; };
+		82C2456B266DC4DD00AD8FF5 /* logicaPuntos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logicaPuntos.swift; sourceTree = "<group>"; };
 		DFC88275DB8F873B24C034E3 /* Pods_entrenate_v2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_entrenate_v2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F22E84A8B4FD7A9E2C1E0440 /* Pods-entrenate v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-entrenate v2.release.xcconfig"; path = "Target Support Files/Pods-entrenate v2/Pods-entrenate v2.release.xcconfig"; sourceTree = "<group>"; };
 		F771A0B02291BA70426E35C0 /* Pods-entrenate v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-entrenate v2.debug.xcconfig"; path = "Target Support Files/Pods-entrenate v2/Pods-entrenate v2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 				827454A6266B9F3000513881 /* ProfileTabsCollectionReusableView.swift */,
 				827454A2266B9EEF00513881 /* ProfileInfoHeaderCollectionReusableView.swift */,
 				827454C2266C27AA00513881 /* AreaCollectionViewCell.swift */,
+				8A618C64266D981800C85194 /* LeaderboardTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -203,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				829180F9266C33FA008973AA /* Models.swift */,
+				82C2456B266DC4DD00AD8FF5 /* logicaPuntos.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +287,7 @@
 		829DA930266CD6BB0053B159 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				82C24564266DB5FB00AD8FF5 /* ProblemaListaTableViewCell.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -403,12 +412,14 @@
 				82774DD22661AA8C00EB40D7 /* Extensions.swift in Sources */,
 				82995FD12661899200A4FBE8 /* RegisterViewController.swift in Sources */,
 				82995FA02661843E00A4FBE8 /* HomeViewController.swift in Sources */,
+				82C2456C266DC4DD00AD8FF5 /* logicaPuntos.swift in Sources */,
 				82774DB52661A5BE00EB40D7 /* DatabaseManager.swift in Sources */,
 				82995FDB26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift in Sources */,
 				82995FDF26618A8300A4FBE8 /* ProblemaViewController.swift in Sources */,
 				827454A3266B9EEF00513881 /* ProfileInfoHeaderCollectionReusableView.swift in Sources */,
 				827454A7266B9F3000513881 /* ProfileTabsCollectionReusableView.swift in Sources */,
 				82995FD4266189D600A4FBE8 /* CompetenciaStartViewController.swift in Sources */,
+				8A618C65266D981900C85194 /* LeaderboardTableViewCell.swift in Sources */,
 				826082FD266CB73B00E72DFB /* NavigationGradientViewController.swift in Sources */,
 				82995FBE2661871C00A4FBE8 /* ProblemasViewController.swift in Sources */,
 				82995FC22661872C00A4FBE8 /* ConfigViewController.swift in Sources */,
@@ -426,6 +437,7 @@
 				82995FE226618D1000A4FBE8 /* EmpiezaViewController.swift in Sources */,
 				82995F9E2661843E00A4FBE8 /* SceneDelegate.swift in Sources */,
 				829180FA266C33FA008973AA /* Models.swift in Sources */,
+				82C24565266DB5FB00AD8FF5 /* ProblemaListaTableViewCell.swift in Sources */,
 				8274545F266B638B00513881 /* CreditsViewController.swift in Sources */,
 				82745463266B75AC00513881 /* EditProfileViewController.swift in Sources */,
 			);

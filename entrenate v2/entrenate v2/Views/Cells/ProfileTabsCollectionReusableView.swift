@@ -23,6 +23,7 @@ class ProfileTabsCollectionReusableView: UICollectionReusableView {
         boton.clipsToBounds = true
         boton.tintColor = .systemGreen
         boton.setBackgroundImage(UIImage(systemName: "info"), for: .normal)
+        boton.backgroundColor = .red
         return boton
     }()
     
@@ -31,6 +32,7 @@ class ProfileTabsCollectionReusableView: UICollectionReusableView {
         boton.clipsToBounds = true
         boton.tintColor = .secondarySystemBackground
         boton.setBackgroundImage(UIImage(systemName: "house"), for: .normal)
+        boton.backgroundColor = .blue
         return boton
     }()
     
@@ -39,6 +41,7 @@ class ProfileTabsCollectionReusableView: UICollectionReusableView {
         boton.clipsToBounds = true
         boton.tintColor = .secondarySystemBackground
         boton.setBackgroundImage(UIImage(systemName: "person"), for: .normal)
+        boton.backgroundColor = .yellow
         return boton
     }()
     
@@ -79,7 +82,7 @@ class ProfileTabsCollectionReusableView: UICollectionReusableView {
         let size = height/2
         let widthBt = ((width/3)-size)/3
         infoButton.frame = CGRect(x: widthBt, y: height/4, width: size, height: size)
-        statsButton.frame = CGRect(x: infoButton.right + 2*widthBt, y: height/4, width: size, height: size)
-        achievementsButton.frame = CGRect(x: statsButton.right + 2*widthBt, y: height/4, width: size, height: size)
+        statsButton.frame = CGRect(x: width/3 + widthBt, y: height/4, width: size, height: size)
+        achievementsButton.frame = CGRect(x: 2*(width/3) + widthBt, y: height/4, width: size, height: size)
     }
 }

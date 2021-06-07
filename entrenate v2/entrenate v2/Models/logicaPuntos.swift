@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LogicaPuntos {
+class LogicaPuntos: NSObject {
     
     let niveles = ["Introductorio", "Regional", "Estatal", "Nacional", "Internacional"]
     

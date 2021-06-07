@@ -19,7 +19,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     
     private let tableView: UITableView = {
         let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "leaderboard")
+        table.register(LeaderboardTableViewCell.self, forCellReuseIdentifier: LeaderboardTableViewCell.identifier)
         return table
     }()
     
@@ -41,25 +41,23 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "leaderboard", for: indexPath)
-        cell.textLabel?.text = userData[indexPath.row].user
-        cell.backgroundColor = UIColor(red: 0, green: 0.50, blue: 0.22, alpha: 1)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: LeaderboardTableViewCell.identifier, for: indexPath) as? LeaderboardTableViewCell
 
+        var placeImg: String
         
         switch(indexPath.row){
         case 0:
-            cell.imageView?.image = UIImage(named: "1st")
+            placeImg = "1st"
         case 1:
-            cell.imageView?.image = UIImage(named: "2nd")
+            placeImg = "2nd"
         case 2:
-            cell.imageView?.image = UIImage(named: "3rd")
+            placeImg = "3rd"
         default:
-            cell.imageView?.image = UIImage(named: "4th+")
-            
+            placeImg = "4th+"
         }
+        cell?.configure(imgName: placeImg, lbPointsText: String(userData[indexPath.row].points), lbUserText: userData[indexPath.row].user )
 
-        return cell
+            return cell!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

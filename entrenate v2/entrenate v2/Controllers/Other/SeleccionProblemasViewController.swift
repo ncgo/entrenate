@@ -46,6 +46,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ProblemaViewController()
+        vc.totalTime = totalTime
         navigationController?.present(vc, animated: true, completion: nil)
     }
     
@@ -165,6 +166,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     @IBAction private func numProblemas(num: Int) {
         cardTitulo.category = "\(num) problemas"
     }
+
     
     // MARK: -Models
     private func configureModels() {

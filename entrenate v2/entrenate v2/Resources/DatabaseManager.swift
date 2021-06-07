@@ -27,14 +27,17 @@ public class DatabaseManager {
     /// - email: String representing email
     /// - username: String representing username
     /// - completion: Async callback for result if database entry suceeded
-    public func insertNewUser(with email: String, username: String, escuela: String, completion: @escaping (Bool) -> Void) {
+    public func insertNewUser(with name: String, email: String, username: String, Ciudad: String, nivelEducativo: String, gradoEtapa: String, escuela: String,  completion: @escaping (Bool) -> Void) {
         let user: [String: Any] = [
+            "name": name,
             "username": username,
             "email": email,
             "nivelUsuarioJuego": 0,
             "puntosAcumulados" : 0,
             "escuela" : escuela,
-            "ciudad" : "Ciudad Juarez",
+            "ciudad" : Ciudad,
+            "nivelEducativo": nivelEducativo,
+            "grado": gradoEtapa,
             "estado" : "Chihuahua"
         ]
         database.child(email.safeDatabaseKey()).setValue(

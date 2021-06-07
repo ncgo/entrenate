@@ -43,7 +43,7 @@
 		829DA98C266CFC3A0053B159 /* ResultadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DA98B266CFC390053B159 /* ResultadosViewController.swift */; };
 		82B37284266C970800D94620 /* GradientTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B37283266C970800D94620 /* GradientTabBarController.swift */; };
 		82C24565266DB5FB00AD8FF5 /* ProblemaListaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C24564266DB5FB00AD8FF5 /* ProblemaListaTableViewCell.swift */; };
-		82C24568266DBDC500AD8FF5 /* problemaNivelLogica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C24567266DBDC500AD8FF5 /* problemaNivelLogica.swift */; };
+		82C2456C266DC4DD00AD8FF5 /* logicaPuntos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C2456B266DC4DD00AD8FF5 /* logicaPuntos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,7 +86,7 @@
 		82B37263266C7C4B00D94620 /* entrenate v2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "entrenate v2.entitlements"; sourceTree = "<group>"; };
 		82B37283266C970800D94620 /* GradientTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTabBarController.swift; sourceTree = "<group>"; };
 		82C24564266DB5FB00AD8FF5 /* ProblemaListaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemaListaTableViewCell.swift; sourceTree = "<group>"; };
-		82C24567266DBDC500AD8FF5 /* problemaNivelLogica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = problemaNivelLogica.swift; sourceTree = "<group>"; };
+		82C2456B266DC4DD00AD8FF5 /* logicaPuntos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logicaPuntos.swift; sourceTree = "<group>"; };
 		DFC88275DB8F873B24C034E3 /* Pods_entrenate_v2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_entrenate_v2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F22E84A8B4FD7A9E2C1E0440 /* Pods-entrenate v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-entrenate v2.release.xcconfig"; path = "Target Support Files/Pods-entrenate v2/Pods-entrenate v2.release.xcconfig"; sourceTree = "<group>"; };
 		F771A0B02291BA70426E35C0 /* Pods-entrenate v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-entrenate v2.debug.xcconfig"; path = "Target Support Files/Pods-entrenate v2/Pods-entrenate v2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				829180F9266C33FA008973AA /* Models.swift */,
-				82C24567266DBDC500AD8FF5 /* problemaNivelLogica.swift */,
+				82C2456B266DC4DD00AD8FF5 /* logicaPuntos.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -409,6 +409,7 @@
 				82774DD22661AA8C00EB40D7 /* Extensions.swift in Sources */,
 				82995FD12661899200A4FBE8 /* RegisterViewController.swift in Sources */,
 				82995FA02661843E00A4FBE8 /* HomeViewController.swift in Sources */,
+				82C2456C266DC4DD00AD8FF5 /* logicaPuntos.swift in Sources */,
 				82774DB52661A5BE00EB40D7 /* DatabaseManager.swift in Sources */,
 				82995FDB26618A1D00A4FBE8 /* SeleccionProblemasViewController.swift in Sources */,
 				82995FDF26618A8300A4FBE8 /* ProblemaViewController.swift in Sources */,
@@ -423,7 +424,6 @@
 				82995FD8266189E700A4FBE8 /* EntrenamientoStartViewController.swift in Sources */,
 				82774DB82661A68200EB40D7 /* AuthManager.swift in Sources */,
 				82B37284266C970800D94620 /* GradientTabBarController.swift in Sources */,
-				82C24568266DBDC500AD8FF5 /* problemaNivelLogica.swift in Sources */,
 				82995F9C2661843E00A4FBE8 /* AppDelegate.swift in Sources */,
 				82995FCD2661898600A4FBE8 /* LoginViewController.swift in Sources */,
 				827454C3266C27AA00513881 /* AreaCollectionViewCell.swift in Sources */,

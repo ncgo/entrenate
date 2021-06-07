@@ -13,6 +13,7 @@ class RegisterViewController: UIViewController {
         static let verdeOmmch = UIColor(red: 0, green: 0.50, blue: 0.22, alpha: 1.00)
     }
     
+    
     private let usernameField: UITextField = {
         let field = UITextField()
         field.placeholder = "Nombre de usuario"

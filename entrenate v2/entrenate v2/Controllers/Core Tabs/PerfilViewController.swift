@@ -101,3 +101,19 @@ extension PerfilViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
     }
 }
+
+extension PerfilViewController: ProfileTabsCollectionReusableViewDelegate {
+    func didTapInfoButton() {
+        
+    }
+    
+    func didTapStatsButton() {
+        
+    }
+    
+    func didTapAchievementsButton() {
+        
+    }
+    
+    
+}

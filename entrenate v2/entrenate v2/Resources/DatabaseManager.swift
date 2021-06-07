@@ -70,5 +70,23 @@ public class DatabaseManager {
         })
     }
     
-    
+    /// Log sesion de competencia
+    /*
+    public func logSesionCompetencia(t0: String, numProblemas: String) {
+        let sesion: [String: Any] = [
+            "tiempoEscogido":
+        ]
+        database.child(email.safeDatabaseKey()).setValue(
+            user) { error,  _ in
+            if error == nil {
+                //success
+                completion(true)
+                return
+            } else {
+                // failed
+                completion(false)
+                return
+            }
+        }
+    }*/
 }

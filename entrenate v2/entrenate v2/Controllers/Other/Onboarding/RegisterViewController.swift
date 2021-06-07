@@ -299,7 +299,7 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             return
         }
         
-        AuthManager.shared.registerNewUser(name: name, username: username, email: email, password: password, Ciudad: Ciudad, nivelEducativo: nivelEducativo, gradoEtapa: gradoEtapa, escuela: escuela) { registered in
+        AuthManager.shared.registerNewUser(name: name, username: username, email: email, password: password, Ciudad: Ciudad, nivelEducativo: "Secundaria", gradoEtapa: gradoEtapa, escuela: escuela) { registered in
             DispatchQueue.main.async {
                 if registered {
                     // good to go

@@ -11,12 +11,19 @@ class ProblemaViewController: UIViewController {
     
     var countDownTimer: Timer!
     var totalTime: Int!
+    var descripcionProblema: String!
+    
+    let descripcion: UILabel = {
+        let descripcion = UILabel()
+        descripcion.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis risus id felis pulvinar, nec pretium mi tempus. Nulla facilisi. Aliquam eget justo ut libero sagittis maximus nec sit amet lacus. Donec blandit est eget ipsum porta, ut pharetra ex tincidunt. Aenean vitae hendrerit mauris."
+        return descripcion
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(labelTimer)
+        view.addSubview(descripcion)
         createTimer(tiempo: totalTime)
-        view.backgroundColor = .systemTeal
     }
     
     private let labelTimer: UILabel = {

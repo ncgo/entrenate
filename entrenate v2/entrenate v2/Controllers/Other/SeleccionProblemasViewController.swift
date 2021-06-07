@@ -104,7 +104,6 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     }
     
     private func getSeconds(tiempo: String) -> Double {
-        return 15
         if tiempo == "15 minutos" {
             return 15*60
         } else if tiempo == "30 minutos" {

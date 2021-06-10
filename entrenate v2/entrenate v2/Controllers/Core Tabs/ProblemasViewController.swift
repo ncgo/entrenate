@@ -22,7 +22,7 @@ class ProblemasViewController: UIViewController {
         //configure
         card.backgroundImage = UIImage(named: "fondo gradiente rojo opacity")
         card.icon = UIImage(named: "convocatoria")
-        card.title = "Listadode Problemas"
+        card.title = "Listado de Problemas"
         card.itemTitle = ""
         card.itemSubtitle = ""
         card.itemTitleSize = 20

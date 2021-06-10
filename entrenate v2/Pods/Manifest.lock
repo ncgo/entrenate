@@ -149,6 +149,7 @@ PODS:
   - PromisesObjC (1.2.12)
   - Protobuf (3.17.0)
   - RAMAnimatedTabBarController (5.2.0)
+  - SAConfettiView (0.1.8)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
@@ -167,6 +168,7 @@ DEPENDENCIES:
   - Firebase/Performance
   - Firebase/Storage
   - RAMAnimatedTabBarController
+  - SAConfettiView
   - SDWebImage
   - ShimmerSwift
   - TransitionButton
@@ -197,6 +199,7 @@ SPEC REPOS:
     - PromisesObjC
     - Protobuf
     - RAMAnimatedTabBarController
+    - SAConfettiView
     - SDWebImage
     - ShimmerSwift
     - TransitionButton
@@ -226,10 +229,11 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Protobuf: 7327d4444215b5f18e560a97f879ff5503c4581c
   RAMAnimatedTabBarController: 6863a386e7ae2ab227cd60aa73ab8ff56cdacfdd
+  SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   ShimmerSwift: f7ed2daf9c246de8299dfd9e12c6ab465cba9842
   TransitionButton: 36283346e17c64775a1b3bc3a7a72940a367de1f
 
-PODFILE CHECKSUM: 56bede6bd6a6634c6ca6d1dc291b6edbbbf7d3bd
+PODFILE CHECKSUM: e769780e2c7e961a6c1f9c84d49c2a11f7dc1e7e
 
 COCOAPODS: 1.10.1

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SAConfettiView
 
 class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -27,6 +28,9 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         return table
     }()
     
+    let confettiView = SAConfettiView()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
@@ -35,11 +39,27 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.backgroundColor = UIColor(red: 0, green: 0.50, blue: 0.22, alpha: 1)
         tableView.delegate = self
         tableView.dataSource = self
-
+        configConfetti()
+        
+        
         // Do any additional setup after loading the view.
     }
     
-    
+    func configConfetti(){
+        self.view.addSubview(confettiView)
+        confettiView.frame = self.view.bounds
+        confettiView.intensity = 0.75
+        confettiView.startConfetti()
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: {_ in
+            self.confettiView.stopConfetti()
+        })
+        
+        
+        Timer.scheduledTimer(withTimeInterval: 4, repeats: false, block: {_ in
+            self.confettiView.removeFromSuperview()
+        })
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userData.count + 1
@@ -76,11 +96,12 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
             placeImg = "4th+"
         }
         
-        let sortedPoints = userData.sorted {
+        userData = userData.sorted {
             $0.points > $1.points
         }
         
-        cell?.configure(imgName: placeImg, lbPointsText: String(sortedPoints[indexPath.row].points), lbUserText: sortedPoints[indexPath.row].user)
+        
+        cell?.configure(imgName: placeImg, lbPointsText: String(userData[indexPath.row].points), lbUserText: userData[indexPath.row].user)
 
             return cell!
     }

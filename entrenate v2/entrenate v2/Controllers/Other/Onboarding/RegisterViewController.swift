@@ -15,9 +15,9 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var semestresPrepa = ["Primer Semestre", "Segundo Semestre", "Tercer Semestre", "Cuarto Semestre", "Quinto Semestre", "Sexto Semestre"]
     var Ciudades = ["Ciudad Juárez", "Chihuahua", "Cuauhtémoc", "Delicias", "Saucillo", "Camargo", "Parral", "Otra"]
     
-    var etapa: String!
-    var gradoEtapa: String!
-    var Ciudad: String!
+    var etapa: String = "Primaria"
+    var gradoEtapa: String = "Primer Grado"
+    var Ciudad: String = "Ciudad Juárez"
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if pickerView == pickerCiudad {

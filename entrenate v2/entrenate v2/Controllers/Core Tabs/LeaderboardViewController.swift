@@ -12,6 +12,9 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     
     let defaults = UserDefaults.standard
     
+    
+//    DatabaseManager.shared.readUserData(dbKey: )
+    
     struct LeaderboardCells {
         let user: String
         let points: Int
@@ -19,7 +22,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     
 
     
-    var userData = [LeaderboardCells(user: "PedroA" , points: 125), LeaderboardCells(user: "UrsulaC" , points: 400), LeaderboardCells(user: "JaimeL" , points: 340), LeaderboardCells(user: "EstherA" , points: 235), LeaderboardCells(user: "ItziarI" , points: 25), LeaderboardCells(user: "MiguelH" , points: 800)]
+    var userData = [LeaderboardCells(user: "Pedro A" , points: 125), LeaderboardCells(user: "Ursula C" , points: 400), LeaderboardCells(user: "Jaime L" , points: 340), LeaderboardCells(user: "Esther A" , points: 235), LeaderboardCells(user: "Itziar I" , points: 25), LeaderboardCells(user: "Miguel H" , points: 800)]
     
     
     private let tableView: UITableView = {
@@ -78,6 +81,8 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         
         if let username = defaults.string(forKey: "Username") {
             sUsername = username
+        } else {
+            sUsername = "@Username"
         }
         
         let newElem = LeaderboardCells(user: sUsername, points: iPoints)

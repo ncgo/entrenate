@@ -138,6 +138,8 @@ final class ConfigViewController: UIViewController {
                             self.navigationController?.popToRootViewController(animated: false)
                             self.tabBarController?.selectedIndex = 0
                         }
+                        
+                        
                     } else {
                         // Error occurred
                         fatalError("No se pudo salir al cerrar sesión")

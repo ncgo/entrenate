@@ -178,14 +178,6 @@ class ProblemaViewController: UIViewController {
     
     private func checkAnswer(respuestaRecibida: String, respuestaCorrecta: String) {
         if respuestaRecibida == respuestaCorrecta {
-            var userPoints: Int!
-            
-            if let puntos = defaults.string(forKey: "PuntosAcumulados") {
-                userPoints = Int(puntos)!
-            }
-            
-            defaults.set(userPoints, forKey: "PuntosAcumulados")
-            
             configConfetti()
             Timer.scheduledTimer(withTimeInterval: 4, repeats: false, block: {_ in
                 self.dismiss(animated: true, completion: nil)

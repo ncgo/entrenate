@@ -12,6 +12,8 @@ class ProblemaViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     
+    var problemInfo = "Book, Year"
+    
     struct Problema {
         var tipoProblema:String!
         var descProblema:String!
@@ -113,6 +115,7 @@ class ProblemaViewController: UIViewController {
         view.addSubview(respuestaInput)
         view.addSubview(areaLabel)
         botonEnviar.addTarget(self, action: #selector(didTapEnviar), for: .touchUpInside)
+        botonInfo.addTarget(self, action: #selector(didTapInfo), for: .touchUpInside)
         createTimer(tiempo: totalTime)
         view.backgroundColor = .systemBackground
     }
@@ -202,6 +205,7 @@ class ProblemaViewController: UIViewController {
     
     @objc private func didTapInfo() {
         let info = PopUp()
+        info.fuenteLabel.text = problemInfo
         view.addSubview(info)
     }
     

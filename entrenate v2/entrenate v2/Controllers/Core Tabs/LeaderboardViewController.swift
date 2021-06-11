@@ -13,8 +13,6 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     let defaults = UserDefaults.standard
     
     
-//    DatabaseManager.shared.readUserData(dbKey: )
-    
     struct LeaderboardCells {
         let user: String
         let points: Int
@@ -36,6 +34,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        insertUserToLeaderboard()
         view.addSubview(tableView)
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 1, bottom: 0, right: 1)
         tableView.frame = view.bounds
@@ -43,9 +42,18 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.delegate = self
         tableView.dataSource = self
         configConfetti()
+//        tableView.refreshControl = UIRefreshControl()
+//        tableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+    }
+    
+    @objc func didPullToRefresh(){
+        print("Actualizando")
+        tableView.removeFromSuperview()
+        view.addSubview(tableView)
         
-        
-        // Do any additional setup after loading the view.
+        DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
+        }
     }
     
     func configConfetti(){
@@ -65,15 +73,40 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userData.count + 1
+        return userData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LeaderboardTableViewCell.identifier, for: indexPath) as? LeaderboardTableViewCell
 
+        var placeImg: String!
+        
+        switch(indexPath.row){
+        case 0:
+            placeImg = "1st"
+        case 1:
+            placeImg = "2nd"
+        case 2:
+            placeImg = "3rd"
+        default:
+            placeImg = "4th+"
+        }
+        
+        sortData()
+        
+        cell?.configure(imgName: placeImg, lbPointsText: String(userData[indexPath.row].points), lbUserText: userData[indexPath.row].user)
+
+            return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+
+    
+    func insertUserToLeaderboard(){
         var sUsername: String!
         var iPoints: Int!
-        var placeImg: String!
         
         if let puntos = defaults.string(forKey: "PuntosAcumulados") {
             iPoints = Int(puntos)!
@@ -88,33 +121,14 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         let newElem = LeaderboardCells(user: sUsername, points: iPoints)
         
         userData.append(newElem)
-
-        
-        switch(indexPath.row){
-        case 0:
-            placeImg = "1st"
-        case 1:
-            placeImg = "2nd"
-        case 2:
-            placeImg = "3rd"
-        default:
-            placeImg = "4th+"
-        }
-        
+    }
+    
+    func sortData(){
         userData = userData.sorted {
             $0.points > $1.points
         }
-        
-        
-        cell?.configure(imgName: placeImg, lbPointsText: String(userData[indexPath.row].points), lbUserText: userData[indexPath.row].user)
-
-            return cell!
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-
     /*
     // MARK: - Navigation
 

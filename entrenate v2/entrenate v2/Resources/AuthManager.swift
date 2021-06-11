@@ -79,9 +79,13 @@ public class AuthManager {
         }
     }
     
-    
-    public func changeRequest(completion: (Bool) -> Void) {
+/*
+    public func changeRequest(username: String, ) {
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = username
+        changeRequest?.photoURL = url
         
+        changeRequest?.commitChanges(completion: )
     }
+ */
 }

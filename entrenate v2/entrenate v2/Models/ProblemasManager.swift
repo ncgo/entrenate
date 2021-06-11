@@ -11,6 +11,8 @@ import Firebase
 class ProblemasManager {
     let db = Firestore.firestore()
     
+    var listaProblemas = [Problema]()
+    
     func getAllProblems() {
         db.collection("ProblemasApp").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -24,36 +26,29 @@ class ProblemasManager {
         }
     }
     
-    func getProblemsByLevel(nivelProblema: String) -> [Problema] {
+    func getProblemsByLevel(numProblemas: Int, nivelProblema: String) -> [Problema] {
         let problemas = db.collection("ProblemasApp")
         let problemasNivel = problemas.whereField("nivel", isEqualTo: nivelProblema)
-        print("check")
-        var listaProblemas = [Problema]()
-        problemasNivel.getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let problema: Problema = try! document.decoded()
-                    print(type(of: problema))
-                    listaProblemas.append(problema)
-                }
-            }
-        }
-        return listaProblemas
-    }
-    
-    func getProblemsByLevelByTime(numProblemas: Int, nivelProblema: String) -> [Problema] {
-        var listaProblemasDisponibles = getProblemsByLevel(nivelProblema: nivelProblema)
-        print(listaProblemasDisponibles.count)
-        print("Hey \(numProblemas)")
-        print(nivelProblema)
         var listaSesion = [Problema]()
-        for _ in Range(0...numProblemas) {
-            let random = Int.random(in: 0..<listaProblemasDisponibles.count)
-            listaSesion.append(listaProblemasDisponibles[random])
-            listaProblemasDisponibles.remove(at: random)
+        problemasNivel.getDocuments() { [self](querySnapshot, err) in
+            let documents = querySnapshot!.documents
+            try! documents.forEach { document in
+                let problema: Problema = try document.decoded()
+                listaProblemas.append(problema)
+            }
+            listaSesion = getProblemsByLevelByTime(numProblemas: numProblemas, nivelProblema: nivelProblema, listaProblema: listaProblemas)
         }
+        return listaSesion
+    }
+
+    func getProblemsByLevelByTime(numProblemas: Int, nivelProblema: String, listaProblema: [Problema]) -> [Problema] {
+        var listaSesion = [Problema]()
+        for _ in Range(1...numProblemas) {
+            let random = Int.random(in: 0..<listaProblemas.count)
+            listaSesion.append(listaProblema[random])
+            listaProblemas.remove(at: random)
+        }
+        print("Lista Sesion \(listaSesion.count)")
         return listaSesion
     }
 }

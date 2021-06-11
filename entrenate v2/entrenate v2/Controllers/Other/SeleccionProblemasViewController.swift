@@ -38,7 +38,8 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = problemas[indexPath.row].area
+        print(indexPath.row)
+        //cell.textLabel?.text = problemas[indexPath.row].area
         return cell
     }
     
@@ -203,9 +204,12 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     
     private func seleccionProblemas(nivelproblema: String, numProblemas: Int) {
         let problemManager = ProblemasManager()
-        let lista = problemManager.getProblemsByLevel(nivelProblema: nivelproblema)
-        print(lista)
-        problemas = problemManager.getProblemsByLevelByTime(numProblemas: cantidadProblemas, nivelProblema: nivelproblema)
+        // problemas = problemManager.getProblemsByLevel(nivelProblema: nivelproblema)
+        // print(lista)
+        problemas = problemManager.getProblemsByLevel(numProblemas: cantidadProblemas, nivelProblema: nivelproblema)
+        //print(problemas)
+        tableView.reloadData()
+        
     }
 }
 

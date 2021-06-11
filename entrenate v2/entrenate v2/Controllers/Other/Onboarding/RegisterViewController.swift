@@ -28,6 +28,8 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
     }
     
+    var activeTextField : UITextField? = nil
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == pickerNivelEducativo {
             if component == 0 {
@@ -266,34 +268,43 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         escuelaField.delegate = self
         let tap = UITapGestureRecognizer(target: self, action: #selector(quitaTeclado))
         view.addGestureRecognizer(tap)
-        NotificationCenter.default.addObserver(self, selector: #selector(tecladoCambia), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(tecladoCambia), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(tecladoCambia), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(RegisterViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(RegisterViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @IBAction func quitaTeclado() {
         view.endEditing(true)
     }
     
-    @objc func tecladoCambia(notification: Notification) {
-        print("Teclado aparece: \(notification.name.rawValue)")
-        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            return
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+           // if keyboard size is not available for some reason, dont do anything
+           return
         }
         
-        if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
-            view.frame.origin.y = -keyboardRect.height
-        }
-        else {
-            view.frame.origin.y = 0
-        }
-        
+        var shouldMoveViewUp = false
+
+          // if active text field is not nil
+          if let activeTextField = activeTextField {
+
+            let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
+            
+            let topOfKeyboard = self.view.frame.height - keyboardSize.height
+
+            // if the bottom of Textfield is below the top of keyboard, move up
+            if bottomOfTextField > topOfKeyboard {
+              shouldMoveViewUp = true
+            }
+          }
+
+          if(shouldMoveViewUp) {
+            self.view.frame.origin.y = 0 - keyboardSize.height
+          }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+      // move back the root view origin to zero
+      self.view.frame.origin.y = 0
     }
     
     override func viewDidLayoutSubviews() {
@@ -349,8 +360,13 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 }
 
 
-
 extension RegisterViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.activeTextField = textField
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.activeTextField = nil
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == nameField{
             usernameField.becomeFirstResponder()

@@ -30,13 +30,15 @@ class ProblemasManager {
         let problemas = db.collection("ProblemasApp")
         let problemasNivel = problemas.whereField("nivel", isEqualTo: nivelProblema)
         var listaSesion = [Problema]()
-        problemasNivel.getDocuments() { [self](querySnapshot, err) in
-            let documents = querySnapshot!.documents
-            try! documents.forEach { document in
-                let problema: Problema = try document.decoded()
-                listaProblemas.append(problema)
+        DispatchQueue.main.async {
+            problemasNivel.getDocuments() { [self](querySnapshot, err) in
+                let documents = querySnapshot!.documents
+                try! documents.forEach { document in
+                    let problema: Problema = try document.decoded()
+                    listaProblemas.append(problema)
+                }
+                listaSesion = getProblemsByLevelByTime(numProblemas: numProblemas, nivelProblema: nivelProblema, listaProblema: listaProblemas)
             }
-            listaSesion = getProblemsByLevelByTime(numProblemas: numProblemas, nivelProblema: nivelProblema, listaProblema: listaProblemas)
         }
         return listaSesion
     }
@@ -54,12 +56,12 @@ class ProblemasManager {
 }
 
 struct Problema: Codable {
-    let area: String!
-    let descripcion: String
-    let fuente: String!
-    let nivel: String
-    let respuesta: String
-    let titulo: String!
+    var area: String = "Area"
+    var descripcion: String = "Descripcion"
+    var fuente: String! = "fuente"
+    var nivel: String = "nivel"
+    var respuesta: String = "respuesta"
+    var titulo: String! = "titulo"
     
 }
 

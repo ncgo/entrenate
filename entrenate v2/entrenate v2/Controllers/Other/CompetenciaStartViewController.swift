@@ -6,6 +6,7 @@
 //
 import Cards
 import UIKit
+import Firebase
 
 class CompetenciaStartViewController: UIViewController, UIPickerViewAccessibilityDelegate, UIPickerViewDataSource {
     
@@ -114,10 +115,19 @@ class CompetenciaStartViewController: UIViewController, UIPickerViewAccessibilit
     }
     
     @objc private func didTapBotonIr() {
+        config()
         let vc = SeleccionProblemasViewController()
-        vc.tiempoSeleccionado = tiempoSeleccionado
-        vc.cantidadProblemas = cantidadProblemas(tiempo: tiempoSeleccionado)!
-        navigationController?.pushViewController(vc, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [self] in
+            print(type(of: listaSesion))
+            print(listaSesion.first)
+            vc.tiempoSeleccionado = tiempoSeleccionado
+            vc.cantidadProblemas = cantidadProblemas
+            vc.problemas = listaSesion
+            vc.puntosPorProblema = puntosPorProblema
+            vc.puntosAcumulados = puntosAcumulados
+            vc.nivelUsuario = nivelUsuario
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private func cantidadProblemas(tiempo: String) -> Int? {
@@ -131,6 +141,66 @@ class CompetenciaStartViewController: UIViewController, UIPickerViewAccessibilit
             return 12
         } else {
             return 15
+        }
+    }
+    
+    var cantidadProblemas: Int = 12
+    var puntosAcumulados: Int!
+    var puntosPorProblema: Int = 500
+    var nivelUsuario: Int = 0
+    var nivelProblema: String = "Introductorio"
+    
+    private func prepareConfig() {
+        
+    }
+    
+    
+    let db = Firestore.firestore()
+    
+    var listaProblemas = [Problema]()
+    var listaSesion = [Problema]()
+    
+    func getProblemsByLevel(numProblemas: Int, nivelProblema: String){
+        let p = db.collection("ProblemasApp")
+        let problemasNivel = p.whereField("nivel", isEqualTo: nivelProblema)
+        
+        DispatchQueue.main.async {
+            problemasNivel.getDocuments() { [self](querySnapshot, err) in
+                let documents = querySnapshot!.documents
+                try! documents.forEach { document in
+                    let problema: Problema = try document.decoded()
+                    listaProblemas.append(problema)
+                }
+                listaSesion = getProblemsByLevelByTime(numProblemas: numProblemas, nivelProblema: nivelProblema, listaProblema: listaProblemas)
+            }
+        }
+        
+    }
+
+    func getProblemsByLevelByTime(numProblemas: Int, nivelProblema: String, listaProblema: [Problema]) -> [Problema] {
+        var listaSesion = [Problema]()
+        for _ in Range(1...numProblemas) {
+            let random = Int.random(in: 0..<listaProblemas.count)
+            listaSesion.append(listaProblema[random])
+            listaProblemas.remove(at: random)
+        }
+        print("Lista Sesion \(listaSesion.count)")
+        return listaSesion
+    }
+    
+    private func config() {
+        let p = LogicaPuntos()
+        let defaults = UserDefaults.standard
+        cantidadProblemas = cantidadProblemas(tiempo: tiempoSeleccionado)!
+        if let nivel = defaults.string(forKey: "NivelUsuarioJuego") {
+            nivelUsuario = Int(nivel)!
+            nivelProblema = p.tipoProblema(nivelUsuarioJuego: nivelUsuario)
+            if let puntos = defaults.string(forKey: "PuntosAcumulados") {
+                puntosAcumulados = Int(puntos)!
+                puntosPorProblema = p.puntosProblema(nivelUsuarioJuego: Int(nivel)!)
+            }
+            print("la cantidad de problemas es \(cantidadProblemas)")
+            getProblemsByLevel(numProblemas: cantidadProblemas, nivelProblema: nivelProblema)
         }
     }
     

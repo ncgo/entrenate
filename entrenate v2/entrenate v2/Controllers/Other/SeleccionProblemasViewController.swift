@@ -28,6 +28,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     }()
     
     var problemas = [Problema]()
+    let label = "label"
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -38,14 +39,23 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        print(indexPath.row)
-        //cell.textLabel?.text = problemas[indexPath.row].area
+        print("whack \(indexPath.row)")
+        print(problemas[indexPath.row].area)
+        cell.textLabel?.text = problemas[indexPath.row].area
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ProblemaViewController()
         vc.totalTime = totalTime
+        vc.descripcionProblema = problemas[indexPath.row].descripcion
+        vc.areaProblema = problemas[indexPath.row].area
+        vc.respuestaProblema = problemas[indexPath.row].respuesta
+        vc.fuente = problemas[indexPath.row].respuesta
+        vc.puntos = puntosPorProblema
+        vc.tituloProblema = problemas[indexPath.row].titulo
+        vc.puntosAcumulados = puntosAcumulados
+        
         navigationController?.present(vc, animated: true, completion: nil)
     }
     
@@ -91,7 +101,6 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(labelTimer)
-        config()
     }
 
     
@@ -187,30 +196,6 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         
     }
     
-    private func config() {
-        let p = LogicaPuntos()
-        let defaults = UserDefaults.standard
-        if let nivel = defaults.string(forKey: "NivelUsuarioJuego") {
-            nivelUsuario = Int(nivel)!
-            nivelProblema = p.tipoProblema(nivelUsuarioJuego: nivelUsuario)
-            if let puntos = defaults.string(forKey: "PuntosAcumulados") {
-                puntosAcumulados = Int(puntos)!
-                puntosPorProblema = p.puntosProblema(nivelUsuarioJuego: Int(nivel)!)
-            }
-            print("la cantidad de problemas es \(cantidadProblemas)")
-            seleccionProblemas(nivelproblema: nivelProblema, numProblemas: cantidadProblemas)
-        }
-    }
-    
-    private func seleccionProblemas(nivelproblema: String, numProblemas: Int) {
-        let problemManager = ProblemasManager()
-        // problemas = problemManager.getProblemsByLevel(nivelProblema: nivelproblema)
-        // print(lista)
-        problemas = problemManager.getProblemsByLevel(numProblemas: cantidadProblemas, nivelProblema: nivelproblema)
-        //print(problemas)
-        tableView.reloadData()
-        
-    }
 }
 
 

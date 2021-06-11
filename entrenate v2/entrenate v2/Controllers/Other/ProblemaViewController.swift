@@ -14,21 +14,15 @@ class ProblemaViewController: UIViewController {
     
     var problemInfo = "Book, Year"
     
-    struct Problema {
-        var tipoProblema:String!
-        var descProblema:String!
-        var nomProblema:String!
-        var respProblema:String!
-        var imgProblema:UIImage!
-        
-    }
-    
     var countDownTimer: Timer!
     var totalTime: Int!
     var descripcionProblema: String!
     var tituloProblema: String!
     var areaProblema: String!
     var respuestaProblema: String!
+    var fuente: String!
+    var puntos: Int!
+    var puntosAcumulados: Int!
     let color: UIColor = .systemBlue
     var index: Int!
     
@@ -94,19 +88,13 @@ class ProblemaViewController: UIViewController {
         descripcion.numberOfLines = 0
         return descripcion
     }()
-        
-    var listaProblemas = [
-        Problema(tipoProblema: "Combinatoria", descProblema: "Rita camina de izquierda a derecha y va poniendo en su canasta los números que se encuentra en su camino. ¿Cuáles de los siguientes números pueden estar en su canasta?", nomProblema: "El camino de Rita", respProblema: "2, 3 y 5", imgProblema: nil), Problema(tipoProblema: "Teoría de Números", descProblema: "¿Cuántos cubitos se quitaron del primer bloque para obtener el segundo?", nomProblema: "Removiendo cubitos", respProblema: "7", imgProblema: nil), Problema(tipoProblema: "Combinatoria", descProblema: "La combinación de una caja fuerte es un número de tres cifras distintas. Si se sabe que las cifras son 1, 3 y 5 ¿Cuántas combinaciones son posibles?", nomProblema: "Combinaciones posibles", respProblema: "6", imgProblema: nil), Problema(tipoProblema: "Combinatoria", descProblema: "Después del primer silbido que da un entrenador de changos en el circo, los changos se quedan formados en 6 filas cada una con 4 changos. Después del segundo chiflido se forman 8 filas ¿Cuántos changos quedan en cada fila después del segundo silbido?", nomProblema: "Formación chango", respProblema: "3", imgProblema: nil), Problema(tipoProblema: "Combinatoria", descProblema: "Sofía dibuja canguros: uno azul, uno verde, uno rojo, uno negro, uno amarillo, uno azul, uno verde, uno rojo, etc. ¿De qué color es el 17º canguro", nomProblema: "Sofía dibuja canguros", respProblema: "Verde", imgProblema: nil)
-    ]
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let randomInt = Int.random(in: 0 ...  listaProblemas.count - 1)
-        index = randomInt
-        areaLabel.text = listaProblemas[randomInt].tipoProblema
-        titulo.text = listaProblemas[randomInt].nomProblema
-        descripcion.text = listaProblemas[randomInt].descProblema
+        areaLabel.text = areaProblema
+        titulo.text = tituloProblema
+        descripcion.text = descripcionProblema
         view.addSubview(labelTimer)
         view.addSubview(descripcion)
         view.addSubview(botonInfo)
@@ -114,6 +102,7 @@ class ProblemaViewController: UIViewController {
         view.addSubview(titulo)
         view.addSubview(respuestaInput)
         view.addSubview(areaLabel)
+        print(respuestaProblema!)
         botonEnviar.addTarget(self, action: #selector(didTapEnviar), for: .touchUpInside)
         botonInfo.addTarget(self, action: #selector(didTapInfo), for: .touchUpInside)
         createTimer(tiempo: totalTime)
@@ -187,7 +176,7 @@ class ProblemaViewController: UIViewController {
     }
     
     @objc private func didTapEnviar() {
-        checkAnswer(respuestaRecibida: respuestaInput.text!, respuestaCorrecta: listaProblemas[index].respProblema)
+        checkAnswer(respuestaRecibida: respuestaInput.text!, respuestaCorrecta: respuestaProblema)
     }
     
     private func checkAnswer(respuestaRecibida: String, respuestaCorrecta: String) {

@@ -118,6 +118,17 @@ class ProblemaViewController: UIViewController {
         botonInfo.addTarget(self, action: #selector(didTapInfo), for: .touchUpInside)
         createTimer(tiempo: totalTime)
         view.backgroundColor = .systemBackground
+        let tap = UITapGestureRecognizer(target: self, action: #selector(quitaTeclado))
+        view.addGestureRecognizer(tap)
+        NotificationCenter.default.addObserver(self, selector: #selector(tecladoCambia), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(tecladoCambia), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(tecladoCambia), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     private let labelTimer: UIButton = {
@@ -207,6 +218,25 @@ class ProblemaViewController: UIViewController {
         let info = PopUp()
         info.fuenteLabel.text = problemInfo
         view.addSubview(info)
+    }
+    
+    @IBAction func quitaTeclado() {
+        view.endEditing(true)
+    }
+    
+    @objc func tecladoCambia(notification: Notification) {
+        print("Teclado aparece: \(notification.name.rawValue)")
+        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
+            view.frame.origin.y = -keyboardRect.height
+        }
+        else {
+            view.frame.origin.y = 0
+        }
+        
     }
     
 }

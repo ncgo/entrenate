@@ -47,6 +47,10 @@ public class AuthManager {
     }
     
     public func loginUser(username: String?, email: String?, password: String, completion: @escaping (Bool) ->  Void) {
+        let defaults = UserDefaults.standard
+        let userID = Auth.auth().currentUser?.uid
+        defaults.set(userID, forKey: "userID")
+        
         if let email = email {
             //Email log in
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
@@ -73,5 +77,11 @@ public class AuthManager {
             completion(false)
             return
         }
+    }
+    
+    
+    public func changeRequest(completion: (Bool) -> Void) {
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        
     }
 }

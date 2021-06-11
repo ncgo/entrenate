@@ -91,6 +91,8 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         tableView.dataSource = self
         view.addSubview(labelTimer)
         pointConfig()
+        // let problemas = Problemas()
+        // problemas.getProblemasNivel(nivel: 0)
     }
 
     
@@ -186,13 +188,13 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     }
     
     private func pointConfig() {
-        let p = LogicaPuntos()
+        /* let p = LogicaPuntos()
         let defaults = UserDefaults.standard
         if let nivel = defaults.string(forKey: "NivelUsuarioJuego") {
             if let puntos = defaults.string(forKey: "PuntosAcumulados") {
                 puntosPorProblema = p.puntosProblema(nivelUsuarioJuego: Int(nivel)!)
             }
-        }
+        }*/
         
     }
 }

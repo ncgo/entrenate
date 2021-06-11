@@ -10,6 +10,7 @@ import Foundation
 class LogicaPuntos: NSObject {
     
     let niveles = ["Introductorio", "Regional", "Estatal", "Nacional", "Internacional"]
+    let problemas = Problemas()
     
     /// Regresa el nivel de problema que será presentado en todo el nivel
     public func tipoProblema(nivelUsuarioJuego: Int) -> String {
@@ -48,6 +49,18 @@ class LogicaPuntos: NSObject {
     /// Regresa la cantidad de puntos a descontar por respuesta incorrecta por nivel
     public func puntosIncorrecta(nivelUsuarioJuego: Int) -> Int {
         return Int(((nivelUsuarioJuego+1)*500)/5)
+    }
+    
+    /// Realiza lo necesario cuando se cambia de nivel
+    public func cambiaNivel() {
+        //let problemasDownload: String = problemas.getProblemas()
+        //print(problemasDownload)
+    }
+    
+    public func checkCambioNivel(nivel: Int, puntosAcumulados: Int) {
+        if puntosAcumulados >= puntosNivel(nivelUsuarioJuego: nivel) {
+            cambiaNivel()
+        }
     }
 }
 

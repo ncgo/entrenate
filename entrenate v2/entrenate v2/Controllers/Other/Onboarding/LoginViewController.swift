@@ -11,6 +11,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    let manager = FileManager.default
     
     struct Constantes {
         static let cornerRadius: CGFloat = 8.0
@@ -117,6 +118,21 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(tecladoCambia), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(tecladoCambia), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         // Do any additional setup after loading the view.
+        
+        guard let url = manager.urls(for: .documentDirectory,
+                                     in: .userDomainMask).first else {
+            return
+        }
+        print(url.path)
+        
+        let folderProblemas = url.appendingPathComponent("problemas")
+        do {
+            try manager.createDirectory(at: folderProblemas, withIntermediateDirectories: true, attributes: [:])
+            let fileURL = folderProblemas.appendingPathComponent("problemas.txt")
+            manager.createFile(atPath: fileURL.path, contents: nil, attributes: [FileAttributeKey.creationDate: Date()])
+        } catch {
+            print(error)
+        }
     }
     
     deinit {

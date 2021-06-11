@@ -13,8 +13,6 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     let defaults = UserDefaults.standard
     
     
-//    DatabaseManager.shared.readUserData(dbKey: )
-    
     struct LeaderboardCells {
         let user: String
         let points: Int
@@ -44,10 +42,18 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.delegate = self
         tableView.dataSource = self
         configConfetti()
-        if view.isHidden{
-        tableView.reloadData()
+//        tableView.refreshControl = UIRefreshControl()
+//        tableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+    }
+    
+    @objc func didPullToRefresh(){
+        print("Actualizando")
+        tableView.removeFromSuperview()
+        view.addSubview(tableView)
+        
+        DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
         }
-        // Do any additional setup after loading the view.
     }
     
     func configConfetti(){
@@ -86,10 +92,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
             placeImg = "4th+"
         }
         
-        userData = userData.sorted {
-            $0.points > $1.points
-        }
-        
+        sortData()
         
         cell?.configure(imgName: placeImg, lbPointsText: String(userData[indexPath.row].points), lbUserText: userData[indexPath.row].user)
 
@@ -118,6 +121,12 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         let newElem = LeaderboardCells(user: sUsername, points: iPoints)
         
         userData.append(newElem)
+    }
+    
+    func sortData(){
+        userData = userData.sorted {
+            $0.points > $1.points
+        }
     }
     
     /*

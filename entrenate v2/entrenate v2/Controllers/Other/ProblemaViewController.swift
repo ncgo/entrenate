@@ -191,17 +191,25 @@ class ProblemaViewController: UIViewController {
     }
     
     private func checkAnswer(respuestaRecibida: String, respuestaCorrecta: String) {
-        var puntosAcumulados = 0
+        var puntosUsuario: Int!
+        if let puntosAcumulados = defaults.string(forKey: "PuntosAcumulados"){
+            puntosUsuario = Int(puntosAcumulados)!
+        }
         if respuestaRecibida == respuestaCorrecta {
             configConfetti()
+            puntosUsuario += 100
+            defaults.setValue(puntosUsuario, forKey: "PuntosAcumulados")
             Timer.scheduledTimer(withTimeInterval: 4, repeats: false, block: {_ in
                 self.dismiss(animated: true, completion: nil)
             })
             
         } else {
-            // Restar Puntos, respuesta incorrecta
+            if puntosUsuario >= 100 {
+                puntosUsuario -= 100
+                defaults.setValue(puntosUsuario, forKey: "PuntosAcumulados")
+            } else {}
         }
-        //Update puntosAcumulados
+       
     }
     
     func configConfetti(){

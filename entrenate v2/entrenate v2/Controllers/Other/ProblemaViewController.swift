@@ -201,7 +201,8 @@ class ProblemaViewController: UIViewController {
     }
     
     @objc private func didTapInfo() {
-        //Present popover with fuente del problema
+        let info = PopUp()
+        view.addSubview(info)
     }
     
 }

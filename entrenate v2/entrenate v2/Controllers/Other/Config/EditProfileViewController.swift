@@ -25,12 +25,13 @@ final class EditProfileViewController: UIViewController, UITableViewDataSource {
     }()
     
     private var models = [[EditProfileFormModel]]()
+    let profilePhotoButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureModels()
         view.backgroundColor = Constantes.verdeOmmch
-        tableView.tableHeaderView = createTableHeaderView()
+        tableView.tableHeaderView = createTableHeaderView(profilePhotoButton: profilePhotoButton)
         tableView.dataSource = self
         view.addSubview(tableView)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Guardar", style: .done, target: self, action: #selector(didTapSave))
@@ -63,7 +64,7 @@ final class EditProfileViewController: UIViewController, UITableViewDataSource {
     
     // MARK: - Tableview
     
-    private func createTableHeaderView() -> UIView {
+    private func createTableHeaderView(profilePhotoButton: UIButton) -> UIView {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: view.height/4).integral)
         let size = header.height/1.5
         let profilePhotoButton = UIButton(frame: CGRect(x: (view.width - size)/2, y: (header.height - size)/2, width: size, height: size))
@@ -72,15 +73,11 @@ final class EditProfileViewController: UIViewController, UITableViewDataSource {
         profilePhotoButton.layer.masksToBounds = true
         profilePhotoButton.tintColor = .label
         profilePhotoButton.layer.cornerRadius = size/2
-        profilePhotoButton.addTarget(self, action: #selector(didTapProfilePhotoButton), for: .touchUpInside)
+        profilePhotoButton.addTarget(self, action: #selector(didTapChangeProfilePicture), for: .touchUpInside)
         profilePhotoButton.setBackgroundImage(UIImage(named: "pp"), for: .normal)
         profilePhotoButton.layer.borderWidth = 1
         profilePhotoButton.layer.borderColor = Constantes.verdeOmmch.cgColor
         return header
-    }
-    
-    @objc private func didTapProfilePhotoButton() {
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -122,14 +119,19 @@ final class EditProfileViewController: UIViewController, UITableViewDataSource {
             
         }))
         actionSheet.addAction(UIAlertAction(title: "Escoge de tu carrete", style: .default, handler: { _ in
-            
+            var imagePicker:UIImagePickerController!
+            imagePicker = UIImagePickerController()
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.delegate = self
+            self.present(imagePicker, animated: true, completion: nil)
+            print("Ay")
         }))
         actionSheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
         actionSheet.popoverPresentationController?.sourceView = view
         actionSheet.popoverPresentationController?.sourceRect = view.bounds
         present(actionSheet, animated: true)
     }
-
 }
 
 extension EditProfileViewController: FormTableViewCellDelegate {
@@ -138,4 +140,23 @@ extension EditProfileViewController: FormTableViewCellDelegate {
         print(updatedModel.value ?? "nil")
         
     }
+}
+
+extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print("Hello")
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage.rawValue] as? UIImage {
+            self.profilePhotoButton.setBackgroundImage(pickedImage, for: .normal)
+            print("Hey")
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }

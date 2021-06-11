@@ -60,6 +60,7 @@ public class DatabaseManager {
             guard let userData = snapshot.value as? [String: Any] else { return }
             let defaults = UserDefaults.standard
             defaults.set(userData["username"], forKey: "Username")
+            defaults.set(userData["name"], forKey: "Name")
             defaults.set(userData["email"], forKey: "Email")
             defaults.set(userData["nivelUsuarioJuego"], forKey: "NivelUsuarioJuego")
             defaults.set(userData["puntosAcumulados"], forKey: "PuntosAcumulados")

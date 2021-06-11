@@ -105,7 +105,7 @@ class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
         if let username = defaults.string(forKey: "Username") {
             usernameLabel.text = username
         }
-        if let nombre = defaults.string(forKey: "Nombre") {
+        if let nombre = defaults.string(forKey: "Name") {
             nameLabel.text = nombre
         }
         if let escuela = defaults.string(forKey: "Escuela") {

@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import SAConfettiView
 
 class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let defaults = UserDefaults.standard
+    
+    
+//    DatabaseManager.shared.readUserData(dbKey: )
     
     struct LeaderboardCells {
         let user: String
@@ -18,7 +22,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     
 
     
-    var userData = [LeaderboardCells(user: "PedroA" , points: 125), LeaderboardCells(user: "UrsulaC" , points: 400), LeaderboardCells(user: "JaimeL" , points: 340), LeaderboardCells(user: "EstherA" , points: 235), LeaderboardCells(user: "ItziarI" , points: 25), LeaderboardCells(user: "MiguelH" , points: 800)]
+    var userData = [LeaderboardCells(user: "Pedro A" , points: 125), LeaderboardCells(user: "Ursula C" , points: 400), LeaderboardCells(user: "Jaime L" , points: 340), LeaderboardCells(user: "Esther A" , points: 235), LeaderboardCells(user: "Itziar I" , points: 25), LeaderboardCells(user: "Miguel H" , points: 800)]
     
     
     private let tableView: UITableView = {
@@ -26,6 +30,9 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         table.register(LeaderboardTableViewCell.self, forCellReuseIdentifier: LeaderboardTableViewCell.identifier)
         return table
     }()
+    
+    let confettiView = SAConfettiView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +42,27 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.backgroundColor = UIColor(red: 0, green: 0.50, blue: 0.22, alpha: 1)
         tableView.delegate = self
         tableView.dataSource = self
-
+        configConfetti()
+        
+        
         // Do any additional setup after loading the view.
     }
     
-    
+    func configConfetti(){
+        self.view.addSubview(confettiView)
+        confettiView.frame = self.view.bounds
+        confettiView.intensity = 0.75
+        confettiView.startConfetti()
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: {_ in
+            self.confettiView.stopConfetti()
+        })
+        
+        
+        Timer.scheduledTimer(withTimeInterval: 4, repeats: false, block: {_ in
+            self.confettiView.removeFromSuperview()
+        })
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userData.count + 1
@@ -58,6 +81,8 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         
         if let username = defaults.string(forKey: "Username") {
             sUsername = username
+        } else {
+            sUsername = "@Username"
         }
         
         let newElem = LeaderboardCells(user: sUsername, points: iPoints)
@@ -76,11 +101,12 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
             placeImg = "4th+"
         }
         
-        let sortedPoints = userData.sorted {
+        userData = userData.sorted {
             $0.points > $1.points
         }
         
-        cell?.configure(imgName: placeImg, lbPointsText: String(sortedPoints[indexPath.row].points), lbUserText: sortedPoints[indexPath.row].user)
+        
+        cell?.configure(imgName: placeImg, lbPointsText: String(userData[indexPath.row].points), lbUserText: userData[indexPath.row].user)
 
             return cell!
     }

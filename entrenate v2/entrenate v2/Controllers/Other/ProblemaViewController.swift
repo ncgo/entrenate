@@ -6,7 +6,11 @@
 //
 
 import UIKit
+import SAConfettiView
+
 class ProblemaViewController: UIViewController {
+    
+    let defaults = UserDefaults.standard
     
     struct Problema {
         var tipoProblema:String!
@@ -26,7 +30,7 @@ class ProblemaViewController: UIViewController {
     let color: UIColor = .systemBlue
     var index: Int!
     
-    
+    let confettiView = SAConfettiView()
     
     let titulo: UILabel = {
         let titulo = UILabel()
@@ -174,13 +178,26 @@ class ProblemaViewController: UIViewController {
     
     private func checkAnswer(respuestaRecibida: String, respuestaCorrecta: String) {
         if respuestaRecibida == respuestaCorrecta {
-            // Sumar Puntos
-            print("La tiene bien")
-            self.dismiss(animated: true, completion: nil)
+            configConfetti()
+            Timer.scheduledTimer(withTimeInterval: 4, repeats: false, block: {_ in
+                self.dismiss(animated: true, completion: nil)
+            })
+            
         } else {
             // Restar Puntos, respuesta incorrecta
         }
         //Update puntosAcumulados
+    }
+    
+    func configConfetti(){
+        self.view.addSubview(confettiView)
+        confettiView.frame = self.view.bounds
+        confettiView.intensity = 0.75
+        confettiView.startConfetti()
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: {_ in
+            self.confettiView.stopConfetti()
+        })
+        
     }
     
     @objc private func didTapInfo() {

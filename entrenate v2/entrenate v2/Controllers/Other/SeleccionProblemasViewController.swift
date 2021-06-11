@@ -10,16 +10,15 @@ import Cards
 
 class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    struct problema {
-        let area: String
-        let titulo: String
-        let nivel: String
-    }
+    let defaults = UserDefaults.standard
     
-    struct sesion {
-        let dateSesion: Date
+    struct Sesion {
+        let dateSesion: Date = Date()
         let numProblems: Int
         let time: Timer
+        let problemas = [Problema]()
+        let nivel: Int
+        let puntosBien: Int
     }
     
     private let tableView: UITableView = {
@@ -28,18 +27,18 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         return tableView
     }()
     
-    var problemas = [[problema]]()
+    var problemas = [Problema]()
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return problemas.count
+        return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return problemas[section].count
+        return cantidadProblemas
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = problemas[indexPath.section][indexPath.row].area
+        cell.textLabel?.text = problemas[indexPath.row].area
         return cell
     }
     
@@ -55,6 +54,8 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     var puntosAcumulados: Int!
     var countDownTimer: Timer!
     var puntosPorProblema: Int = 500
+    var nivelUsuario: Int = 0
+    var nivelProblema: String = "Introductorio"
     
     
     private let cardTitulo: CardArticle = {
@@ -85,14 +86,11 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         self.navigationItem.leftBarButtonItem = newBackButton
         view.addSubview(cardTitulo)
         createTimer(tiempo: Int(getSeconds(tiempo: tiempoSeleccionado)))
-        configureModels()
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(labelTimer)
-        pointConfig()
-        // let problemas = Problemas()
-        // problemas.getProblemasNivel(nivel: 0)
+        config()
     }
 
     
@@ -177,25 +175,37 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
 
     
     // MARK: -Models
-    private func configureModels() {
-        problemas.append([problema(area:"Geometría", titulo: "Juanito Alcachofa va a votar", nivel: "Introductorio"), problema(area:"Teoría de Números", titulo: "Panchita compra sandías", nivel: "Introductorio"), problema(area:"Combinatoria", titulo: "Sherlock el  perro y sus amigos", nivel: "Introductorio"), problema(area:"Álgebra", titulo: "Nadia se va a dormir", nivel: "Introductorio")])
-        problemas.append([problema(area:"Bonus", titulo: "Juanito Alcachofa va a votar", nivel: "Introductorio")])
-    }
     
     
     private func logSesion() {
         // DatabaseManager.shared.
     }
     
-    private func pointConfig() {
-        /* let p = LogicaPuntos()
+    
+    private func initializeSession() {
+        
+    }
+    
+    private func config() {
+        let p = LogicaPuntos()
         let defaults = UserDefaults.standard
         if let nivel = defaults.string(forKey: "NivelUsuarioJuego") {
+            nivelUsuario = Int(nivel)!
+            nivelProblema = p.tipoProblema(nivelUsuarioJuego: nivelUsuario)
             if let puntos = defaults.string(forKey: "PuntosAcumulados") {
+                puntosAcumulados = Int(puntos)!
                 puntosPorProblema = p.puntosProblema(nivelUsuarioJuego: Int(nivel)!)
             }
-        }*/
-        
+            print("la cantidad de problemas es \(cantidadProblemas)")
+            seleccionProblemas(nivelproblema: nivelProblema, numProblemas: cantidadProblemas)
+        }
+    }
+    
+    private func seleccionProblemas(nivelproblema: String, numProblemas: Int) {
+        let problemManager = ProblemasManager()
+        let lista = problemManager.getProblemsByLevel(nivelProblema: nivelproblema)
+        print(lista)
+        problemas = problemManager.getProblemsByLevelByTime(numProblemas: cantidadProblemas, nivelProblema: nivelproblema)
     }
 }
 

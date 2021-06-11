@@ -63,6 +63,7 @@ public class DatabaseManager {
             defaults.set(userData["name"], forKey: "Name")
             defaults.set(userData["email"], forKey: "Email")
             defaults.set(userData["nivelUsuarioJuego"], forKey: "NivelUsuarioJuego")
+            
             defaults.set(userData["puntosAcumulados"], forKey: "PuntosAcumulados")
             defaults.set(userData["escuela"], forKey: "Escuela")
             defaults.set(userData["ciudad"], forKey: "Ciudad")

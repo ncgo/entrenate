@@ -191,6 +191,7 @@ class ProblemaViewController: UIViewController {
     }
     
     private func checkAnswer(respuestaRecibida: String, respuestaCorrecta: String) {
+        var puntosAcumulados = 0
         if respuestaRecibida == respuestaCorrecta {
             configConfetti()
             Timer.scheduledTimer(withTimeInterval: 4, repeats: false, block: {_ in

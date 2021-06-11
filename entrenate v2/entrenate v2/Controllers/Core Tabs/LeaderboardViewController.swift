@@ -36,6 +36,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        insertUserToLeaderboard()
         view.addSubview(tableView)
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 1, bottom: 0, right: 1)
         tableView.frame = view.bounds
@@ -43,8 +44,9 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.delegate = self
         tableView.dataSource = self
         configConfetti()
-        
-        
+        if view.isHidden{
+        tableView.reloadData()
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -65,30 +67,13 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userData.count + 1
+        return userData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LeaderboardTableViewCell.identifier, for: indexPath) as? LeaderboardTableViewCell
 
-        var sUsername: String!
-        var iPoints: Int!
         var placeImg: String!
-        
-        if let puntos = defaults.string(forKey: "PuntosAcumulados") {
-            iPoints = Int(puntos)!
-        }
-        
-        if let username = defaults.string(forKey: "Username") {
-            sUsername = username
-        } else {
-            sUsername = "@Username"
-        }
-        
-        let newElem = LeaderboardCells(user: sUsername, points: iPoints)
-        
-        userData.append(newElem)
-
         
         switch(indexPath.row){
         case 0:
@@ -115,6 +100,26 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         return 100
     }
 
+    
+    func insertUserToLeaderboard(){
+        var sUsername: String!
+        var iPoints: Int!
+        
+        if let puntos = defaults.string(forKey: "PuntosAcumulados") {
+            iPoints = Int(puntos)!
+        }
+        
+        if let username = defaults.string(forKey: "Username") {
+            sUsername = username
+        } else {
+            sUsername = "@Username"
+        }
+        
+        let newElem = LeaderboardCells(user: sUsername, points: iPoints)
+        
+        userData.append(newElem)
+    }
+    
     /*
     // MARK: - Navigation
 

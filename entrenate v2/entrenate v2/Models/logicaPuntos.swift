@@ -10,7 +10,7 @@ import Foundation
 class LogicaPuntos: NSObject {
     
     let niveles = ["Introductorio", "Regional", "Estatal", "Nacional", "Internacional"]
-    let problemas = Problemas()
+//    let problemas = Problemas()
     
     /// Regresa el nivel de problema que será presentado en todo el nivel
     public func tipoProblema(nivelUsuarioJuego: Int) -> String {

@@ -201,6 +201,11 @@ class ProblemaViewController: UIViewController {
             })
             
         } else {
+            respuestaInput.layer.borderColor = UIColor.red.cgColor
+            respuestaInput.shake()
+            Timer.scheduledTimer(withTimeInterval: 4, repeats: false, block: {_ in
+                self.respuestaInput.layer.borderColor = UIColor(red: 0.24, green: 0.57, blue: 0.90, alpha: 1.00).cgColor
+            })
             if puntosUsuario >= 100 {
                 puntosUsuario -= puntosAgregar/5
                 status = statusOpciones[1]
@@ -260,4 +265,16 @@ class ProblemaViewController: UIViewController {
         }
     }
     
+}
+
+extension UIView {
+    func shake(){
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 3
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 10, y: self.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 10, y: self.center.y))
+        self.layer.add(animation, forKey: "position")
+    }
 }

@@ -8,6 +8,8 @@
 import UIKit
 import SAConfettiView
 
+
+
 class ProblemaViewController: UIViewController {
     
     let defaults = UserDefaults.standard
@@ -21,11 +23,15 @@ class ProblemaViewController: UIViewController {
     var areaProblema: String!
     var respuestaProblema: String!
     var fuente: String!
-    var puntos: Int!
+    var puntosAgregar: Int!
     var puntosAcumulados: Int!
     let color: UIColor = .systemBlue
-    var index: Int!
+    var indexPath: IndexPath!
+    var status: String = "No intentado"
     
+    var delegate: UpdateCelda?
+    
+    let statusOpciones = ["Correcto", "Incorrecto", "No intentado"]
     let confettiView = SAConfettiView()
     
     let titulo: UILabel = {
@@ -186,19 +192,28 @@ class ProblemaViewController: UIViewController {
         }
         if respuestaRecibida == respuestaCorrecta {
             configConfetti()
-            puntosUsuario += 100
+            puntosUsuario += puntosAgregar
             defaults.setValue(puntosUsuario, forKey: "PuntosAcumulados")
-            Timer.scheduledTimer(withTimeInterval: 4, repeats: false, block: {_ in
+            print("Puntos Actuales= \(defaults.string(forKey: "PuntosAcumulados") ?? "aun no")")
+            status = statusOpciones[0]
+            Timer.scheduledTimer(withTimeInterval: 4, repeats: false, block: { [self]_ in
                 self.dismiss(animated: true, completion: nil)
             })
             
         } else {
             if puntosUsuario >= 100 {
-                puntosUsuario -= 100
+                puntosUsuario -= puntosAgregar/5
+                status = statusOpciones[1]
                 defaults.setValue(puntosUsuario, forKey: "PuntosAcumulados")
+                print("Puntos Actuales= \(defaults.string(forKey: "PuntosAcumulados") ?? "aun no")")
             } else {}
         }
        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("sending to update")
+        delegate!.updateCelda(status: status, index: indexPath)
     }
     
     func configConfetti(){
@@ -235,6 +250,14 @@ class ProblemaViewController: UIViewController {
             view.frame.origin.y = 0
         }
         
+    }
+    
+    func updateStatus(correcta: Bool) -> Bool {
+        if (correcta) {
+            return true
+        } else {
+            return false
+        }
     }
     
 }

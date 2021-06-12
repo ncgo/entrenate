@@ -8,6 +8,10 @@
 import UIKit
 import Cards
 
+protocol UpdateCelda {
+    func updateCelda(status: String, index: IndexPath)
+}
+
 class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let defaults = UserDefaults.standard
@@ -21,6 +25,8 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         let puntosBien: Int
     }
     
+    
+    
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -29,6 +35,13 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     
     var problemas = [Problema]()
     let label = "label"
+    
+    struct resultados {
+        var correctos: Int = 0
+        var intentados: Int = 0
+        var noIntentados: Int = 0
+    }
+    var resultadosSesion = resultados()
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -52,10 +65,11 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         vc.areaProblema = problemas[indexPath.row].area
         vc.respuestaProblema = problemas[indexPath.row].respuesta
         vc.fuente = problemas[indexPath.row].respuesta
-        vc.puntos = puntosPorProblema
+        vc.puntosAgregar = puntosPorProblema
         vc.tituloProblema = problemas[indexPath.row].titulo
         vc.puntosAcumulados = puntosAcumulados
-        
+        vc.indexPath = indexPath
+        vc.delegate = self
         navigationController?.present(vc, animated: true, completion: nil)
     }
     
@@ -92,6 +106,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         print("El tiempo para esta sesion es de \(tiempoSeleccionado)")
         print("Responderás \(String(cantidadProblemas)) problemas")
         numProblemas(num: cantidadProblemas)
+        resultadosSesion.noIntentados = cantidadProblemas
         let newBackButton = UIBarButtonItem(title: "Terminar", style: UIBarButtonItem.Style.plain, target: self, action: #selector(didTapBack))
         newBackButton.tintColor = .white
         self.navigationItem.leftBarButtonItem = newBackButton
@@ -196,7 +211,42 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         
     }
     
+    func finish() {
+        if resultadosSesion.correctos == cantidadProblemas {
+            let alert = UIAlertController(title: "Has terminado", message: "Has contestado correctamente todos los problemas.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: {_ in
+                    let vc = ResultadosViewController()
+                    self.present(vc, animated: true) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }))
+                countDownTimer.invalidate()
+                self.present(alert, animated: true)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        finish()
+    }
+    
 }
 
+extension SeleccionProblemasViewController: UpdateCelda {
+    
+    @IBAction func updateCelda(status: String, index: IndexPath) {
+        print("updating")
+        if (status == "Correcto") {
+            resultadosSesion.correctos += 1
+            resultadosSesion.noIntentados -= 1
+            tableView.cellForRow(at: index)?.backgroundColor = .systemGreen
+        } else if (status == "Incorrecto") {
+            tableView.cellForRow(at: index)?.backgroundColor = .systemRed
+        } else {
+            tableView.cellForRow(at: index)?.backgroundColor = .systemGray5
+        }
+        print(resultadosSesion.correctos, " ", resultadosSesion.noIntentados)
+        finish()
+    }
+}
 
 

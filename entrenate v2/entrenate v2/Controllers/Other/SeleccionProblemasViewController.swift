@@ -109,6 +109,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
         print("Responderás \(String(cantidadProblemas)) problemas")
         numProblemas(num: cantidadProblemas)
         resultadosSesion.noIntentados = cantidadProblemas
+        cardTitulo.subtitle = "Puntos Acumulados \(defaults.string(forKey: "PuntosAcumulados")!)"
         let newBackButton = UIBarButtonItem(title: "Terminar", style: UIBarButtonItem.Style.plain, target: self, action: #selector(didTapBack))
         newBackButton.tintColor = .white
         self.navigationItem.leftBarButtonItem = newBackButton
@@ -210,7 +211,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     
     
     private func initializeSession() {
-        let hora
+        // let hora
     }
     
     func finish() {
@@ -243,6 +244,8 @@ extension SeleccionProblemasViewController: UpdateCelda {
         } else {
             tableView.cellForRow(at: index)?.backgroundColor = .systemGray5
         }
+        
+        cardTitulo.subtitle = "Puntos Acumulados \(defaults.string(forKey: "PuntosAcumulados")!)"
         print(resultadosSesion.correctos, " ", resultadosSesion.noIntentados)
         finish()
     }

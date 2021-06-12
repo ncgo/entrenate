@@ -18,11 +18,12 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     
     struct Sesion {
         let dateSesion: Date = Date()
-        let numProblems: Int
-        let time: Timer
-        let problemas = [Problema]()
-        let nivel: Int
-        let puntosBien: Int
+        let numProblems: Int = Int()
+        let timeSelected: String = String()
+        let timeActual: Timer = Timer()
+        let problemas = [String]()
+        let nivel: Int = Int()
+        let resultadosFinales = resultados()
     }
     
     
@@ -34,6 +35,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     }()
     
     var problemas = [Problema]()
+    var sesion = Sesion()
     let label = "label"
     
     struct resultados {
@@ -208,7 +210,7 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
     
     
     private func initializeSession() {
-        
+        let hora
     }
     
     func finish() {
@@ -221,12 +223,9 @@ class SeleccionProblemasViewController: UIViewController, UITableViewDelegate, U
                     }
                 }))
                 countDownTimer.invalidate()
+                logSesion()
                 self.present(alert, animated: true)
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        finish()
     }
     
 }
